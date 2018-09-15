@@ -11,9 +11,9 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.2.3",
+	"libVersion": "2.3.0",
 	"appid": "wxea9f749b0debbcbc",
-	"projectname": "wxtarget",
+	"projectname": "wx-target",
 	"isGameTourist": false,
 	"condition": {
 		"search": {

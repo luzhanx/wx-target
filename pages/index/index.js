@@ -74,7 +74,7 @@ Page({
     }
   },
   shareIndex() {
-    wx.navigateTo({
+    this.data.user.id && wx.navigateTo({
       url: `/pages/share_index/share_index?id=${this.data.user.id}`
     })
   },

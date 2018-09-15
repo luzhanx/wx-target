@@ -1,8 +1,6 @@
 <!--pages/share_index/share_index.wxml-->
 <!-- 分享首页 -->
 <view class='index'>
-
-
   <view class="header" bindtap="login">
     <image src="/assets/img/headerbg.png" class="headerbg" />
     <view class="avatar">
