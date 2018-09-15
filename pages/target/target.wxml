@@ -1,0 +1,28 @@
+<form class='target' report-submit="{{ true }}" bindsubmit="submit">
+    <view class="group">
+        <view class="row">
+            <view class="label">是否开启提醒功能</view>
+            <view class="value">
+                <switch color="#9de8f7" checked="{{ remind }}" bindchange="remindChange" />
+            </view>
+        </view>
+        <view class="row" wx:if="{{ remind }}">
+            <picker mode="time" value="{{remind_time}}" start="09:01" end="21:01" bindchange="bindTimeChange">
+                <view class="timePicker">
+                    <view class="label">设置每天提醒时间</view>
+                    <view class="value">
+                        <text class="text">{{remind_time}}</text>
+                        <image class="right" src="./../../assets/img/right.png"></image>
+                    </view>
+                </view>
+            </picker>
+        </view>
+        <view class="row">
+            <button plain form-type="submit" class="btn">
+                <image class="bg" src="./../../assets/img/ggtx3.png"></image>
+                <view class="text">更改提醒</view>
+            </button>
+        </view>
+    </view>
+
+</form>

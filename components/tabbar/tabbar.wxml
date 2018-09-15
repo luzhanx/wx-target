@@ -1,0 +1,18 @@
+<view class='tabbar' style='{{ isShandow ? "box-shadow: 0 -5rpx 10rpx 0 rgba(0, 0, 0, 0.06);": "" }}'>
+  <view class='link {{ tab == 0 ? "active":"" }}' bindtap='navLink' data-tab="0">
+    <image src='./../../assets/img/u6.png'></image>
+    <view>我的目标</view>
+  </view>
+  <view class='link {{ tab == 1 ? "active":"" }}' bindtap='navLink' data-tab="1">
+    <view class="center">
+      <view class="btn">
+          <image src='./../../assets/img/u12.png'></image>
+      </view>
+    </view>
+    <view>挑战</view>
+  </view>
+  <view class='link {{ tab == 2 ? "active":"" }}' bindtap='navLink' data-tab="2">
+    <image src='./../../assets/img/u10.png'></image>
+    <view>星星排行</view>
+  </view>
+</view>

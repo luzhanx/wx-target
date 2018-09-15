@@ -1,0 +1,7 @@
+<view class="avatar">
+    <view class="avatar_img" style="width:{{ size }}rpx;height:{{ size }}rpx;">
+        <view class="tip" wx:if="{{ !user.avatar.length }}">登录</view>
+        <image class="avatar_bg" src="./../../assets/img/avatar_bg.png"></image>
+        <image wx:if="{{ user.avatar.length }}" class="avatar_url" src="{{ user.avatar }}"></image>
+    </view>
+</view>

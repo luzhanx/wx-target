@@ -1,0 +1,246 @@
+// out: ranking.wxss, compress:false, sourceMap:false
+
+page{
+    height: 100%;
+    background: #f8f8f8;
+}
+.ranking{
+    // display: flex;
+    // flex-direction: column;
+    align-items: center;
+    .title{
+        width: 100%;
+        font-size: 48rpx;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10rpx 0;
+        // position: fixed;
+        z-index: 999;
+        left: 0;
+        top: 0;
+        background: #fff;
+        .text{
+            display: flex;
+            position: relative;
+            view{
+                padding: 0 14rpx;
+                position: relative;
+                &:after{
+                    content: '';
+                    position: absolute;
+                    width: 2rpx;
+                    height: 60%;
+                    background: #000;
+                    right: 0;
+                    top: 25%;
+                }
+            }
+            .text1{
+                color: #82bed2;
+            }
+            .text2{
+                color: #f69581;
+            }
+            .text3{
+                color: #febb50;
+            }
+            &:before{
+                content: '';
+                position: absolute;
+                width: 2rpx;
+                height: 60%;
+                background: #000;
+                left: 0;
+                top: 25%;
+            }
+        }
+        .ranking_t1{
+            width: 22rpx;
+            height: 37rpx;
+            position: relative;
+            top: 10rpx;
+            left: -5rpx;
+            margin-left: 50rpx;
+        }
+        .ranking_t2{
+            width: 63rpx;
+            height: 69rpx;
+            position: relative;
+            left: -25rpx;
+            top: -10rpx;
+        }
+    }
+    .msg{
+        width: 100%;
+        font-size: 24rpx;
+        // position: relative;
+        display: flex;
+        // position: fixed;
+        top: 84rpx;
+        left: 0;
+        z-index: 99;
+        background: #fff;
+        box-shadow:0 5rpx 10rpx 0 rgba(0, 0, 0, 0.06);        
+        text{
+            padding: 5rpx 40rpx;
+        }
+        &:before{
+            content: '';
+            flex: 1;
+            width: 100%;
+            height: 2rpx;
+            background: #dcdcdc;
+            margin-top: 20rpx;
+        }
+        &:after{
+            content: '';
+            flex: 1;
+            width: 100%;
+            height: 2rpx;
+            background: #dcdcdc;
+            margin-top: 20rpx;
+        }
+    }
+    .ranking_c{
+        padding-top: 20rpx;
+        padding-bottom: 30rpx;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // margin-top: 120rpx;
+        background: #fff;
+        image{
+            width: 30rpx;
+            height: 30rpx;
+        }
+    }
+    .ranklist{
+        // margin-top: 100rpx;
+        width: 100%;
+        padding-bottom: 150rpx;
+        background: #f8f8f8;
+        position: relative;
+        margin-top: 3rpx;     
+        .bg2 {
+            width: 100%;
+            height: 191rpx;
+            position: absolute;
+            top: -60rpx;
+          }
+          .rank{
+            margin: 0 20rpx;
+            background: #fff;
+            height: 150rpx;
+            margin-bottom: 20rpx;
+            border-radius: 16rpx;
+            box-shadow: 0 0 5rpx #eee;
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 10rpx 20rpx;
+            .iinfo{
+                display: flex;
+                flex: 1;
+                align-items: center;
+            }
+            .one{
+                width: 71rpx;
+                height: 64rpx;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .avatar{
+                width: 125rpx;
+                height: 124rpx;
+                border-radius: 50%;
+                margin: 0 30rpx;
+            }
+            .infos{
+                flex: 1;
+                .username{
+                    font-size: 28rpx;
+                    font-weight: bold;
+                    margin-bottom: 8rpx;
+                }
+                .info{
+                    font-size: 22rpx;
+                    color: #818181;
+                }
+            }
+            .zan{
+                height: 100%;
+                flex: 0 0 140rpx;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .zanicon{
+                    width: 41rpx;
+                    height: 41rpx;
+                }
+                .num{
+                    color: #818181;
+                    font-size: 28rpx;
+                    margin-left: 10rpx;
+                }
+            }
+        }
+    }
+
+    .myrank{
+        width: 100%;
+        position: fixed;
+        bottom: 0rpx;
+        left: 0;
+        background: #fff;
+        height: 150rpx;
+        border-bottom: 2rpx solid #dcdcdc;
+        box-shadow: 0 -5rpx 10rpx 0 rgba(0, 0, 0, 0.06);
+        .rank{
+            padding: 10rpx 40rpx;
+            display: flex;
+            align-items: center;
+        }
+        .one{
+            width: 71rpx;
+            height: 64rpx;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .avatar{
+            width: 125rpx;
+            height: 124rpx;
+            border-radius: 50%;
+            margin: 0 30rpx;
+        }
+        .infos{
+            flex: 1;
+            .username{
+                font-size: 28rpx;
+                font-weight: bold;
+                margin-bottom: 8rpx;
+            }
+            .info{
+                font-size: 22rpx;
+                color: #818181;
+            }
+        }
+        .zan{
+            flex: 0 0 140rpx;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .zanicon{
+                width: 41rpx;
+                height: 41rpx;
+            }
+            .num{
+                color: #818181;
+                font-size: 28rpx;
+                margin-left: 10rpx;
+            }
+        }
+    }
+}

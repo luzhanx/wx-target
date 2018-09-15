@@ -1,0 +1,7 @@
+<view class="commonbg">
+    <image class="bg" src="./../../assets/img/bg2.png"></image>
+    <block wx:if="{{ title !== '' }}">
+        <image class="yuan" src="./../../assets/img/ranking_c.png"></image>
+        <view class="title">{{ title }}</view>
+    </block>
+</view>

@@ -1,0 +1,26 @@
+<view class="confirm" wx:if="{{ showConfirm }}">
+    <view class="mask"></view>
+    <view class="dialog">
+        <view wx:if="{{ type === 'success' }}" class="title">{{ title }}</view>
+        <view wx:elif="{{ type === 'error' }}" class="title error">{{ title }}</view>
+
+        <view class="icon">
+            <image wx:if="{{ type === 'success' }}" src="./../../assets/img/xx.png"></image>
+            <image wx:elif="{{ type === 'error' }}" src="./../../assets/img/kulian2.png">{{ title }}</image>
+            <image wx:elif="{{ type === 'del' }}" src="./../../assets/img/kulian.png"></image>
+            <text class="num" wx:if="{{ type === 'success' }}">
+                <text class="unit">x</text>
+                <text class="value">{{ num }}</text>
+            </text>
+        </view>
+        <view wx:if="{{ type === 'del' }}" class="title error">{{ title }}</view>
+        <view wx:if="{{ type === 'del' }}" class="message">{{ message }}</view>
+        <view class="btn" bindtap="handClickOne">
+            <image class="bg" src="./../../assets/img/ggtx2.png"></image>
+            <view class="text">{{ btn[0] }}</view>
+        </view>
+        <view class="btn bor" bindtap="handClickTwo">
+            <view class="text">{{ btn[1] }}</view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "tabbar": "../../components/tabbar/tabbar",
+    "avatar": "../../components/avatar/avatar",
+    "fraction": "../../components/fraction/fraction",
+    "commonbg": "../../components/commonbg/commonbg"
+  }
+}

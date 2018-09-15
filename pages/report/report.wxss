@@ -1,0 +1,271 @@
+page {
+  height: 100%;
+}
+
+.report {
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 100%;
+}
+
+.rili {
+  width: 100%;
+  background: #f8f8f8;
+  position: relative;
+  margin-top: 80rpx;
+  flex: 1;
+}
+
+.rili .bg2 {
+  width: 100%;
+  height: 191rpx;
+  position: absolute;
+  top: -127rpx;
+}
+
+.demo2-header {
+  font-size: 32rpx;
+  color: #232a3d;
+  position: relative;
+}
+
+.demo2-board {
+  color: #595959;
+  border-top: 2rpx solid #d2d2d2;
+  border-bottom: 2rpx solid #d2d2d2;
+  margin: 0 26rpx;
+}
+
+@keyframes move_wave {
+  0% {
+    transform: translateX(0) translateZ(0) scaleY(1);
+  }
+
+  50% {
+    transform: translateX(-25%) translateZ(0) scaleY(0.55);
+  }
+
+  100% {
+    transform: translateX(-50%) translateZ(0) scaleY(1);
+  }
+}
+
+.waveWrapper {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: 20rpx auto;
+  width: 325rpx;
+  height: 325rpx;
+  z-index: 999;
+  border-radius: 50%;
+  background-size: 100% 100%;
+  box-shadow: 0 0 20rpx #000;
+  padding: 0;
+  /* opacity: 0.9; */
+}
+
+.waveWrapperInner {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+  bottom: -1px;
+}
+
+.bgTop {
+  z-index: 10;
+  opacity: 0.5;
+}
+
+.bgMiddle {
+  z-index: 15;
+  opacity: 0.5;
+}
+
+.bgBottom {
+  z-index: 5;
+}
+
+.wave {
+  position: absolute;
+  left: 0;
+  width: 1200%;
+  height: 100%;
+  background-repeat: repeat no-repeat;
+  background-position: 0 bottom;
+  transform-origin: center bottom;
+}
+
+.waveTop {
+  background-size: 100% 150rpx;
+}
+
+.waveAnimation .waveTop {
+  animation: move_wave 40s linear infinite;
+}
+
+.waveMiddle {
+  background-size: 50% 150rpx;
+}
+
+.waveAnimation .waveMiddle {
+  animation: move_wave 30s linear infinite;
+}
+
+.waveBottom {
+  background-size: 50% 150rpx;
+}
+
+.waveAnimation .waveBottom {
+  animation: move_wave 25s linear infinite;
+}
+
+.tip {
+  flex: 1;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  color: #fff;
+  position: relative;
+  z-index: 999;
+}
+
+.ttitle {
+  font-size: 36rpx;
+  letter-spacing: 5rpx;
+}
+.yqdt{
+  line-height: initial;
+}
+.yqdt .num .day {
+  font-size: 114rpx;
+}
+
+.yqdt .num .unit {
+  font-size: 22rpx;
+}
+
+.yqdt .yqdtip {
+  font-size: 22rpx;
+  padding: 0rpx 20rpx;
+  position: relative;
+}
+
+.yqdt .yqdtip:before {
+  content: '';
+  position: absolute;
+  width: 34rpx;
+  height: 2rpx;
+  background: #fff;
+  left: -34rpx;
+  top: 50%;
+}
+
+.yqdt .yqdtip:after {
+  content: '';
+  position: absolute;
+  width: 34rpx;
+  height: 2rpx;
+  background: #fff;
+  right: -34rpx;
+  top: 50%;
+}
+
+.btns {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin: 0 26rpx;
+}
+
+.btns .btn {
+  width: 191rpx;
+  height: 57rpx;
+  font-size: 24rpx;
+  border-radius: 57rpx;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2rpx solid #b5b5b5;
+  margin-left: 28rpx;
+}
+
+.btns .btn text {
+  color: #535353;
+}
+
+.btns .imgbtn {
+  border: none;
+  width: 194rpx;
+  height: 60rpx;
+}
+
+.btns .imgbtn text {
+  color: #2e2e2e;
+  position: relative;
+}
+
+.btns .imgbtn image {
+  width: 194rpx;
+  height: 60rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+}
+
+.btns .btn:active {
+  background: #eee;
+}
+
+.info {
+  font-size: 32rpx;
+}
+.info .xxpng{
+  width: 40rpx;
+  height: 40rpx;
+  transform: rotate(-15deg);
+  position: relative;
+  top: 8rpx;
+  margin: 0 5rpx;
+}
+.gophb {
+  width: 194rpx;
+  height: 60rpx;
+  position: relative;
+  font-size: 24rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20rpx 0;
+  z-index: 8;
+}
+.gophb text {
+  color: #2e2e2e;
+  position: relative;
+}
+
+.gophb image {
+  width: 194rpx;
+  height: 60rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+}
+
+.mccolor {
+  color: #fe0000;
+  padding: 0 5px;
+}

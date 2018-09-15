@@ -1,0 +1,21 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/target/target",
+    "pages/ranking/ranking",
+    "pages/create/create",
+    "pages/report/report",
+    "pages/reportSubmit/reportSubmit",
+    "pages/template/template",
+    "pages/new/new",
+    "pages/share_index/share_index",
+    "pages/login/login",
+    "pages/tailoring/tailoring"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "小目标KEEP",
+    "navigationBarTextStyle": "black"
+  }
+}

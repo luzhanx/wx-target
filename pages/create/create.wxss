@@ -1,0 +1,84 @@
+page {
+  background: #f8f8f8;
+}
+.index {
+  display: flex;
+  height: 100%;
+  margin-bottom: 100rpx;
+  flex-direction: column;
+}
+.index .avatar {
+  display: flex;
+  justify-content: center;
+  background: #fff;
+}
+.index .fraction {
+  padding: 0 90rpx;
+  padding-top: 30rpx;
+  background: #fff;
+}
+.index .lists {
+  padding: 0 45rpx;
+  margin-top: 20rpx;
+}
+.index .lists .item {
+  width: 166rpx;
+  display: inline-block;
+  padding: 0 27rpx;
+  margin-bottom: 30rpx;
+}
+.index .lists .item:active {
+  background: #eee;
+}
+.index .lists .item .icon {
+  width: 166rpx;
+  height: 166rpx;
+  border-radius: 50%;
+}
+.index .lists .item .title {
+  color: #313131;
+  font-size: 24rpx;
+  text-align: center;
+  white-space: nowrap;
+}
+.index .lists .item .btn {
+  width: 100%;
+  height: 54rpx;
+  margin-top: 17rpx;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.index .lists .item .btn .bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.index .lists .item .btn .text {
+  font-size: 24rpx;
+  color: #2E2E2E;
+  position: relative;
+  z-index: 9;
+}
+.index .newFix {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.index .newFix .btn {
+  width: 250rpx;
+  height: 250rpx;
+  margin: 0 40rpx;
+}
+.index .newFix .btn image {
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,24 @@
+<view class="fraction">
+    <view class="item">
+        <image src="./../../assets/img/sy.png"></image>
+        <view class="left">
+            <view class="value">{{ star }}</view>
+            <view class="label">星星数量</view>
+        </view>
+    </view>
+    <!-- <view class="item">
+        <view class="value">{{ rank }}</view>
+        <view class="label">星星排行</view>
+    </view> -->
+    <view class="item">
+            <image src="./../../assets/img/qd.png"></image>
+        <view class="left">
+            <view class="value">{{ sum }}</view>
+            <view class="label">积累签到</view>
+        </view>
+    </view>
+    <!-- <view class="item">
+        <view class="value">{{ target }}</view>
+        <view class="label">完成目标</view>
+    </view> -->
+</view>

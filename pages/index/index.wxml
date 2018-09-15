@@ -1,0 +1,67 @@
+<!--pages/share_index/share_index.wxml-->
+<!-- 分享首页 -->
+<view class='index'>
+
+
+  <view class="header" bindtap="login">
+    <image src="/assets/img/headerbg.png" class="headerbg" />
+    <view class="avatar">
+      <avatar user="{{ user }}" bindtap="shareIndex" />
+      <view class="info">
+        <view class="tip" wx:if="{{ user == '' }}">请点击头像登录</view>
+        <view class="nickname" wx:if="{{ user != '' }}">{{ user.nickname }}</view>
+        <view class="rank" wx:if="{{ user != '' }}">排行榜:
+          <text class="num">{{ fraction.rank }}</text>名
+        </view>
+      </view>
+      <navigator url="/pages/create/create" class="addTarget" wx:if="{{ user != '' }}">+ 添加新目标</navigator>
+      <navigator url="/pages/create/create" wx:if="{{ user != '' }}">
+        <image class="addTargetBg" src="/assets/img/headerb.png" />
+      </navigator>
+    </view>
+    <!-- <view class="tip" wx:else>点击我登录哟~</view> -->
+  </view>
+
+  <view class="fraction">
+    <fraction star="{{ fraction.star }}" rank="{{ fraction.rank }}" sum="{{ fraction.sum }}" target="{{ fraction.target }}"></fraction>
+  </view>
+  <view class="commonbg">
+    <view class="tttile">我的小目标</view>
+  </view>
+  <view class="lists tip" wx:if="{{ user == '' }}">登录后可查看</view>
+  <view class="lists" wx:else>
+    <block wx:for="{{ item }}" wx:key="{{ index }}">
+      <view class="item {{ index == 0 ? 'activity': '' }}" data-text="活动" bindtap="report" data-id="{{ item.id }}" data-sign="{{ item.sign }}">
+        <view class="navigator">
+          <image class="img" src="{{ item.images }}"></image>
+          <view class="info">
+            <view class="title">{{ item.title }}</view>
+            <view class="dec">{{ item.description }}</view>
+          </view>
+        </view>
+        <view class="item_r">
+          <view class="num" wx:if="{{ item.sign == 0 || item.sign == 3 }}">
+            <text class="current">{{ item.sum }}</text>
+            <text class="fenge">/</text>
+            <text>{{ item.day }}</text>
+          </view>
+          <view class="tiptext success" wx:elif="{{ item.sign == 1 }}">
+            目标已完成
+          </view>
+          <view class="tiptext error" wx:elif="{{ item.sign == 2 }}">
+            目标未完成
+          </view>
+          <view class="tiptext yes" wx:if="{{ item.sign == 3 }}">
+            今日已签到
+          </view>
+          <view class="btn" wx:if="{{ item.sign != 1 && item.sign != 2 && item.sign != 3}}">
+            <image class="bg" src="./../../assets/img/ggtx.png"></image>
+            <view class="text">点击签到</view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+<confirm showConfirm="{{ false }}" bind:test="handTest" />
+<tabbar tab="0" />

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "calendar": "../../components/calendar/calendar",
+    "tabbar": "../../components/tabbar/tabbar"
+  }
+}

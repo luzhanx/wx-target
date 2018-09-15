@@ -1,0 +1,44 @@
+<!--pages/share_index/share_index.wxml-->
+<!-- 分享首页 -->
+<view class='index'>
+    <!-- <view class="avatar" bindtap="login">
+        <avatar user="{{ user }}" />
+    </view>
+    <view class="fraction">
+        <fraction star="{{ fraction.star }}" rank="{{ fraction.rank }}" sum="{{ fraction.sum }}" target="{{ fraction.target }}"></fraction>
+    </view> -->
+    <commonbg title="新建小目标"></commonbg>
+    <view class="lists">
+
+        <block wx:for="{{ template }}" wx:key="{{ index }}">
+            <view class="item" bindtap="link" data-id="{{ item.id }}">
+                <image class="icon" src="{{ item.images }}"></image>
+                <view class="title">{{ item.title }}</view>
+                <view class="btn">
+                    <image class="bg" src="./../../assets/img/ggtx.png"></image>
+                    <view class="text">添加</view>
+                </view>
+            </view>
+        </block>
+
+        <view class="item" bindtap="showNewFix">
+            <image class="icon" src="./../../assets/img/add2.png"></image>
+            <view class="title">添加自定义目标</view>
+            <view class="btn">
+                <image class="bg" src="./../../assets/img/ggtx.png"></image>
+                <view class="text">添加</view>
+            </view>
+        </view>
+    </view>
+
+    <view class="newFix" wx:if="{{ newFix }}" bindtap="showNewFix">
+        <view class="btn" bindtap="link" data-type="geren">
+            <image src="/assets/img/geren.png" />
+        </view>
+        <view class="btn" bindtap="link" data-type="qun">
+            <image src="/assets/img/qun.png" />
+        </view>
+    </view>
+</view>
+
+<tabbar tab="1" />

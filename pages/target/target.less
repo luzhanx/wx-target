@@ -1,0 +1,100 @@
+// out: target.wxss, compress:false, sourceMap:false
+
+page{
+    // background: #F5F5F5;
+}
+
+.target{
+    border-radius: 8rpx;
+    .group{
+        background: #fff;
+        .row{
+            font-size: 28rpx;
+            display: flex;
+            padding: 26rpx 0rpx;
+            margin: 0 28rpx;
+            align-items: center;
+            position: relative;
+            min-height: 60rpx;
+            &:after{
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 1px;
+                background: #E5E5E5;
+            }
+            &:last-child:after{
+                display: none;
+            }
+            input{
+                font-size: 28rpx;
+                text-align: right;
+            }
+            .label{
+                color: #454545;
+            }
+            .value{
+                flex: 1;
+                text-align: right;
+                color: #898989;
+                .right{
+                    width: 14rpx;
+                    height: 19rpx;
+                }
+                .text{
+                    padding: 0 20rpx;
+                }
+                // switch控件样式
+                .wx-switch-input{
+                    zoom: 0.8;
+                }
+                .wx-switch-input::before{
+                    // background: orangered !important;
+                }
+            }
+            picker{
+                width: 100%;
+                height: 100%;
+            }
+            .timePicker{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                z-index: 9;
+                display: flex;
+                align-items: center;
+                padding: 20rpx;
+                padding-left: 0;
+                box-sizing: border-box;
+            }
+            .btn{
+                width: 603rpx;
+                height: 85rpx;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 24rpx auto;
+                border: none;
+                outline: none;
+                .bg{
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                }
+                .text{
+                    font-size: 32rpx;
+                    color: #2E2E2E;
+                    position: relative;
+                    z-index: 9;
+                }
+            }
+        }
+    }
+}

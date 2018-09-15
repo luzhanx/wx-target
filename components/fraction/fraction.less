@@ -1,0 +1,60 @@
+// out: fraction.wxss, compress:false, sourceMap:false
+
+
+.fraction{
+    // width: 100%;
+    // padding: 0 60rpx;
+    display: flex;
+    height: 121rpx;
+    align-items: center;
+    background: #fff;
+    .item{
+        flex: 1;
+        display: flex;
+        // align-items: center;
+        align-items: flex-end;
+        justify-content: center;
+        position: relative;
+        &:after{
+            content: '';
+            width: 1px;
+            height: 100%;
+            background: #DCDCDC;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+        &:last-child:after{
+            display: none;
+        }
+        image{
+            width: 60rpx;
+            height: 57rpx;
+            position: relative;
+            bottom: 8rpx;
+            right: 10rpx;
+        }
+        // .fz{
+        //     width: 60rpx;
+        //     height: 53rpx;
+        // }
+    }
+    .left{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        // flex: 1;
+        .value{
+            font-size: 34rpx;
+            color: #F69581;
+            margin-bottom: -8rpx;
+            // font-weight: bold;
+        }
+        .label{
+            font-size: 28rpx;
+            color: #3B3B3B;
+        }
+    }
+}

@@ -1,0 +1,102 @@
+page {
+  background: #f7f7f7;
+}
+.new {
+  background: #fff;
+}
+.new .group {
+  background: #fff;
+  border-radius: 8rpx;
+  margin: 35rpx 26rpx 66rpx 26rpx;
+}
+.new .group .row {
+  font-size: 28rpx;
+  display: flex;
+  padding: 26rpx 20rpx;
+  align-items: center;
+  position: relative;
+  min-height: 60rpx;
+}
+.new .group .row:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: #E5E5E5;
+}
+.new .group .row:last-child:after {
+  display: none;
+}
+.new .group .row input {
+  font-size: 28rpx;
+  text-align: right;
+}
+.new .group .row textarea {
+  width: 100%;
+  height: 200rpx;
+}
+.new .group .row .label {
+  color: #454545;
+}
+.new .group .row .value {
+  flex: 1;
+  text-align: right;
+  color: #898989;
+}
+.new .group .row .value .photo {
+  width: 69rpx;
+  height: 69rpx;
+  border-radius: 8rpx;
+}
+.new .group .row .value .right {
+  width: 14rpx;
+  height: 19rpx;
+}
+.new .group .row .value .text {
+  padding: 0 20rpx;
+}
+.new .group .row .value .wx-switch-input {
+  zoom: 0.8;
+}
+.new .group .row picker {
+  width: 100%;
+  height: 100%;
+}
+.new .group .row .timePicker {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 9;
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.new .group .row .btn {
+  width: 603rpx;
+  height: 85rpx;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 24rpx auto;
+  border: none;
+  outline: none;
+}
+.new .group .row .btn .bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.new .group .row .btn .text {
+  font-size: 24rpx;
+  color: #2E2E2E;
+  position: relative;
+  z-index: 9;
+}

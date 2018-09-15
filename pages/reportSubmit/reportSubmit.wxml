@@ -1,0 +1,19 @@
+<view class="reportSubmit">
+    <div class="header">
+        <view class="item">取消</view>
+        <view class="title">打卡心情</view>
+        <view class="item fabu" bindtap="submit">发布</view>
+    </div>
+    <view class="section">
+        <textarea bindinput="bindTextAreaBlur" auto-height placeholder="输入打卡心情记录" />
+    </view>
+    <view class="addImg" bindtap="openImg">
+        <image src="/assets/img/add.png" wx:if="{{ sign_images === '' }}" />
+        <image src="{{ sign_images }}" class="sign_images" wx:else />
+    </view>
+    <view class="getMap" bindtap="getMap">
+        <image class="point icon" src="/assets/img/point.png"></image>
+        <view class="text">{{ name }}</view>
+        <image class="right icon" src="/assets/img/right2.png"></image>
+    </view>
+</view>

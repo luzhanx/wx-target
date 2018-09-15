@@ -1,0 +1,20 @@
+<!--pages/share_index/share_index.wxml-->
+<!-- 分享首页 -->
+<view class='share_index'>
+    <view class="avatar">
+        <avatar user="{{ myRank }}" size="{{ 240 }}" />
+    </view>
+    <view class="fraction">
+        <fraction star="{{ myRank.star }}" rank="{{ myRank.rank }}" sum="{{ myRank.sum }}" target="{{ myRank.target }}"></fraction>
+    </view>
+    <commonbg></commonbg>
+    <view class="content">
+        <view class="zanImg" bindtap="handZan" data-id="{{ myRank.id }}" data-sign="{{ sign }}">
+            <image class="bg" src="./../../assets/img/avatar_bg.png"></image>
+            <image class="zan" src="./../../assets/img/zan2.png"></image>
+        </view>
+        <view class="text">鼓励一下吧！</view>
+    </view>
+    <!-- <view class="tip">快来建立自己的小目标吧！</view> -->
+</view>
+<tabbar tab="1" />

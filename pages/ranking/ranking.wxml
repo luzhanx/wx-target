@@ -1,0 +1,84 @@
+<!--pages/demo/demo.wxml-->
+<view class='ranking'>
+  <view class='title'>
+    <image src="./../../assets/img/ranking_t1.png" class="ranking_t1"></image>
+    <view class="text">
+      <view class='text1'>星</view>
+      <view class='text2'>星</view>
+      <view class='text3'>榜</view>
+    </view>
+    <image src="./../../assets/img/ranking_t2.png" class="ranking_t2"></image>
+  </view>
+  <view class="msg">
+    <text>21天完成一个小目标</text>
+  </view>
+  <view class="ranking_c">
+    <!-- <image src="./../../assets/img/ranking_c.png"></image> -->
+  </view>
+  <view class="ranklist">
+    <image class='bg2' src='./../../assets/img/bg2.png'></image>
+    <block wx:for="{{ rank }}" wx:key="{{ index }}">
+      <view class="rank">
+        <view class="iinfo" bindtap="shareIndex" data-id="{{ item.id }}">
+          <!-- 排名 -->
+          <image wx:if="{{ index === 0 }}" src="./../../assets/img/one.png" class="one"></image>
+          <image wx:elif="{{ index === 1 }}" src="./../../assets/img/two.png" class="one"></image>
+          <image wx:elif="{{ index === 2 }}" src="./../../assets/img/three.png" class="one"></image>
+          <view wx:else class="one">{{ index + 1 }}</view>
+
+          <!-- 头像 -->
+          <image src="{{ item.avatar }}" class="avatar"></image>
+
+          <view class="infos">
+            <view class="username">{{ item.nickname }}</view>
+            <view class="info">
+              <text class="label">完成目标数: </text>
+              <text class="value">{{ item.target }}</text>
+            </view>
+            <view class="info">
+              <text class="label">坚持打卡天数: </text>
+              <text class="value">{{ item.sum }}</text>
+            </view>
+          </view>
+        </view>
+
+        <!-- 点赞 -->
+        <view class="zan" bindtap="handZan" data-id="{{ item.id }}" data-sign="{{ item.sign }}">
+          <image src="./../../assets/img/zan{{ item.sign == 0 || !item.sign  ? '':'2' }}.png" class="zanicon"></image>
+          <text class="num">{{ item.count }}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class="myrank" wx:if="{{ user != '' }}"  bindtap="shareIndex" data-id="{{ user.id }}">
+    <view class="rank">
+      <!-- 排名 -->
+      <image wx:if="{{ user.rank === 1 }}" src="./../../assets/img/one.png" class="one"></image>
+      <image wx:elif="{{ user.rank === 2 }}" src="./../../assets/img/two.png" class="one"></image>
+      <image wx:elif="{{ user.rank === 3 }}" src="./../../assets/img/three.png" class="one"></image>
+      <view wx:else class="one">{{ user.rank }}</view>
+
+      <!-- 头像 -->
+      <image src="{{ user.avatar }}" class="avatar"></image>
+
+      <view class="infos">
+        <view class="username">{{ user.nickname }}</view>
+        <view class="info">
+          <text class="label">完成目标数: </text>
+          <text class="value">{{ user.target }}</text>
+        </view>
+        <view class="info">
+          <text class="label">坚持打卡天数: </text>
+          <text class="value">{{ user.sum }}</text>
+        </view>
+      </view>
+
+      <!-- 点赞 -->
+      <view class="zan">
+        <image src="./../../assets/img/zan-active.png" class="zanicon"></image>
+        <text class="num">{{ user.count }}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- <tabbar isShandow="{{ flase }}" tab="2" /> -->

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "calendar": "../../components/calendar/calendar",
+    "share": "../../components/share/index",
+    "confirm": "../../components/confirm/confirm"
+  }
+}

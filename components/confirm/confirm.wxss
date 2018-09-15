@@ -1,0 +1,92 @@
+.confirm {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.confirm .mask {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  min-height: 100vh;
+  z-index: 99999;
+  background: rgba(0, 0, 0, 0.6);
+}
+.confirm .dialog {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 700rpx;
+  border-radius: 8rpx;
+  padding-top: 80rpx;
+  padding-bottom: 80rpx;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000000;
+  background: #fff;
+}
+.confirm .dialog .title {
+  font-size: 32rpx;
+  margin-bottom: 40rpx;
+}
+.confirm .dialog .title.error {
+  color: #F69581;
+}
+.confirm .dialog .icon {
+  margin-bottom: 20rpx;
+  position: relative;
+}
+.confirm .dialog .icon image {
+  width: 176rpx;
+  height: 176rpx;
+}
+.confirm .dialog .icon .num {
+  position: absolute;
+  bottom: 30rpx;
+  right: -20rpx;
+  font-size: 32rpx;
+}
+.confirm .dialog .icon .num .unit {
+  margin: 0 5rpx;
+  position: relative;
+  top: -2rpx;
+}
+.confirm .dialog .message {
+  color: #828282;
+  font-size: 24rpx;
+  line-height: 42rpx;
+  padding: 0 80rpx;
+  margin-bottom: 10rpx;
+}
+.confirm .dialog .btn {
+  width: 420rpx;
+  height: 81rpx;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #414141;
+  border-radius: 81rpx;
+  margin-top: 26rpx;
+  box-sizing: border-box;
+}
+.confirm .dialog .btn.bor {
+  border: 1px solid #414141;
+}
+.confirm .dialog .btn .bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.confirm .dialog .btn .text {
+  font-size: 32rpx;
+  color: #2E2E2E;
+  position: relative;
+  z-index: 9;
+}

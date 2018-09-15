@@ -1,0 +1,58 @@
+<view class='report'>
+  <form report-submit="{{ true }}" bindsubmit="handReport">
+    <button form-type="submit" class="waveWrapper waveAnimation" style="background-image: url({{ qdbg }});">
+      <view class="tip">
+        <view class="ttitle" wx:if="{{ sign == 0 }}">点击签到</view>
+        <view class="yqdt" wx:else>
+          <view class="num">
+            <span class="day">{{ sum }}</span>
+            <span class="unit">天</span>
+          </view>
+          <view class="yqdtip">已积累签到</view>
+        </view>
+      </view>
+      <view class="waveWrapperInner bgTOP">
+        <view class="wave waveTop" style="background-image: url({{ qd1 }})"></view>
+      </view>
+      <view class="waveWrapperInner bgMiddle">
+        <view class="wave waveMiddle" style="background-image: url({{ qd2 }})"></view>
+      </view>
+      <view class="waveWrapperInner bgBottom">
+        <view class="wave waveBottom" style="background-image: url({{ qd3 }})"></view>
+      </view>
+    </button>
+  </form>
+  <view class='info'>
+    <view wx:if="{{ sign }}">
+      获得{{ signTarget.star }}枚
+      <image src='./../../assets/img/xx.png' class='xxpng' />币,您的今日排名:
+      <text class='mccolor'>{{ signTarget.rank }}</text>名
+    </view>
+    <view wx:else>您已坚持打卡
+      <text class="mccolor">{{ sum }}</text>天</view>
+  </view>
+  <navigator url='/pages/ranking/ranking' class='gophb'>
+    <image src='./../../assets/img/ggtx.png'></image>
+    <text>查看排行榜 ></text>
+  </navigator>
+  <view class="rili">
+    <image class='bg2' src='./../../assets/img/bg2.png'></image>
+    <calendar cell-size="30" days-color="{{demo2_days_style}}" header-style="demo2-header" board-style="demo2-board" weeks-type="full-en"
+      cellSize="48" year="{{ year }}" month="{{ month }}" bind:prevMonth="onPrevMonth" bind:nextMonth="onnNxtMonth" bind:dateChange="onDateChange"
+      bind:currentDay="onCurrentDay" />
+    <view class='btns'>
+      <navigator url="/pages/target/target?id={{ id }}" class='btn imgbtn'>
+        <image src='./../../assets/img/ggtx.png'></image>
+        <text>更改提醒设置</text>
+      </navigator>
+      <view class='btn' bindtap="delTarget">
+        <text>删除此打卡</text>
+      </view>
+    </view>
+  </view>
+
+
+</view>
+<confirm title="{{ confirm.title }}" type="{{ confirm.type }}" num="{{ confirm.num }}" message="{{ confirm.message }}" btn="{{ confirm.btn }}"  showConfirm="{{ confirm.showConfirm }}" bind:handClickOne="handClickOne" bind:handClickTwo="handClickTwo"/>
+<share jhm="{{ share.jhm }}" avatar="{{ share.avatar }}" nickname="{{ share.nickname }}" day="{{ share.day }}" showShareModel="{{ share.showShareModel }}"
+  rank="{{ share.rank }}" title="{{ title }}" sharePic="{{ sharePic }}" />

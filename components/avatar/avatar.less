@@ -1,0 +1,38 @@
+// out: avatar.wxss, compress:true, sourceMap:false
+
+
+.avatar{
+    .avatar_img{
+        // width: 122rpx;
+        // height: 122rpx;
+        background: #fff;
+        border-radius: 50%;
+        // border: 1px solid #000;
+        position: relative;
+        margin-bottom: 10rpx;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .tip{
+            color: #bbb;
+            font-size: 28rpx;
+        }
+        .avatar_bg{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 9;
+        }
+        .avatar_url{
+            position: absolute;
+            width: 92%;
+            height: 92%;
+            border-radius: 50%;
+        }
+        &:active{
+            background: #eee;
+        }
+    }
+}

@@ -1,0 +1,40 @@
+<form class='template' report-submit="{{ true }}" bindsubmit="submit">
+    <view class="head">
+        <image class="headImg" src="{{ images }}"></image>
+        <view class="title">{{ title }}</view>
+        <view class="content">{{ description }}</view>
+    </view>
+
+    <view class="group">
+        <view class="row">
+            <view class="label">需要连续打卡天数（天）</view>
+            <view class="value">
+                <input  bindinput="bindDay" type="number" placeholder="天数" />
+            </view>
+        </view>
+        <view class="row">
+            <view class="label">是否开启提醒功能</view>
+            <view class="value">
+                <switch color="#9de8f7" bindchange="remindChange" />
+            </view>
+        </view>
+        <view class="row" wx:if="{{ remind }}">
+            <picker mode="time" value="{{remind_time}}" start="09:01" end="21:01" bindchange="bindTimeChange">
+                <view class="timePicker">
+                    <view class="label">设置每天提醒时间</view>
+                    <view class="value">
+                        <text class="text">{{remind_time}}</text>
+                        <image class="right" src="./../../assets/img/right.png"></image>
+                    </view>
+                </view>
+            </picker>
+        </view>
+        <view class="row">
+            <button plain form-type="submit" class="btn">
+                <image class="bg" src="./../../assets/img/ggtx3.png"></image>
+                <view class="text">立即添加</view>
+            </button>
+        </view>
+    </view>
+
+</form>

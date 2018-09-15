@@ -1,0 +1,53 @@
+// out: commonbg.wxss, compress:false, sourceMap:false
+
+
+.commonbg{
+    // color: greenyellow;
+    height: 191rpx;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    // justify-content: center;
+    align-items: center;
+    .bg{
+        width: 100%;
+        height: 191rpx;
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        top: 0;
+    }
+    .yuan{
+        width: 30rpx;
+        height: 30rpx;
+        margin-top: 90rpx;
+        margin-bottom: 10rpx;
+        position: relative;
+        z-index: 9;
+    }
+    .title{
+        font-size: 32rpx;
+        padding: 0 30rpx;
+        position: relative;
+        z-index: 9;
+        &:before{
+            content: '';
+            position: absolute;
+            width: 40rpx;
+            height: 2rpx;
+            background: #000;
+            top: 50%;
+            left: -40rpx;
+        }
+        &:after{
+            content: '';
+            position: absolute;
+            width: 40rpx;
+            height: 2rpx;
+            background: #000;
+            top: 50%;
+            right: -40rpx;
+        }
+    }
+}
