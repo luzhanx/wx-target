@@ -1,2 +1,4 @@
 # 忽略doc目录下psd目录
+
 doc/psd/ 
+*.psd
