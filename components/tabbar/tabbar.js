@@ -22,13 +22,14 @@ Component({
       let tab = e.currentTarget.dataset.tab;
       let url = './../index/index';
 
+      console.log(tab)
+
       switch (tab) {
         case '0':
           url = './../index/index';
           break;
         case '1':
-          url = './../create/create';
-          return;
+          url = './../challenge/challenge';
           break;
         case '2':
           url = './../ranking/ranking';
@@ -36,7 +37,6 @@ Component({
             url: url,
           })
           return;
-          break;
       }
       app.globalData.tabIndex = tab;
       this.setData({

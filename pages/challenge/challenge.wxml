@@ -1,0 +1,6 @@
+<view class="challenge">
+	<view class="header">
+		header
+	</view>
+</view>
+<tabbar tab="1" />
