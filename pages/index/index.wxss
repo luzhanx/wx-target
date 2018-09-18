@@ -20,7 +20,7 @@ page {
 .index .header .tip {
   position: relative;
   display: flex;
-  color: #6B400D;
+  color: #6b400d;
   font-size: 28rpx;
   justify-content: center;
 }
@@ -40,7 +40,7 @@ page {
   font-size: 30rpx;
 }
 .index .header .avatar .info .rank {
-  color: #6B400D;
+  color: #6b400d;
   font-size: 24rpx;
 }
 .index .header .avatar .info .rank .num {
@@ -122,10 +122,10 @@ page {
   width: 100%;
   height: 170rpx;
   background: #fff;
-  border-radius: 8rpx;
+  border-radius: 16rpx;
   box-shadow: 0px 0px 15rpx rgba(0, 0, 0, 0.1);
   margin-bottom: 30rpx;
-  padding: 20rpx 30rpx;
+  padding: 20rpx 20rpx;
   padding-right: 0;
   box-sizing: border-box;
   display: flex;
@@ -137,20 +137,39 @@ page {
   content: attr(data-text);
   width: 130rpx;
   height: 50rpx;
-  padding-top: 28rpx;
+  padding-top: 32rpx;
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
-  font-size: 24rpx;
+  font-size: 20rpx;
   z-index: 2;
-  left: -50rpx;
-  top: -18rpx;
+  left: -48rpx;
+  top: -22rpx;
   color: #fff;
   background: #dc3636;
   transform: rotate(-45deg);
   z-index: 0;
-  box-shadow: 0 0 5rpx red;
+  box-shadow: 0 0 10rpx red;
+}
+.index .lists .item.groupOf:before {
+  content: attr(data-text);
+  width: 130rpx;
+  height: 50rpx;
+  padding-top: 32rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  font-size: 20rpx;
+  z-index: 2;
+  left: -48rpx;
+  top: -22rpx;
+  color: #fff;
+  background: #eab318;
+  transform: rotate(-45deg);
+  z-index: 0;
+  box-shadow: 0 0 10rpx #eab318;
 }
 .index .lists .item:active {
   background: rgba(238, 238, 238, 0.507);
@@ -159,7 +178,7 @@ page {
   display: flex;
   flex: 1;
   align-items: center;
-  padding-left: 14rpx;
+  padding-left: 20rpx;
 }
 .index .lists .item .img {
   width: 131rpx;
@@ -181,7 +200,7 @@ page {
 }
 .index .lists .item .info .dec {
   height: 66rpx;
-  color: #7F7F7F;
+  color: #7f7f7f;
   font-size: 22rpx;
   line-height: 32rpx;
   overflow: hidden;
@@ -203,7 +222,7 @@ page {
   top: 0;
   width: 1px;
   height: 100%;
-  background: #DCDCDC;
+  background: #dcdcdc;
 }
 .index .lists .item .item_r .num {
   color: #646464;
@@ -213,7 +232,7 @@ page {
   padding: 0 4rpx;
 }
 .index .lists .item .item_r .num .current {
-  color: #FF0000;
+  color: #ff0000;
 }
 .index .lists .item .item_r .tiptext {
   font-size: 28rpx;
@@ -246,7 +265,7 @@ page {
 }
 .index .lists .item .item_r .btn .text {
   font-size: 24rpx;
-  color: #2E2E2E;
+  color: #2e2e2e;
   position: relative;
   z-index: 9;
 }

@@ -1,259 +1,279 @@
 // out: index.wxss, compress:false, sourceMap:false
-page{
-    background: #fff;
+page {
+	background: #fff;
 }
-.index{
-    display: flex;
-    height: 100%;
-    padding-bottom: 138rpx;
-    flex-direction: column;
-    .header{
-        height: 240rpx;
-        position: relative;
-        // justify-content: center;
-        background: #fff;
-        .headerbg{
-            width: 100%;
-            height: 100%;
-            position: absolute;
-        }
-        .tip{
-            position: relative;
-            display: flex;
-            color: #6B400D;
-            font-size:28rpx;            
-            justify-content: center;
-
-        }
-        .avatar{
-            position: relative;
-            display: flex;
-            align-items: center;
-            padding: 0 30rpx;
-            margin-top: 20rpx;
-            .info{
-                font-size: 24rpx;
-                box-sizing: border-box;
-                padding-left: 20rpx;
-                .nickname{
-                    font-size: 30rpx;
-                }
-                .rank{
-                    color: #6B400D;
-                    font-size: 24rpx;
-                    .num{
-                        padding: 0 4rpx;
-                    }
-                }
-            }
-            .addTarget{
-                width: 190rpx;
-                height: 56rpx;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                color: #fff;
-                font-size: 26rpx;
-                background: #e9b218;
-                border-radius: 56rpx;
-                padding-top: 4rpx;
-                position: absolute;
-                right:24rpx;
-                top:26rpx;                
-            }
-            .addTargetBg{
-                width: 190rpx;
-                height: 56rpx;
-                position: absolute;
-                right:28rpx;
-                top:32rpx;   
-                z-index: 9;  
-            }
-        }
-    }
-    .fraction{
-        margin: 0 30rpx;
-        border-radius: 16rpx;
-        overflow: hidden;
-        box-shadow: 0 0 10rpx #ccc;
-        position: relative;
-        top: -60rpx;
-    }
-    .commonbg{
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        top: -30rpx;
-        .tttile{
-            font-size: 32rpx;
-            padding: 0 30rpx;
-            position: relative;
-            z-index: 9;
-            &:before{
-                content: '';
-                position: absolute;
-                width: 40rpx;
-                height: 1px;
-                background: #000;
-                top: 50%;
-                left: -40rpx;
-            }
-            &:after{
-                content: '';
-                position: absolute;
-                width: 40rpx;
-                height: 1px;
-                background: #000;
-                top: 50%;
-                right: -40rpx;
-            }
-        }
-    }
-    .lists{
-        padding: 0 26rpx;
-        margin-top: 0rpx;
-        &.tip{
-            font-size: 28rpx;
-            display: flex;
-            justify-content: center;
-            color: #ccc;
-        }
-        .item{
-            width: 100%;
-            height: 170rpx;
-            background: #fff;
-            border-radius: 8rpx;
-            box-shadow:0px 0px 15rpx rgba(0,0,0,0.1);
-            margin-bottom: 30rpx;
-            padding: 20rpx 30rpx; 
-            padding-right: 0;
-            box-sizing: border-box;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-            // 活动
-            &.activity{
-                &:before{
-                    content: attr(data-text);
-                    width: 130rpx;
-                    height: 50rpx;
-                    padding-top: 28rpx;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    position: absolute;
-                    font-size: 24rpx;
-                    z-index: 2;
-                    left: -50rpx;
-                    top: -18rpx;
-                    color: #fff;
-                    background: #dc3636;
-                    transform: rotate(-45deg);
-                    z-index: 0;
-                    box-shadow: 0 0 5rpx red;
-                }
-            }
-            &:active{
-                background: rgba(238, 238, 238, 0.507);
-            }
-            .navigator{
-                display: flex;
-                flex: 1;
-                align-items: center;
-                padding-left:14rpx;                
-            }
-            .img{
-                width: 131rpx;
-                height: 131rpx;
-                border-radius: 50%;
-            }
-            .info{
-                flex: 1;
-                height: 100%;
-                padding: 0 20rpx;
-                box-sizing: border-box;
-                display: flex;
-                flex-direction: column;
-                .title{
-                    font-size: 28rpx;
-                    line-height: 50rpx;
-                    overflow: hidden;
-                }
-                .dec{
-                    height: 66rpx;
-                    color: #7F7F7F;
-                    font-size: 22rpx;
-                    line-height:32rpx;
-                    overflow: hidden;
-                }
-            }
-            .item_r{
-                width: 200rpx;
-                height: 100%;
-                flex: 0 0 200rpx;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                position: relative;
-                &:before{
-                    content: '';
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    width: 1px;
-                    height: 100%;
-                    background: #DCDCDC; 
-                }
-                .num{
-                    color: #646464;
-                    font-size: 34rpx;
-                    .fenge{
-                        padding: 0 4rpx;
-                    }
-                    .current{
-                        color: #FF0000;
-                    }
-                }
-                .tiptext{
-                    font-size: 28rpx;
-                    &.success{
-                        color: seagreen;
-                    }
-                    &.error{
-                        color: firebrick;
-                    }
-                    &.yes{
-                        color: sandybrown;
-                        margin: 10rpx 0;
-                    }
-                }
-                .btn{
-                    width: 163rpx;
-                    height: 54rpx;
-                    margin-top: 17rpx;
-                    position: relative;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    .bg{
-                        width: 100%;
-                        height: 100%;
-                        position: absolute;
-                        left: 0;
-                        top: 0;
-                    }
-                    .text{
-                        font-size: 24rpx;
-                        color: #2E2E2E;
-                        position: relative;
-                        z-index: 9;
-                    }
-                }
-            }
-        }
-    }
-
+.index {
+	display: flex;
+	height: 100%;
+	padding-bottom: 138rpx;
+	flex-direction: column;
+	.header {
+		height: 240rpx;
+		position: relative;
+		// justify-content: center;
+		background: #fff;
+		.headerbg {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+		}
+		.tip {
+			position: relative;
+			display: flex;
+			color: #6b400d;
+			font-size: 28rpx;
+			justify-content: center;
+		}
+		.avatar {
+			position: relative;
+			display: flex;
+			align-items: center;
+			padding: 0 30rpx;
+			margin-top: 20rpx;
+			.info {
+				font-size: 24rpx;
+				box-sizing: border-box;
+				padding-left: 20rpx;
+				.nickname {
+					font-size: 30rpx;
+				}
+				.rank {
+					color: #6b400d;
+					font-size: 24rpx;
+					.num {
+						padding: 0 4rpx;
+					}
+				}
+			}
+			.addTarget {
+				width: 190rpx;
+				height: 56rpx;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				color: #fff;
+				font-size: 26rpx;
+				background: #e9b218;
+				border-radius: 56rpx;
+				padding-top: 4rpx;
+				position: absolute;
+				right: 24rpx;
+				top: 26rpx;
+			}
+			.addTargetBg {
+				width: 190rpx;
+				height: 56rpx;
+				position: absolute;
+				right: 28rpx;
+				top: 32rpx;
+				z-index: 9;
+			}
+		}
+	}
+	.fraction {
+		margin: 0 30rpx;
+		border-radius: 16rpx;
+		overflow: hidden;
+		box-shadow: 0 0 10rpx #ccc;
+		position: relative;
+		top: -60rpx;
+	}
+	.commonbg {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		top: -30rpx;
+		.tttile {
+			font-size: 32rpx;
+			padding: 0 30rpx;
+			position: relative;
+			z-index: 9;
+			&:before {
+				content: '';
+				position: absolute;
+				width: 40rpx;
+				height: 1px;
+				background: #000;
+				top: 50%;
+				left: -40rpx;
+			}
+			&:after {
+				content: '';
+				position: absolute;
+				width: 40rpx;
+				height: 1px;
+				background: #000;
+				top: 50%;
+				right: -40rpx;
+			}
+		}
+	}
+	.lists {
+		padding: 0 26rpx;
+		margin-top: 0rpx;
+		&.tip {
+			font-size: 28rpx;
+			display: flex;
+			justify-content: center;
+			color: #ccc;
+		}
+		.item {
+			width: 100%;
+			height: 170rpx;
+			background: #fff;
+			border-radius: 16rpx;
+			box-shadow: 0px 0px 15rpx rgba(0, 0, 0, 0.1);
+			margin-bottom: 30rpx;
+			padding: 20rpx 20rpx;
+			padding-right: 0;
+			box-sizing: border-box;
+			display: flex;
+			align-items: center;
+			position: relative;
+			overflow: hidden;
+			// 活动
+			&.activity {
+				&:before {
+					content: attr(data-text);
+					width: 130rpx;
+					height: 50rpx;
+					padding-top: 32rpx;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					position: absolute;
+					font-size: 20rpx;
+					z-index: 2;
+					left: -48rpx;
+					top: -22rpx;
+					color: #fff;
+					background: #dc3636;
+					transform: rotate(-45deg);
+					z-index: 0;
+					box-shadow: 0 0 10rpx red;
+				}
+			}
+			// 群目标
+			&.groupOf {
+				&:before {
+					content: attr(data-text);
+					width: 130rpx;
+					height: 50rpx;
+					padding-top: 32rpx;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					position: absolute;
+					font-size: 20rpx;
+					z-index: 2;
+					left: -48rpx;
+					top: -22rpx;
+					color: #fff;
+					background: #eab318;
+					transform: rotate(-45deg);
+					z-index: 0;
+					box-shadow: 0 0 10rpx #eab318;
+				}
+			}
+			&:active {
+				background: rgba(238, 238, 238, 0.507);
+			}
+			.navigator {
+				display: flex;
+				flex: 1;
+				align-items: center;
+				padding-left: 20rpx;
+			}
+			.img {
+				width: 131rpx;
+				height: 131rpx;
+				border-radius: 50%;
+			}
+			.info {
+				flex: 1;
+				height: 100%;
+				padding: 0 20rpx;
+				box-sizing: border-box;
+				display: flex;
+				flex-direction: column;
+				.title {
+					font-size: 28rpx;
+					line-height: 50rpx;
+					overflow: hidden;
+				}
+				.dec {
+					height: 66rpx;
+					color: #7f7f7f;
+					font-size: 22rpx;
+					line-height: 32rpx;
+					overflow: hidden;
+				}
+			}
+			.item_r {
+				width: 200rpx;
+				height: 100%;
+				flex: 0 0 200rpx;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				position: relative;
+				&:before {
+					content: '';
+					position: absolute;
+					left: 0;
+					top: 0;
+					width: 1px;
+					height: 100%;
+					background: #dcdcdc;
+				}
+				.num {
+					color: #646464;
+					font-size: 34rpx;
+					.fenge {
+						padding: 0 4rpx;
+					}
+					.current {
+						color: #ff0000;
+					}
+				}
+				.tiptext {
+					font-size: 28rpx;
+					&.success {
+						color: seagreen;
+					}
+					&.error {
+						color: firebrick;
+					}
+					&.yes {
+						color: sandybrown;
+						margin: 10rpx 0;
+					}
+				}
+				.btn {
+					width: 163rpx;
+					height: 54rpx;
+					margin-top: 17rpx;
+					position: relative;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					.bg {
+						width: 100%;
+						height: 100%;
+						position: absolute;
+						left: 0;
+						top: 0;
+					}
+					.text {
+						font-size: 24rpx;
+						color: #2e2e2e;
+						position: relative;
+						z-index: 9;
+					}
+				}
+			}
+		}
+	}
 }

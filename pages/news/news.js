@@ -10,6 +10,7 @@ Page({
 		description: '', // 内容
 		day: '', // 天数
 		photo: '', // 封面图片
+		photoS: '', // 展示图片
 		remind: false, // 提醒功能
 		remind_time: '' // 提醒时间,
 	},
@@ -33,6 +34,14 @@ Page({
 		let day = e.detail.value;
 		this.data.day = day;
 	},
+	// 选择打卡天数
+	shooseDay(e) {
+		let day = e.currentTarget.dataset.day;
+
+		this.setData({
+			day: day
+		});
+	},
 	// 开启提醒功能
 	remindChange() {
 		this.setData({
@@ -52,6 +61,24 @@ Page({
 			url: './../tailoring/tailoring'
 		});
 	},
+	// 添加展示图片
+	addPhotoS() {
+		let that = this;
+
+		wx.chooseImage({
+			count: 1,
+			sizeType: [ 'original', 'compressed' ],
+			sourceType: [ 'album', 'camera' ],
+			success: (result) => {
+				console.log(result.tempFilePaths[0]);
+				that.setData({
+					photoS: result.tempFilePaths[0]
+				});
+			},
+			fail: () => {},
+			complete: () => {}
+		});
+	},
 	// 立即添加
 	submit(e) {
 		let that = this;
@@ -60,35 +87,48 @@ Page({
 		if (that.data.title === '') {
 			wx.showToast({
 				title: '标题不能为空',
-				icon: 'none'
+				icon: 'none',
+				mask: true
 			});
 			return;
-		} else if (that.data.title > 8) {
+		} else if (that.data.title.length > 8) {
 			wx.showToast({
 				title: '标题文字不能超过8个字',
-				icon: 'none'
+				icon: 'none',
+				mask: true
 			});
 			return;
 		}
 		if (that.data.description === '') {
 			wx.showToast({
 				title: '内容不能为空',
-				icon: 'none'
+				icon: 'none',
+				mask: true
 			});
 			return;
 		}
 		if (that.data.day === '') {
 			wx.showToast({
 				title: '目标天数不能为空',
-				icon: 'none'
+				icon: 'none',
+				mask: true
 			});
 			return;
 		}
 
 		if (that.data.photo === '') {
 			wx.showToast({
-				title: '请选择图片再上传',
-				icon: 'none'
+				title: '请选择目标封面图片',
+				icon: 'none',
+				mask: true
+			});
+			return;
+		}
+		if (that.data.photoS === '') {
+			wx.showToast({
+				title: '请选择详情页展示图片',
+				icon: 'none',
+				mask: true
 			});
 			return;
 		}
@@ -98,7 +138,8 @@ Page({
 			if (that.data.remind_time === '') {
 				wx.showToast({
 					title: '请设置每天提醒时间',
-					icon: 'none'
+					icon: 'none',
+					mask: true
 				});
 				return;
 			}
@@ -115,33 +156,68 @@ Page({
 			formId: formId,
 			template: 2
 		};
+
 		// console.log(formData);
 		wx.showLoading({
 			title: '添加目标中'
 		});
 
-		Api.addTarget(that.data.photo, formData).then(
+		Api.dataImages({ name: 'show', path: this.data.photoS }).then(
 			(result) => {
 				if (result.code == 0) {
-					wx.showToast({
-						title: result.msg,
-						icon: 'success'
-					});
-					setTimeout(() => {
-						wx.reLaunch({
-							url: '/pages/index/index'
+					let formData = {
+						group_title: that.data.title,
+						group_text: that.data.description,
+						group_day: that.data.day,
+						group_remind: that.data.remind ? 1 : 0,
+						group_remind_time: that.data.remind_time,
+						formId: formId,
+						group_show: result.data.url
+					};
+					let file = {
+						name: 'group_images',
+						path: [ that.data.photo ]
+					};
+					Api.groupAddgroup(file, formData)
+						.then((res) => {
+							if (res.code == 0) {
+								wx.showToast({
+									title: res.msg,
+									icon: 'success',
+									mask: true
+                });
+                setTimeout(() => {
+                  wx.reLaunch({
+                    url: '/pages/index/index'
+                  });
+                }, 2000);
+							} else {
+								wx.showToast({
+									title: res.msg
+								});
+							}
+						})
+						.catch((err) => {
+							wx.showToast({
+								title: '网络异常',
+								icon: '',
+								mask: true
+							});
 						});
-					}, 2000);
 				} else {
 					wx.showToast({
-						title: result.msg
+						title: '详情页展示图片上传失败',
+						icon: '',
+						mask: true
 					});
 				}
-
-				console.log(result);
 			},
 			(err) => {
-				console.log(err);
+				wx.showToast({
+					title: '网络异常',
+					icon: '',
+					mask: true
+				});
 			}
 		);
 	}

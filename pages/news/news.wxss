@@ -1,0 +1,172 @@
+page {
+  background: #f7f7f7;
+}
+.news {
+  background: #fff;
+}
+.news .group {
+  background: #fff;
+  border-radius: 8rpx;
+  margin: 35rpx 26rpx 66rpx 26rpx;
+}
+.news .group .row {
+  font-size: 28rpx;
+  display: flex;
+  padding: 26rpx 20rpx;
+  align-items: center;
+  position: relative;
+  min-height: 60rpx;
+}
+.news .group .row.norow {
+  display: block;
+}
+.news .group .row:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: #e5e5e5;
+}
+.news .group .row:last-child:after {
+  display: none;
+}
+.news .group .row input {
+  font-size: 28rpx;
+  text-align: right;
+}
+.news .group .row input.left {
+  text-align: left;
+}
+.news .group .row textarea {
+  width: 100%;
+  height: 200rpx;
+}
+.news .group .row .label {
+  color: #454545;
+}
+.news .group .row .value {
+  flex: 1;
+  text-align: right;
+  color: #898989;
+}
+.news .group .row .value .photo {
+  width: 69rpx;
+  height: 69rpx;
+  border-radius: 8rpx;
+}
+.news .group .row .value .addimgs {
+  width: 172rpx;
+  height: 97rpx;
+  border-radius: 8rpx;
+}
+.news .group .row .value .right {
+  width: 14rpx;
+  height: 19rpx;
+}
+.news .group .row .value .text {
+  padding: 0 20rpx;
+}
+.news .group .row .value .wx-switch-input {
+  zoom: 0.8;
+}
+.news .group .row picker {
+  width: 100%;
+  height: 100%;
+}
+.news .group .row .timePicker {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 9;
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.news .group .row .btn {
+  width: 603rpx;
+  height: 85rpx;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 24rpx auto;
+  border: none;
+  outline: none;
+}
+.news .group .row .btn .bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.news .group .row .btn .text {
+  font-size: 24rpx;
+  color: #2e2e2e;
+  position: relative;
+  z-index: 9;
+}
+.cate {
+  margin: 20rpx 0;
+}
+.diy {
+  display: flex;
+  height: 50rpx;
+  align-items: center;
+}
+.diy .dinput {
+  width: 160rpx;
+  text-align: center !important;
+  border-radius: 4rpx;
+  border: 1px solid #6F6F6F;
+  margin: 0 20rpx;
+  height: 40rpx;
+}
+.fang {
+  display: inline-block;
+  width: 140rpx;
+  height: 50rpx;
+  border: 1px solid #6F6F6F;
+  border-radius: 8rpx;
+  position: relative;
+  font-size: 30rpx;
+  line-height: 50rpx;
+  color: #525252;
+  text-align: center;
+  margin: 10rpx;
+  margin-left: 0rpx;
+  margin-right: 26rpx;
+}
+.fang:nth-child(4n + 0) {
+  margin-right: 0;
+  margin-left: 0rpx;
+}
+.fang.active {
+  background: #9de8f7;
+}
+.fang:active {
+  opacity: 0.6;
+}
+.fang::before {
+  content: '';
+  position: absolute;
+  right: 10%;
+  top: -1px;
+  width: 12%;
+  height: 1px;
+  background-color: #fff;
+}
+.fang::after {
+  content: '';
+  position: absolute;
+  right: 35%;
+  top: -1px;
+  width: 4%;
+  height: 1px;
+  background-color: #fff;
+}
