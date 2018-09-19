@@ -26,6 +26,7 @@ page {
   display: inline-block;
   padding: 0 27rpx;
   margin-bottom: 30rpx;
+  box-sizing: content-box;
 }
 .index .lists .item:active {
   background: #eee;
