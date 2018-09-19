@@ -43,7 +43,7 @@ Page({
 	},
 	// 加入群目标
 	addgroup() {
-		Api.groupAddgroup({ id: this.data.id }).then((result) => {
+		Api.groupAddgrouptarget({ id: this.data.id }).then((result) => {
 			let res = result.data;
 
 			if (res.code === 0) {
