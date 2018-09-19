@@ -21,13 +21,11 @@ Page({
 	onLoad: function(options) {
 		app.globalData.tabIndex = 0;
 	},
-	onLoad() {
+	onShow() {
 		let that = this;
-		let cookie = '';
 
 		try {
 			user = wx.getStorageSync('user');
-			cookie = wx.getStorageSync('cookie');
 
 			// 登录了
 			if (user !== '') {
@@ -77,8 +75,8 @@ Page({
 			wx.navigateTo({
 				url: `/pages/share_index/share_index?id=${this.data.user.id}`
 			});
-  },
-  // https://www.jianshu.com/p/07c4ddf8a3d3
+	},
+	// https://www.jianshu.com/p/07c4ddf8a3d3
 	// 手势开始
 	itemTouchstart(e) {
 		console.log('itemTouchStart' + e);
