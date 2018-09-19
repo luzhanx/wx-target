@@ -54,11 +54,11 @@
           </block>
           <image class="more" src="/assets/img/more.png"></image>
         </view>
-        <image class="xinzan" src="/assets/img/xinzan.png" />
+        <image class="xinzan" src="/assets/img/xinzan.png" bindtap="xinzan" data-id="{{ item.id }}" data-allow_probability="{{ item.allow_probability }}" />
       </view>
     </view>
   </block>
-  <view class="card">
+  <!-- <view class="card">
     <view class="head">
       <avatar user="{{ user }}" size="{{ 105 }}" />
       <view class="nickname">霸道总裁PP(测试用的)</view>
@@ -81,12 +81,14 @@
       </view>
       <image class="xinzan" src="/assets/img/xinzan.png" />
     </view>
-  </view>
+  </view> -->
   <view class="footer">
     <view wx:if="{{ groupMess.owner === 0 }}" class="btn dis">删除此打卡</view>
     <view wx:if="{{ groupMess.owner === 0 }}" class="btn">打卡</view>
     <view wx:if="{{ groupMess.join === 0 }}" class="btn" bindtap="addgroup">加入打卡</view>
-    <view wx:if="{{ groupMess.join === 1 && groupMess.owner !== 0 }}" class="btn" bindtap="addgroup">打卡</view>
+    <navigator class="btn" url="/pages/report/report?id={{ groupMess.target_id }}" wx:if="{{ groupMess.join === 1 && groupMess.owner !== 0 }}">
+      {{ sign == 0 ? '打卡':'已签到' }}
+    </navigator>
     <!-- <view wx:if="{{ groupMess.join === 0 }}" class="btn" bindtap="addgroup">加入打卡</view> -->
   </view>
 </view>

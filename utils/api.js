@@ -96,7 +96,7 @@ const api = {
    * @param {*数据} data
    */
 	groupAddgroup: (file, data) => {
-    console.log(file, data)
+		console.log(file, data);
 		return http.uploadFile('/group/addgroup', file, data);
 	},
 	/**
@@ -111,11 +111,15 @@ const api = {
    */
 	groupGroupDetails: (data) => {
 		return http.get('/group/groupDetails', data);
-  },
-  // 加入群目标
-  groupAddgrouptarget: (data) => {
+	},
+	// 加入群目标
+	groupAddgrouptarget: (data) => {
 		return http.post('/group/addgrouptarget', data);
-  },
+	},
+	// 签到点赞
+	signSignProbability: (data) => {
+		return http.post('/sign/signProbability', data);
+	}
 };
 
 module.exports = api;

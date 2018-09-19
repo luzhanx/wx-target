@@ -84,10 +84,10 @@
 					"query": ""
 				},
 				{
-					"id": -1,
+					"id": 8,
 					"name": "群打卡详情",
 					"pathName": "pages/qdetail/qdetail",
-					"query": "id=12"
+					"query": "id=15"
 				}
 			]
 		}

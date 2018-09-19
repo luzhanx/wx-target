@@ -15,7 +15,7 @@ page {
 			justify-content: center;
 			position: relative;
 			padding: 30rpx 20rpx;
-			padding-bottom: 20rpx;
+			padding-bottom: 0rpx;
 			border-bottom: 1px solid #e5e5e5;
 			.title {
 				color: #333333;
@@ -30,7 +30,7 @@ page {
 			.share {
 				position: absolute;
 				right: 30rpx;
-				top: 60rpx;
+				top: 40rpx;
 			}
 		}
 		.content {
@@ -193,6 +193,7 @@ page {
 			background: #e9b318;
 			text-align: center;
       padding: 0;
+      box-sizing: border-box;
       &.dis{
         background: #D2D2D2;
         &::before{
@@ -206,7 +207,7 @@ page {
 				background: #9de8f7;
 			}
 			&:active {
-				opacity: 0.6;
+				// opacity: 0.6;
 			}
 		}
 		.btn::before {
