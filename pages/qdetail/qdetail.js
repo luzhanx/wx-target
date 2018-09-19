@@ -4,12 +4,21 @@ Page({
 	data: {
 		user: {
 			avatar: './../../assets/img/share.png'
-		}
+		},
+		groupMess: {},
+		signList: []
 	},
 	onLoad: function(options) {
 		let id = options.id;
-		Api.groupGroupDetails({id: id}).then((result) => {
+		let that = this;
+
+		Api.groupGroupDetails({ id: id }).then((result) => {
 			let res = result.data;
+
+			that.setData({
+				groupMess: res.groupMess,
+				signList: res.signList
+			});
 
 			console.log(res);
 		});

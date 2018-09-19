@@ -1,8 +1,7 @@
 <view class="qdetail">
   <view class="main">
     <view class="head">
-      <view class="title">星空群365天读书打卡！</view>
-      <view class="xtitle">需要坚持打卡 180 天，你已完成 0 天！</view>
+      <view class="title">{{ groupMess.group_title }}</view>
       <view class="share">
         <button class="fang">分享给群友></button>
       </view>

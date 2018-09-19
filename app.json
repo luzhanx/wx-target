@@ -1,7 +1,7 @@
 {
 	"pages": [
+    "pages/index/index",
 		"pages/qdetail/qdetail",
-		"pages/index/index",
 		"pages/news/news",
 		"pages/challenge/challenge",
 		"pages/target/target",
