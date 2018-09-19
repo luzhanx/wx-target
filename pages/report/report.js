@@ -231,6 +231,7 @@ Page({
     let that = this;
 
     if (that.data.sign == 3) {
+
       if (that.data.code == 0) {
         // 生成菊花码
         let uid = wx.getStorageSync('user').id;

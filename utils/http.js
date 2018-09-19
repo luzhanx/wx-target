@@ -16,7 +16,7 @@ const http = {
       'content-type': 'application/json',
       'Cookie': cookie
     };
-    console.log(file)
+
     return new Promise((resolve, reject) => {
       wx.uploadFile({
         url: host + url,

@@ -110,7 +110,11 @@ const api = {
    */
 	groupGroupDetails: (data) => {
 		return http.get('/group/groupDetails', data);
-	}
+  },
+  // 加入群目标
+  groupAddgroup: (data) => {
+		return http.post('/group/addgroup', data);
+  },
 };
 
 module.exports = api;

@@ -33,7 +33,7 @@
   <view class="lists" wx:else>
     <block wx:for="{{ item }}" wx:key="{{ index }}">
       <!-- 1 -->
-      <view wx:if="{{index == 0}}" class="item activity" data-text="活动" data-groupid="{{item.group_id}}" bindtap="report" data-id="{{ item.id }}" data-sign="{{ item.sign }}">
+      <view wx:if="{{index == 0}}" class="item activity" data-text="活动" data-gid="{{item.group_id}}" bindtap="report" data-id="{{ item.id }}" data-sign="{{ item.sign }}">
         <view class="navigator">
           <image class="img" src="{{ item.images }}"></image>
           <view class="info">

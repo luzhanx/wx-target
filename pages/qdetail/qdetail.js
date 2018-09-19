@@ -6,7 +6,10 @@ Page({
 			avatar: './../../assets/img/share.png'
 		},
 		groupMess: {},
-		signList: []
+		signList: [],
+
+		ShowText: false,
+		ShowTextBtn: '点击全文'
 	},
 	onLoad: function(options) {
 		let id = options.id;
@@ -21,6 +24,47 @@ Page({
 			});
 
 			console.log(res);
+		});
+	},
+	handleShowText() {
+		let that = this;
+
+		if (this.data.ShowText) {
+			this.setData({
+				ShowTextBtn: '点击收起',
+				ShowText: !this.data.ShowText
+			});
+		} else {
+			this.setData({
+				ShowTextBtn: '点击全文',
+				ShowText: !this.data.ShowText
+			});
+		}
+	},
+	// 加入群目标
+	addgroup() {
+		Api.groupAddgroup({ id: this.data.id }).then((result) => {
+			let res = result.data;
+
+			if (res.code === 0) {
+				wx.showToast({
+					title: res.msg,
+					icon: 'success',
+					mask: true
+				});
+			} else if (res.code === 1) {
+				wx.showToast({
+					title: res.msg,
+					icon: 'none',
+					mask: true
+				});
+			} else {
+				wx.showToast({
+					title: res.msg,
+					icon: 'none',
+					mask: true
+				});
+			}
 		});
 	},
 	onReady: function() {},

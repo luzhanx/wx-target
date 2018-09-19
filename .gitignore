@@ -1,4 +1,5 @@
 # 忽略doc目录下psd目录
 
-doc/psd/ 
+doc/psd/
 *.psd
+sql.js

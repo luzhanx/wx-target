@@ -30,7 +30,7 @@ page {
 			.share {
 				position: absolute;
 				right: 30rpx;
-				top: 30rpx;
+				top: 60rpx;
 			}
 		}
 		.content {
@@ -45,17 +45,19 @@ page {
 				border-radius: 8rpx;
 			}
 			.text {
-				padding: 20rpx 0;
-				padding-bottom: 30rpx;
+				margin: 20rpx 0;
+        margin-bottom: 30rpx;
+        overflow: hidden;
+        transition: all .5s ease;
 			}
 			.foot {
 				width: 100%;
-				padding: 0rpx 30rpx;
+				padding: 0rpx 20rpx;
 				color: #eac16a;
 				font-size: 24rpx;
 				display: flex;
 				justify-content: space-between;
-				align-items: center;
+        align-items: center;
 				.downicon {
 					width: 18rpx;
 					height: 12rpx;
@@ -175,6 +177,7 @@ page {
 		bottom: 0;
 		left: 0;
     display: flex;
+    z-index: 9;
 		.btn {
 			display: inline-block;
       flex: 1;

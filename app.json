@@ -1,6 +1,6 @@
 {
 	"pages": [
-    "pages/index/index",
+		"pages/index/index",
 		"pages/qdetail/qdetail",
 		"pages/news/news",
 		"pages/challenge/challenge",
