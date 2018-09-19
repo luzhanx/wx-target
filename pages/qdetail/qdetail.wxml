@@ -54,7 +54,7 @@
           </block>
           <image class="more" src="/assets/img/more.png"></image>
         </view>
-        <image class="xinzan" src="/assets/img/xinzan.png" bindtap="xinzan" data-id="{{ item.id }}" data-allow_probability="{{ item.allow_probability }}" />
+        <image class="xinzan" src="/assets/img/xinzan.png" bindtap="xinzan" data-id="{{ item.id }}" data-allowProbability="{{ item.allow_probability }}" />
       </view>
     </view>
   </block>

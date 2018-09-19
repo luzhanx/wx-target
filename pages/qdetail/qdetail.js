@@ -90,9 +90,7 @@ Page({
 	},
 	xinzan(e) {
 		let id = e.currentTarget.dataset.id;
-    let allow_probability = e.currentTarget.dataset.allow_probability;
-
-    console.log(e.currentTarget.dataset.allow_probability)
+    let allow_probability = e.currentTarget.dataset.allowprobability;
 
 		if (allow_probability == 1) {
 				wx.showToast({
