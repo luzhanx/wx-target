@@ -1,0 +1,85 @@
+<view class="qdetail">
+  <view class="main">
+    <view class="head">
+      <view class="title">星空群365天读书打卡！</view>
+      <view class="xtitle">需要坚持打卡 180 天，你已完成 0 天！</view>
+      <view class="share">
+        <button class="fang">分享给群友></button>
+      </view>
+    </view>
+    <view class="content">
+      <image class="showImg" src="./../../assets/img/share.png" />
+      <view class="text">都说要坚持打卡，但是没有人监督简直痛苦！群主我就作为监督员监督大家每天打卡情况吧，希望小可...</view>
+      <view class="foot">
+        <view class="footz">点击全文</view>
+        <image src="./../../assets/img/down.png" class="downicon" alt="" />
+      </view>
+    </view>
+    <view class="info">
+      <view class="btn">
+        <view class="key">参加打卡人数</view>
+        <view class="value">50</view>
+      </view>
+      <view class="btn">
+        <view class="key">今日打卡人数</view>
+        <view class="value">10</view>
+      </view>
+    </view>
+  </view>
+  <view class="linebox">
+    <view class="line">小伙伴们的打卡记录</view>
+  </view>
+  <view class="card">
+    <view class="head">
+      <avatar user="{{ user }}" size="{{ 105 }}" />
+      <view class="nickname">霸道总裁PP</view>
+      <view class="date">
+        <view class="date_t">今天09:03</view>
+        <view class="date_b">150天</view>
+      </view>
+    </view>
+    <view class="content">
+      <view class="imgBox">
+        <image class="contentImg" src="./../../assets/img/share.png" mode="aspectFill" />
+      </view>
+      <view class="text">周三早安打卡第105天！希望能够顺利考上中文系研究生！周三早安打卡第105天！希望能够顺利考上中文系研究生！</view>
+    </view>
+    <view class="avatars">
+      <view class="left">
+        <avatar user="{{ user }}" size="60" />
+        <avatar user="{{ user }}" size="60" />
+        <image class="more" src="/assets/img/more.png"></image>
+      </view>
+      <image class="xinzan" src="/assets/img/xinzan.png" />
+    </view>
+  </view>
+  <view class="card">
+    <view class="head">
+      <avatar user="{{ user }}" size="{{ 105 }}" />
+      <view class="nickname">霸道总裁PP</view>
+      <view class="date">
+        <view class="date_t">今天09:03</view>
+        <view class="date_b">150天</view>
+      </view>
+    </view>
+    <view class="content">
+      <view class="imgBox">
+        <image class="contentImg" src="./../../assets/img/share.png" mode="aspectFill" />
+      </view>
+      <view class="text">周三早安打卡第105天！希望能够顺利考上中文系研究生！周三早安打卡第105天！希望能够顺利考上中文系研究生！</view>
+    </view>
+    <view class="avatars">
+      <view class="left">
+        <avatar user="{{ user }}" size="60" />
+        <avatar user="{{ user }}" size="60" />
+        <image class="more" src="/assets/img/more.png"></image>
+      </view>
+      <image class="xinzan" src="/assets/img/xinzan.png" />
+    </view>
+  </view>
+  <view class="footer">
+    <!-- <view class="btn dis">删除此打卡</view> -->
+    <!-- <view class="btn">打卡</view> -->
+    <view class="btn">加入打卡</view>
+  </view>
+</view>

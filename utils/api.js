@@ -104,6 +104,12 @@ const api = {
    */
 	dataImages: (data) => {
 		return http.uploadFile('/data/images', { name: data.name, path: [ data.path ] }, {});
+	},
+	/**
+   * 群目标详情页
+   */
+	groupGroupDetails: (data) => {
+		return http.get('/group/groupDetails', data);
 	}
 };
 

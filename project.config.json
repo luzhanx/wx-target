@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 7,
+			"current": 8,
 			"list": [
 				{
 					"id": -1,
@@ -82,6 +82,12 @@
 					"name": "签到提交",
 					"pathName": "pages/reportSubmit/reportSubmit",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "群打卡详情",
+					"pathName": "pages/qdetail/qdetail",
+					"query": "id=12"
 				}
 			]
 		}
