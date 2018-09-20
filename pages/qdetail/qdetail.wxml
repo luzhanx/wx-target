@@ -37,8 +37,8 @@
         <avatar user="{{ item.user_oth }}" size="{{ 105 }}" />
         <view class="nickname">霸道总裁PP</view>
         <view class="date">
-          <view class="date_t">今天09:03</view>
-          <view class="date_b">150天</view>
+          <view class="date_t">{{ item.now }}</view>
+          <view class="date_b">{{ item.sign_sum }}天</view>
         </view>
       </view>
       <view class="content">
@@ -54,7 +54,7 @@
           </block>
           <image class="more" src="/assets/img/more.png"></image>
         </view>
-        <image class="xinzan" src="/assets/img/xinzan.png" bindtap="xinzan" data-id="{{ item.id }}" data-allowProbability="{{ item.allow_probability }}" />
+        <image class="xinzan" src="/assets/img/xinzan.png" bindtap="xinzan" data-index="{{ index }}" data-id="{{ item.id }}" data-allowProbability="{{ item.allow_probability }}" />
       </view>
     </view>
   </block>

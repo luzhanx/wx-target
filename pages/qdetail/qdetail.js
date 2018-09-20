@@ -78,14 +78,14 @@ Page({
 					mask: true
 				});
 				that.setData({
-					groupMess: { ...that.data.groupMess, join: 1 }
-				});
+          groupMess: { ...that.data.groupMess, join: 1 , target_id: res.target_id}
+        });
 			} else if (res.code === 1) {
 				wx.showToast({
 					title: res.msg,
 					icon: 'none',
 					mask: true
-				});
+        });
 			} else {
 				wx.showToast({
 					title: res.msg,
@@ -98,6 +98,8 @@ Page({
 	xinzan(e) {
 		let id = e.currentTarget.dataset.id;
 		let allow_probability = e.currentTarget.dataset.allowprobability;
+    let index = e.currentTarget.dataset.index;
+    let that = this;
 
 		if (allow_probability == 1) {
 			wx.showToast({
@@ -122,7 +124,15 @@ Page({
 					title: res.msg,
 					icon: 'success',
 					mask: true
-				});
+        });
+        let data = [...that.data.signList];
+        data[index].allow_probability = 1;
+        console.log(data)
+        that.setData({
+          signList: data
+        })
+
+
 			} else {
 				wx.showToast({
 					title: res.msg,
