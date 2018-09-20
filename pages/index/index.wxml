@@ -64,7 +64,7 @@
             <view class="dec">{{ item.description }}</view>
           </view>
         </view>
-        <view class="item_r">
+        <view class="item_r" bindtap="guidang">
           <view class="num" wx:if="{{ item.sign == 0 || item.sign == 3 }}">
             <text class="current">{{ item.sum }}</text>
             <text class="fenge">/</text>
@@ -77,6 +77,7 @@
             <image class="bg" src="./../../assets/img/ggtx.png"></image>
             <view class="text">点击签到</view>
           </view>
+          <view class="guidang success" wx:elif="{{ item.sign == 1 || item.sign == 2 }}">点击归档</view>
         </view>
       </view>
     </block>

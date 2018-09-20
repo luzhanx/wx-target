@@ -357,3 +357,36 @@ page {
 		}
 	}
 }
+.guidang {
+	width: 163rpx;
+	height: 54rpx;
+	border-radius: 54rpx;
+	margin-top: 17rpx;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 24rpx;
+  color: #fff;
+  background: #e9b318;
+  border: 1px solid #6B400D;
+  box-sizing: border-box;
+  &::before {
+    content: '';
+    position: absolute;
+    right: 10%;
+    top: -2px;
+    width: 12%;
+    height: 2px;
+    background-color: #e9b318;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    right: 35%;
+    top: -2px;
+    width: 4%;
+    height: 2px;
+    background-color: #e9b318;
+  }
+}
