@@ -1,0 +1,38 @@
+<!-- pages/demo/demo.wxml -->
+<view class='ranking'>
+  <view class='title'>
+    <image src="./../../assets/img/ranking_t1.png" class="ranking_t1"></image>
+    <view class="text">
+      <view class='text1'>今</view>
+      <view class='text2'>日</view>
+      <view class='text3'>打</view>
+      <view class='text3'>卡</view>
+    </view>
+    <image src="./../../assets/img/ranking_t2.png" class="ranking_t2"></image>
+  </view>
+  <view class="ranking_c"></view>
+  <view class="ranklist">
+    <image class='bg2' src='./../../assets/img/bg2.png'></image>
+    <block wx:for="{{ user }}" wx:key="{{ index }}">
+      <view class="rank">
+        <view class="iinfo" bindtap="shareIndex" data-id="{{ item.user.id }}">
+          <!-- 头像 -->
+          <image src="{{ item.user.avatar }}" class="avatar"></image>
+          <view class="infos">
+            <view class="username">{{ item.user.nickname }}</view>
+            <view class="info">
+              <text class="label">排行榜：</text>
+              <text class="value">{{ item.user.rank }}名</text>
+            </view>
+            <view class="info">
+              <text class="label">签到时间：</text>
+              <text class="value">{{ item.time }}</text>
+            </view>
+          </view>
+        </view>
+        <view class="ttip">打卡第{{ item.sum }}天</view>
+      </view>
+    </block>
+  </view>
+</view>
+<!-- <tabbar isShandow="{{ flase }}" tab="2" /> -->

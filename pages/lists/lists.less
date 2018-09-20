@@ -1,4 +1,4 @@
-// out: ranking.wxss, compress:false, sourceMap:false
+// out: lists.wxss, compress:false, sourceMap:false
 
 page {
 	height: 100%;
@@ -110,15 +110,10 @@ page {
 		align-items: center;
 		// margin-top: 120rpx;
 		background: #fff;
-		image {
-			width: 30rpx;
-			height: 30rpx;
-		}
 	}
 	.ranklist {
 		// margin-top: 100rpx;
 		width: 100%;
-		padding-bottom: 150rpx;
 		background: #f8f8f8;
 		position: relative;
 		margin-top: 3rpx;
@@ -144,103 +139,28 @@ page {
 				flex: 1;
 				align-items: center;
 			}
-			.one {
-				width: 71rpx;
-				height: 64rpx;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-			}
 			.avatar {
 				width: 125rpx;
 				height: 124rpx;
 				border-radius: 50%;
-				margin: 0 30rpx;
+				margin: 0 20rpx;
 			}
 			.infos {
 				flex: 1;
 				.username {
-					height: 40rpx;
 					font-size: 28rpx;
-					font-weight: bold;
-					margin-bottom: 8rpx;
+          font-weight: bold;
+          margin-bottom: 4rpx;
+          height: 40rpx;
 				}
-				.info {
+				.info, .date {
 					font-size: 22rpx;
 					color: #818181;
 				}
 			}
-			.zan {
-				height: 100%;
-				flex: 0 0 140rpx;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				.zanicon {
-					width: 41rpx;
-					height: 41rpx;
-				}
-				.num {
-					color: #818181;
-					font-size: 28rpx;
-					margin-left: 10rpx;
-				}
-			}
-		}
-	}
-
-	.myrank {
-		width: 100%;
-		position: fixed;
-		bottom: 0rpx;
-		left: 0;
-		background: #fff;
-		height: 150rpx;
-		border-bottom: 2rpx solid #dcdcdc;
-		box-shadow: 0 -5rpx 10rpx 0 rgba(0, 0, 0, 0.06);
-		.rank {
-			padding: 10rpx 40rpx;
-			display: flex;
-			align-items: center;
-		}
-		.one {
-			width: 71rpx;
-			height: 64rpx;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-		}
-		.avatar {
-			width: 125rpx;
-			height: 124rpx;
-			border-radius: 50%;
-			margin: 0 30rpx;
-		}
-		.infos {
-			flex: 1;
-			.username {
+			.ttip {
+				color: #edbb1b;
 				font-size: 28rpx;
-				font-weight: bold;
-				margin-bottom: 8rpx;
-			}
-			.info {
-				font-size: 22rpx;
-				color: #818181;
-			}
-		}
-		.zan {
-			flex: 0 0 140rpx;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			.zanicon {
-				width: 41rpx;
-				height: 41rpx;
-			}
-			.num {
-				color: #818181;
-				font-size: 28rpx;
-				margin-left: 10rpx;
 			}
 		}
 	}

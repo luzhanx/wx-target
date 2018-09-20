@@ -2,6 +2,7 @@
 	"pages": [
 		"pages/index/index",
 		"pages/qdetail/qdetail",
+		"pages/center/center",
 		"pages/news/news",
 		"pages/challenge/challenge",
 		"pages/target/target",

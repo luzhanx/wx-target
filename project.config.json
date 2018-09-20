@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 8,
+			"current": 10,
 			"list": [
 				{
 					"id": -1,
@@ -87,7 +87,19 @@
 					"id": 8,
 					"name": "群打卡详情",
 					"pathName": "pages/qdetail/qdetail",
-					"query": "id=15"
+					"query": "id=12"
+				},
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "pages/center/center",
+					"query": ""
+				},
+				{
+					"id": 10,
+					"name": "今日打卡",
+					"pathName": "pages/lists/lists",
+					"query": "tid=15"
 				}
 			]
 		}

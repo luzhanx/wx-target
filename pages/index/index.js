@@ -12,7 +12,9 @@ Page({
 		user: '',
 		item: {},
 		fraction: {},
-		startX: 0
+		startX: 0,
+		showModal: false,
+		startNum: 0
 	},
 
 	/**
@@ -73,8 +75,16 @@ Page({
 	shareIndex() {
 		this.data.user.id &&
 			wx.navigateTo({
-				url: `/pages/share_index/share_index?id=${this.data.user.id}`
+				url: `/pages/center/center`
 			});
+	},
+	toCreate() {
+		this.setData({
+			showModal: false
+		});
+		wx.navigateTo({
+			url: '/pages/create/create'
+		});
 	},
 	// https://www.jianshu.com/p/07c4ddf8a3d3
 	// 手势开始
@@ -150,7 +160,7 @@ Page({
 		let sign = e.currentTarget.dataset.sign;
 		let id = e.currentTarget.dataset.id;
 		let gid = e.currentTarget.dataset.gid;
-    let url = '';
+		let url = '';
 
 		switch (sign) {
 			case 0:
@@ -176,8 +186,13 @@ Page({
 				});
 				return;
 			case 3:
+				if (gid === 0) {
+					url = `/pages/report/report?id=${id}`;
+				} else {
+					url = `/pages/qdetail/qdetail?id=${gid}`;
+				}
 				wx.navigateTo({
-					url: `/pages/report/report?id=${id}`
+					url: url
 				});
 				return;
 		}

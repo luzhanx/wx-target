@@ -17,15 +17,15 @@
         <image src="./../../assets/img/down.png" class="downicon" alt="" />
       </view>
     </view>
-    <view class="info">
+    <view class="info" wx:if="{{ groupMess.owner === 0 }}">
       <view class="btn">
         <view class="key">参加打卡人数</view>
         <view class="value">{{ groupMess.target_count }}</view>
       </view>
-      <view class="btn">
+      <navigator url="/pages/lists/lists?tid={{ groupMess.id }}" class="btn">
         <view class="key">今日打卡人数</view>
         <view class="value">{{ groupMess.statistics }}</view>
-      </view>
+      </navigator>
     </view>
   </view>
   <view class="linebox">
@@ -83,8 +83,10 @@
     </view>
   </view> -->
   <view class="footer">
-    <view wx:if="{{ groupMess.owner === 0 }}" class="btn dis">删除此打卡</view>
-    <view wx:if="{{ groupMess.owner === 0 }}" class="btn">打卡</view>
+    <view wx:if="{{ groupMess.owner === 0 }}" class="btn dis" bindtap="delTarget">删除此打卡</view>
+    <navigator wx:if="{{ groupMess.owner === 0 }}" class="btn" url="/pages/report/report?id={{ groupMess.target_id }}">
+      打卡
+    </navigator>
     <view wx:if="{{ groupMess.join === 0 }}" class="btn" bindtap="addgroup">加入打卡</view>
     <navigator class="btn" url="/pages/report/report?id={{ groupMess.target_id }}" wx:if="{{ groupMess.join === 1 && groupMess.owner !== 0 }}">
       {{ sign == 0 ? '打卡':'已签到' }}
@@ -92,3 +94,4 @@
     <!-- <view wx:if="{{ groupMess.join === 0 }}" class="btn" bindtap="addgroup">加入打卡</view> -->
   </view>
 </view>
+<confirm title="{{ confirm.title }}" type="{{ confirm.type }}" num="{{ confirm.num }}" message="{{ confirm.message }}" btn="{{ confirm.btn }}" showConfirm="{{ confirm.showConfirm }}" bind:handClickOne="handClickOne" bind:handClickTwo="handClickTwo" />

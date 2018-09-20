@@ -1,0 +1,191 @@
+page {
+  background: #FAFAFA;
+}
+.index {
+  display: flex;
+  height: 100%;
+  padding-bottom: 138rpx;
+  flex-direction: column;
+}
+.index .header {
+  height: 240rpx;
+  position: relative;
+  background: #fff;
+}
+.index .header .headerbg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.index .header .tip {
+  position: relative;
+  display: flex;
+  color: #6b400d;
+  font-size: 28rpx;
+  justify-content: center;
+}
+.index .header .avatar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 30rpx;
+  margin-top: 20rpx;
+}
+.index .header .avatar .info {
+  font-size: 24rpx;
+  box-sizing: border-box;
+  padding-left: 20rpx;
+}
+.index .header .avatar .info .nickname {
+  font-size: 30rpx;
+}
+.index .header .avatar .info .rank {
+  color: #6b400d;
+  font-size: 24rpx;
+}
+.index .header .avatar .info .rank .num {
+  padding: 0 4rpx;
+}
+.index .fraction {
+  margin: 0 30rpx;
+  border-radius: 16rpx;
+  overflow: hidden;
+  box-shadow: 0 0 10rpx #ccc;
+  position: relative;
+  top: -60rpx;
+}
+.index .addTarget {
+  display: flex;
+  width: 190rpx;
+  height: 56rpx;
+  color: #fff;
+  font-size: 26rpx;
+  border-radius: 56rpx;
+  background: #e9b318;
+  line-height: 80rpx;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #6b400d;
+  position: relative;
+  position: absolute;
+  right: 24rpx;
+  top: 26rpx;
+}
+.index .addTarget::before {
+  content: '';
+  position: absolute;
+  right: 10%;
+  top: -1px;
+  width: 12%;
+  height: 1px;
+  background-color: #e9b318;
+}
+.index .addTarget::after {
+  content: '';
+  position: absolute;
+  right: 35%;
+  top: -1px;
+  width: 4%;
+  height: 1px;
+  background-color: #e9b318;
+}
+.index .lists {
+  padding: 0 26rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.index .lists .div {
+  width: 100%;
+  height: 106rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16rpx;
+  background: #fff;
+  font-size: 32rpx;
+  color: #3B3B3B;
+  margin-bottom: 20rpx;
+  box-shadow: 0 0 5rpx #ccc;
+}
+.modal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  background: red;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 80rpx;
+}
+.modal .msg {
+  width: 100%;
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.modal .msg .text {
+  font-size: 30rpx;
+  color: #535353;
+  margin-bottom: 30rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal .msg .text .centertext {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal .msg .icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin: 0 10rpx;
+}
+.modal .msg .num {
+  font-size: 48rpx;
+  color: #e9b318;
+  line-height: 72rpx;
+  padding: 0 10rpx;
+}
+.modal .msg .toCreate {
+  display: flex;
+  width: 100%;
+  height: 80rpx;
+  border-radius: 80rpx;
+  background: #e9b318;
+  color: #fff;
+  line-height: 80rpx;
+  justify-content: center;
+  align-items: center;
+  font-size: 32rpx;
+  border: 1px solid #6b400d;
+  position: relative;
+}
+.modal .msg .toCreate::before {
+  content: '';
+  position: absolute;
+  right: 10%;
+  top: -1px;
+  width: 12%;
+  height: 1px;
+  background-color: #e9b318;
+}
+.modal .msg .toCreate::after {
+  content: '';
+  position: absolute;
+  right: 35%;
+  top: -1px;
+  width: 4%;
+  height: 1px;
+  background-color: #e9b318;
+}

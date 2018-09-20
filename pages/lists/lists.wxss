@@ -104,13 +104,8 @@ page {
   align-items: center;
   background: #fff;
 }
-.ranking .ranking_c image {
-  width: 30rpx;
-  height: 30rpx;
-}
 .ranking .ranklist {
   width: 100%;
-  padding-bottom: 150rpx;
   background: #f8f8f8;
   position: relative;
   margin-top: 3rpx;
@@ -138,100 +133,27 @@ page {
   flex: 1;
   align-items: center;
 }
-.ranking .ranklist .rank .one {
-  width: 71rpx;
-  height: 64rpx;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 .ranking .ranklist .rank .avatar {
   width: 125rpx;
   height: 124rpx;
   border-radius: 50%;
-  margin: 0 30rpx;
+  margin: 0 20rpx;
 }
 .ranking .ranklist .rank .infos {
   flex: 1;
 }
 .ranking .ranklist .rank .infos .username {
+  font-size: 28rpx;
+  font-weight: bold;
+  margin-bottom: 4rpx;
   height: 40rpx;
-  font-size: 28rpx;
-  font-weight: bold;
-  margin-bottom: 8rpx;
 }
-.ranking .ranklist .rank .infos .info {
+.ranking .ranklist .rank .infos .info,
+.ranking .ranklist .rank .infos .date {
   font-size: 22rpx;
   color: #818181;
 }
-.ranking .ranklist .rank .zan {
-  height: 100%;
-  flex: 0 0 140rpx;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.ranking .ranklist .rank .zan .zanicon {
-  width: 41rpx;
-  height: 41rpx;
-}
-.ranking .ranklist .rank .zan .num {
-  color: #818181;
+.ranking .ranklist .rank .ttip {
+  color: #edbb1b;
   font-size: 28rpx;
-  margin-left: 10rpx;
-}
-.ranking .myrank {
-  width: 100%;
-  position: fixed;
-  bottom: 0rpx;
-  left: 0;
-  background: #fff;
-  height: 150rpx;
-  border-bottom: 2rpx solid #dcdcdc;
-  box-shadow: 0 -5rpx 10rpx 0 rgba(0, 0, 0, 0.06);
-}
-.ranking .myrank .rank {
-  padding: 10rpx 40rpx;
-  display: flex;
-  align-items: center;
-}
-.ranking .myrank .one {
-  width: 71rpx;
-  height: 64rpx;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.ranking .myrank .avatar {
-  width: 125rpx;
-  height: 124rpx;
-  border-radius: 50%;
-  margin: 0 30rpx;
-}
-.ranking .myrank .infos {
-  flex: 1;
-}
-.ranking .myrank .infos .username {
-  font-size: 28rpx;
-  font-weight: bold;
-  margin-bottom: 8rpx;
-}
-.ranking .myrank .infos .info {
-  font-size: 22rpx;
-  color: #818181;
-}
-.ranking .myrank .zan {
-  flex: 0 0 140rpx;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.ranking .myrank .zan .zanicon {
-  width: 41rpx;
-  height: 41rpx;
-}
-.ranking .myrank .zan .num {
-  color: #818181;
-  font-size: 28rpx;
-  margin-left: 10rpx;
 }

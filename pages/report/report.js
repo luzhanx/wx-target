@@ -301,7 +301,7 @@ Page({
       })
     } else if (data.type === 'del') {
       wx.showModal({
-        content: '确定要删除次目标吗',
+        content: '确定要删除此次目标吗',
         success(showModelRes) {
           if (showModelRes.confirm) {
             let id = that.options.id;

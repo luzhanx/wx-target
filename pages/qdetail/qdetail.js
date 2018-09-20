@@ -9,7 +9,14 @@ Page({
 		signList: [],
 
 		ShowText: false,
-		ShowTextBtn: '点击全文'
+		ShowTextBtn: '点击全文',
+		confirm: {
+			title: '',
+			num: 0,
+			message: '',
+			type: 'success',
+			showConfirm: false
+		}
 	},
 	onShow: function() {
 		let id = this.options.id;
@@ -90,22 +97,22 @@ Page({
 	},
 	xinzan(e) {
 		let id = e.currentTarget.dataset.id;
-    let allow_probability = e.currentTarget.dataset.allowprobability;
+		let allow_probability = e.currentTarget.dataset.allowprobability;
 
 		if (allow_probability == 1) {
-				wx.showToast({
-					title: '已经点赞',
-					icon: 'none',
-					mask: true
-				});
-      return;
+			wx.showToast({
+				title: '已经点赞',
+				icon: 'none',
+				mask: true
+			});
+			return;
 		} else if (allow_probability == 2) {
-				wx.showToast({
-					title: '不能给自己点赞',
-					icon: 'none',
-          mask: true
-        })
-      return;
+			wx.showToast({
+				title: '不能给自己点赞',
+				icon: 'none',
+				mask: true
+			});
+			return;
 		}
 		Api.signSignProbability({ id: id }).then((result) => {
 			let res = result.data;
@@ -124,6 +131,83 @@ Page({
 				});
 			}
 			console.log(res);
+		});
+	},
+	// 取消删除
+	handClickTwo(e) {
+		let that = this;
+		let data = e.detail;
+
+		if (data.type === 'success') {
+			wx.reLaunch({
+				url: '/pages/index/index'
+			});
+		} else if (data.type === 'error') {
+			wx.reLaunch({
+				url: '/pages/index/index'
+			});
+		} else if (data.type === 'del') {
+			that.data.confirm.showConfirm = false;
+
+			that.setData({
+				confirm: that.data.confirm
+			});
+		}
+	},
+	// 确定删除
+	handClickOne(e) {
+		let data = e.detail;
+		let that = this;
+
+		if (data.type === 'success') {
+			wx.reLaunch({
+				url: '/pages/create/create'
+			});
+		} else if (data.type === 'error') {
+			wx.reLaunch({
+				url: '/pages/create/create'
+			});
+		} else if (data.type === 'del') {
+			wx.showModal({
+				content: '确定要删除群目标吗',
+				success(showModelRes) {
+					if (showModelRes.confirm) {
+						let id = that.options.id;
+
+						Api.groupDelGroup({ id: id }).then(
+							(result) => {
+								let res = result.data;
+								wx.showToast({
+									title: res.msg,
+									icon: 'none',
+									mark: true
+								});
+								setTimeout(() => {
+									wx.reLaunch({
+										url: '/pages/index/index'
+									});
+								}, 1000);
+								console.log(res);
+							},
+							(err) => {
+								console.log(err);
+							}
+						);
+					}
+				}
+			});
+		}
+	},
+	// 删除吃打卡
+	delTarget() {
+		this.setData({
+			confirm: {
+				title: ``,
+				message: '打卡项目删除后星币仍然保留给打卡用户, 但次打卡行动将在用户列表删除。',
+				type: 'del',
+				btn: [ '确定', '取消' ],
+				showConfirm: true
+			}
 		});
 	},
 	onReady: function() {},

@@ -5,7 +5,7 @@
     <image src="/assets/img/headerbg.png" class="headerbg" />
     <view class="avatar">
       <avatar user="{{ user }}" bindtap="shareIndex" />
-      <view class="info">
+      <view class="info"  bindtap="shareIndex">
         <view class="tip" wx:if="{{ user == '' }}">请点击头像登录</view>
         <view class="nickname" wx:if="{{ user != '' }}">{{ user.nickname }}</view>
         <view class="rank" wx:if="{{ user != '' }}">
@@ -33,7 +33,7 @@
   <view class="lists" wx:else>
     <block wx:for="{{ item }}" wx:key="{{ index }}">
       <!-- 1 -->
-      <view wx:if="{{index == 0}}" class="item activity" data-text="活动" data-gid="{{item.group_id}}" bindtap="report" data-id="{{ item.id }}" data-sign="{{ item.sign }}">
+      <!-- <view wx:if="{{index == 0}}" class="item activity" data-text="活动" data-gid="{{item.group_id}}" bindtap="report" data-id="{{ item.id }}" data-sign="{{ item.sign }}">
         <view class="navigator">
           <image class="img" src="{{ item.images }}"></image>
           <view class="info">
@@ -55,7 +55,7 @@
             <view class="text">点击签到</view>
           </view>
         </view>
-      </view>
+      </view> -->
       <view bindtouchmove="itemTouchmove" bindtouchstart="itemTouchstart" bindtouchend="itemTouchend" class="item {{ item.type == 1 ? '': item.type == 2 ? 'groupOf': 'activity' }}" data-text="{{ item.type == 1 ? '': item.type == 2 ? '群目标': '活动' }}" bindtap="report" data-id="{{ item.id }}" data-sign="{{ item.sign }}" data-gid="{{item.group_id}}">
         <view class="navigator">
           <image class="img" src="{{ item.images }}"></image>
@@ -84,3 +84,19 @@
 </view>
 <confirm showConfirm="{{ false }}" bind:test="handTest" />
 <tabbar tab="0" />
+<view class="modal" wx:if="{{showModal}}">
+  <view class="msg">
+    <view class="text">欢迎来到小目标KEEP银河系</view>
+    <view class="text">
+      <image src="/assets/img/xx.png" class="icon" />
+      <view class="centertext">
+        <text>赠送您</text>
+        <text class="num">100</text>
+        <text>星币</text>
+      </view>
+      <image src="/assets/img/xx.png" class="icon" />
+    </view>
+    <view class="text">快来添加你的第一个打卡计划吧</view>
+    <view class="toCreate" bindtap="toCreate">+ 去添加</view>
+  </view>
+</view>

@@ -1,0 +1,27 @@
+<view class='index'>
+  <view class="header" bindtap="login">
+    <image src="/assets/img/headerbg.png" class="headerbg" />
+    <view class="avatar">
+      <avatar user="{{ user }}" bindtap="shareIndex" />
+      <view class="info"  bindtap="shareIndex">
+        <view class="nickname">{{ user.nickname }}</view>
+        <view class="rank">
+          排行榜:
+          <text class="num">{{ user.rank }}</text>
+          名
+        </view>
+      </view>
+      <navigator url="/pages/create/create" class="addTarget">+ 添加新目标</navigator>
+    </view>
+  </view>
+  <view class="fraction">
+    <fraction star="{{ user.star }}" rank="{{ user.rank }}" sum="{{ user.sum }}" target="{{ user.target }}"></fraction>
+  </view>
+  <view class="lists">
+    <view class="div">归档管理</view>
+    <view class="div">我的钱包</view>
+    <view class="div">用户须知</view>
+    <view class="div">小目标KEEP的公众号</view>
+  </view>
+</view>
+<tabbar tab="0" />

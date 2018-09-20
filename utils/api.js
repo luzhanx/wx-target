@@ -119,7 +119,15 @@ const api = {
 	// 签到点赞
 	signSignProbability: (data) => {
 		return http.post('/sign/signProbability', data);
-	}
+	},
+	// 删除群打卡
+	groupDelGroup(data) {
+		return http.post('/group/delGroup', data);
+  },
+  // 群目标今日打卡列表
+  groupToDaySign(data){
+		return http.get('/group/toDaySign', data);
+  },
 };
 
 module.exports = api;
