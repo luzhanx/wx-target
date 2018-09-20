@@ -29,8 +29,12 @@ Component({
           url = './../index/index';
           break;
         case '1':
-          url = './../challenge/challenge';
-          break;
+          wx.showToast({
+            title: '暂未开放,敬请期待',
+            icon: 'none',
+            mask: true,
+          });
+          return;
         case '2':
           url = './../ranking/ranking';
           wx.navigateTo({
