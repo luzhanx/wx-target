@@ -50,7 +50,8 @@ Page({
               item: res.targetList,
               fraction: res.user,
               moon: res.moon,
-              tipNum: res.getStars
+              tipNum: res.getStars,
+              check: res.check
             });
             if (res.getStars > 0) {
               wx.showToast({

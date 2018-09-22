@@ -31,7 +31,7 @@
   </view>
   <view class="lists tip" wx:if="{{ user == '' }}">登录后可查看</view>
   <view class="lists" wx:else>
-      <view  class="item activity" data-text="活动" data-gid="{{moon.group_id}}" bindtap="report" data-id="{{ moon.id }}" data-sign="{{ moon.sign }}">
+      <view wx:if="{{check == 0}}"  class="item activity" data-text="活动" data-gid="{{moon.group_id}}" bindtap="report" data-id="{{ moon.id }}" data-sign="{{ moon.sign }}">
         <view class="navigator">
           <image class="img" src="{{ moon.images }}"></image>
           <view class="info">
