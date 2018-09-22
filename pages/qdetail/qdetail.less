@@ -45,11 +45,11 @@ page {
 				border-radius: 8rpx;
 			}
 			.text {
-        margin: 20rpx 0;
-        font-size: 28rpx;
-        margin-bottom: 30rpx;
-        overflow: hidden;
-        transition: all .5s ease;
+				margin: 20rpx 0;
+				font-size: 28rpx;
+				margin-bottom: 30rpx;
+				overflow: hidden;
+				transition: all .5s ease;
 			}
 			.foot {
 				width: 100%;
@@ -58,7 +58,7 @@ page {
 				font-size: 24rpx;
 				display: flex;
 				justify-content: space-between;
-        align-items: center;
+				align-items: center;
 				.downicon {
 					width: 18rpx;
 					height: 12rpx;
@@ -106,8 +106,8 @@ page {
 		width: 100%;
 		box-shadow: 0 0 10rpx #ccc;
 		background: #fff;
-    border-radius: 8rpx;
-    margin-bottom: 20rpx;
+		border-radius: 8rpx;
+		margin-bottom: 20rpx;
 		.head {
 			padding: 20rpx 20rpx;
 			display: flex;
@@ -119,10 +119,10 @@ page {
 				padding-left: 20rpx;
 			}
 			.date {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
 				.date_t {
 					color: #666666;
 					font-size: 22rpx;
@@ -181,33 +181,33 @@ page {
 		position: fixed;
 		bottom: 0;
 		left: 0;
-    display: flex;
-    z-index: 9;
+		display: flex;
+		z-index: 9;
 		.btn {
 			display: inline-block;
-      flex: 1;
-      height: 100%;
-			border: 2px solid #6B400D;
+			flex: 1;
+			height: 100%;
+			border: 2px solid #6b400d;
 			position: relative;
 			font-size: 32rpx;
-      display: flex;
-      justify-content: center;
-      border-radius: 16rpx;
-      align-items: center;
+			display: flex;
+			justify-content: center;
+			border-radius: 16rpx;
+			align-items: center;
 			color: #fff;
 			background: #e9b318;
 			text-align: center;
-      padding: 0;
-      box-sizing: border-box;
-      &.dis{
-        background: #D2D2D2;
-        &::before{
-          background: #D2D2D2;
-        }
-        &::after{
-          background: #D2D2D2;
-        }
-      }
+			padding: 0;
+			box-sizing: border-box;
+			&.dis {
+				background: #d2d2d2;
+				&::before {
+					background: #d2d2d2;
+				}
+				&::after {
+					background: #d2d2d2;
+				}
+			}
 			&.active {
 				background: #9de8f7;
 			}
@@ -238,39 +238,40 @@ page {
 
 .info {
 	padding: 30rpx 20rpx;
-  display: flex;
-  .btn {
+	display: flex;
+	.btn {
 		width: 240rpx;
 		height: 120rpx;
 		background: #e9b318;
 		border-radius: 8rpx;
 		margin-right: 30rpx;
-		border: 1px solid #6B400D;
+		border: 1px solid #6b400d;
 		color: #fff;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
     position: relative;
-    box-shadow: 0 0 5rpx #ccc;
-    &::before {
-      content: '';
-      position: absolute;
-      right: 10%;
-      top: -1px;
-      width: 12%;
-      height: 1px;
-      background-color: #e9b318;
-    }
-    &::after {
-      content: '';
-      position: absolute;
-      right: 35%;
-      top: -1px;
-      width: 4%;
-      height: 1px;
-      background-color: #e9b318;
-    }
+    box-sizing: content-box;
+		box-shadow: 0 0 5rpx #ccc;
+		&::before {
+			content: '';
+			position: absolute;
+			right: 10%;
+			top: -1px;
+			width: 12%;
+			height: 1px;
+			background-color: #e9b318;
+		}
+		&::after {
+			content: '';
+			position: absolute;
+			right: 35%;
+			top: -1px;
+			width: 4%;
+			height: 1px;
+			background-color: #e9b318;
+		}
 
 		.key {
 			font-size: 24rpx;
@@ -278,37 +279,37 @@ page {
 		.value {
 			font-size: 48rpx;
 		}
-	// .btn {
-	// 	width: 240rpx;
-	// 	height: 120rpx;
-	// 	background: #e9b318;
-	// 	border-radius: 8rpx;
-	// 	margin-right: 30rpx;
-	// 	// border: 1px solid #6B400D;
-	// 	color: #fff;
-	// 	display: flex;
-	// 	justify-content: center;
-	// 	align-items: center;
-	// 	flex-direction: column;
-	// 	position: relative;
-	// 	padding-top: 10rpx;
-	// 	margin-left: 6rpx;
-	// 	.key {
-	// 		font-size: 24rpx;
-	// 	}
-	// 	.value {
-	// 		font-size: 48rpx;
-	// 	}
-	// 	&:before {
-	// 		content: '';
-	// 		width: 98%;
-	// 		height: 100%;
-	// 		position: absolute;
-	// 		left: -8rpx;
-	// 		top: 6rpx;
-	// 		border: 1px solid #6b400d;
-	// 		border-radius: 8rpx;
-	// 	}
+		// .btn {
+		// 	width: 240rpx;
+		// 	height: 120rpx;
+		// 	background: #e9b318;
+		// 	border-radius: 8rpx;
+		// 	margin-right: 30rpx;
+		// 	// border: 1px solid #6B400D;
+		// 	color: #fff;
+		// 	display: flex;
+		// 	justify-content: center;
+		// 	align-items: center;
+		// 	flex-direction: column;
+		// 	position: relative;
+		// 	padding-top: 10rpx;
+		// 	margin-left: 6rpx;
+		// 	.key {
+		// 		font-size: 24rpx;
+		// 	}
+		// 	.value {
+		// 		font-size: 48rpx;
+		// 	}
+		// 	&:before {
+		// 		content: '';
+		// 		width: 98%;
+		// 		height: 100%;
+		// 		position: absolute;
+		// 		left: -8rpx;
+		// 		top: 6rpx;
+		// 		border: 1px solid #6b400d;
+		// 		border-radius: 8rpx;
+		// 	}
 	}
 }
 

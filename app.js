@@ -28,7 +28,8 @@ App({
 	},
 	globalData: {
 		userInfo: null,
-		tabIndex: 0,
+    tabIndex: 0,
+    tipNum: 0,
 		share: {
 			rank: 95,
 			user: {

@@ -6,7 +6,7 @@
   <view class='link {{ tab == 1 ? "active":"" }}' bindtap='navLink' data-tab="1">
     <view class="center">
       <view class="btn">
-          <image src='./../../assets/img/u12.png'></image>
+        <image src='./../../assets/img/u12.png'></image>
       </view>
     </view>
     <view>挑战</view>
@@ -14,5 +14,6 @@
   <view class='link {{ tab == 2 ? "active":"" }}' bindtap='navLink' data-tab="2">
     <image src='./../../assets/img/u10.png'></image>
     <view>星星排行</view>
+    <view wx:if="{{ tipNum > 0 }}" class="tip">{{ tipNum }}</view>
   </view>
 </view>

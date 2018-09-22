@@ -8,7 +8,7 @@ Page({
 	data: {
 		title: '', // 标题
 		description: '', // 内容
-		day: '', // 天数
+		day: '7', // 天数
 		photo: '', // 封面图片
 		remind: true, // 提醒功能
 		remind_time: '' // 提醒时间,

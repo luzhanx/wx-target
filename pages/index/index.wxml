@@ -31,37 +31,40 @@
   </view>
   <view class="lists tip" wx:if="{{ user == '' }}">登录后可查看</view>
   <view class="lists" wx:else>
-    <block wx:for="{{ item }}" wx:key="{{ index }}">
-      <!-- 1 -->
-      <!-- <view wx:if="{{index == 0}}" class="item activity" data-text="活动" data-gid="{{item.group_id}}" bindtap="report" data-id="{{ item.id }}" data-sign="{{ item.sign }}">
+      <view  class="item activity" data-text="活动" data-gid="{{moon.group_id}}" bindtap="report" data-id="{{ moon.id }}" data-sign="{{ moon.sign }}">
         <view class="navigator">
-          <image class="img" src="{{ item.images }}"></image>
+          <image class="img" src="{{ moon.images }}"></image>
           <view class="info">
-            <view class="title">{{ item.title }}</view>
-            <view class="dec">{{ item.description }}</view>
+            <view class="title">{{ moon.title }}</view>
+            <view class="dec">
+              <rich-text nodes="{{ moon.description }}" />
+            </view>
           </view>
         </view>
         <view class="item_r">
-          <view class="num" wx:if="{{ item.sign == 0 || item.sign == 3 }}">
-            <text class="current">{{ item.sum }}</text>
+          <view class="num" wx:if="{{ moon.sign == 0 || moon.sign == 3 }}">
+            <text class="current">{{ moon.sum }}</text>
             <text class="fenge">/</text>
-            <text>{{ item.day }}</text>
+            <text>{{ moon.day }}</text>
           </view>
-          <view class="tiptext success" wx:elif="{{ item.sign == 1 }}">目标已完成</view>
-          <view class="tiptext error" wx:elif="{{ item.sign == 2 }}">目标未完成</view>
-          <view class="tiptext yes" wx:if="{{ item.sign == 3 }}">今日已签到</view>
-          <view class="btn" wx:if="{{ item.sign != 1 && item.sign != 2 && item.sign != 3}}">
+          <view class="tiptext success" wx:elif="{{ moon.sign == 1 }}">目标已完成</view>
+          <view class="tiptext error" wx:elif="{{ moon.sign == 2 }}">目标未完成</view>
+          <view class="tiptext yes" wx:if="{{ moon.sign == 3 }}">今日已签到</view>
+          <view class="btn" wx:if="{{ moon.sign != 1 && moon.sign != 2 && moon.sign != 3}}">
             <image class="bg" src="./../../assets/img/ggtx.png"></image>
             <view class="text">点击签到</view>
           </view>
         </view>
-      </view> -->
-      <view bindtouchmove="itemTouchmove" bindtouchstart="itemTouchstart" bindtouchend="itemTouchend" class="item {{ item.type == 1 ? '': item.type == 2 ? 'groupOf': 'activity' }}" data-text="{{ item.type == 1 ? '': item.type == 2 ? '群目标': '活动' }}" bindtap="report" data-id="{{ item.id }}" data-sign="{{ item.sign }}" data-gid="{{item.group_id}}">
+      </view>
+    <block wx:for="{{ item }}" wx:key="{{ index }}">
+      <view wx:if="{{ item.group_id != 19 }}" bindtouchmove="itemTouchmove" bindtouchstart="itemTouchstart" bindtouchend="itemTouchend" class="item {{ item.type == 1 ? '': item.type == 2 ? 'groupOf': 'activity' }}" data-text="{{ item.type == 1 ? '': item.type == 2 ? '群目标': '活动' }}" bindtap="report" data-id="{{ item.id }}" data-sign="{{ item.sign }}" data-gid="{{item.group_id}}">
         <view class="navigator">
           <image class="img" src="{{ item.images }}"></image>
           <view class="info">
             <view class="title">{{ item.title }}</view>
-            <view class="dec">{{ item.description }}</view>
+            <view class="dec">
+              <rich-text nodes="{{ item.description }}" />
+            </view>
           </view>
         </view>
         <view class="item_r" bindtap="guidang">
@@ -84,7 +87,7 @@
   </view>
 </view>
 <confirm showConfirm="{{ false }}" bind:test="handTest" />
-<tabbar tab="0" />
+<tabbar tab="0" tipNum="{{ tipNum }}" />
 <view class="modal" wx:if="{{showModal}}">
   <view class="msg">
     <view class="text">欢迎来到小目标KEEP银河系</view>

@@ -22,7 +22,7 @@
       </view>
     </view>
     <view class="row norow">
-      <view class="label">需要连续打卡天数（天）</view>
+      <view class="label">需要连续打卡天数</view>
       <view class="cate">
         <div class="fang {{ day == 7 ? 'active':'' }}" bindtap="shooseDay" data-day="7">7天</div>
         <div class="fang {{ day == 21 ? 'active':'' }}" bindtap="shooseDay" data-day="21">21天</div>

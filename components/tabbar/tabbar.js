@@ -9,11 +9,16 @@ Component({
     tab: {
       type: Number,
       value: 0
+    },
+    tipNum: {
+      type: Number,
+      value: 0
     }
   },
   data: {},
   ready() {
     this.setData({
+      // tipNum: app.globalData.tipNum,
       tab: this.data.tab > 0 ? this.data.tab : app.globalData.tabIndex
     })
   },
@@ -30,7 +35,7 @@ Component({
           break;
         case '1':
           wx.showToast({
-            title: '暂未开放,敬请期待',
+            title: '有彩蛋！国庆推出,敬请期待',
             icon: 'none',
             mask: true,
           });

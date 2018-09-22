@@ -1,4 +1,4 @@
-// out: template.wxss, compress:false, sourceMap:false
+// out: template.wxss, compress:true, sourceMap:false
 
 page {
 	background: #f5f5f5;
@@ -13,7 +13,8 @@ page {
 		.headImg {
 			// width: 694rpx;
 			height: 300rpx;
-			border-radius: 8rpx;
+      border-radius: 8rpx;
+      width: 100%;
 		}
 		.title {
 			font-size: 36rpx;
@@ -35,7 +36,9 @@ page {
 			margin: 0 28rpx;
 			align-items: center;
 			position: relative;
-			min-height: 60rpx;
+      min-height: 60rpx;
+      box-sizing: content-box;
+
 			&:after {
 				content: '';
 				position: absolute;
@@ -87,7 +90,7 @@ page {
 				z-index: 9;
 				display: flex;
 				align-items: center;
-				padding: 20rpx;
+				// padding: 20rpx;
 				box-sizing: border-box;
 			}
 			.btn {

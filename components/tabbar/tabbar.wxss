@@ -41,7 +41,7 @@
   border: 1px solid #ccc;
   bottom: 0;
   left: -36rpx;
-  display: flex;  
+  display: flex;
   justify-content: center;
   align-items: center;
   box-shadow: 0 0 4rpx;
@@ -59,4 +59,22 @@
 
 .tabbar .link.active {
   color: #000;
+}
+
+.tabbar .link .tip{
+  position: absolute;
+  min-width: 30rpx;
+  height: 30rpx;
+  top: -7rpx;
+  /* right: 70rpx; */
+  left: 134rpx;
+  padding: 1rpx 10rpx;
+  border-radius: 30rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 20rpx;
+  background: #f01414;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,.4);
 }

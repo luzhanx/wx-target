@@ -3,7 +3,7 @@
     <view class="row">
       <view class="label">标题</view>
       <view class="value">
-        <input type="text" bindinput="bindTitle" placeholder="标题" />
+        <input type="text" bindinput="bindTitle" placeholder="你的目标名字" />
       </view>
     </view>
     <view class="row">
@@ -16,10 +16,10 @@
       </view>
     </view>
     <view class="row">
-      <view class="label">需要连续打卡天数（天）</view>
+      <view class="label">需要连续打卡天数</view>
       <view class="value">
         <!-- <text class="text">700</text> -->
-        <input bindinput="bindDay" type="number" placeholder="天数" />
+        <input bindinput="bindDay" type="number" placeholder="天" value="{{ day }}" />
         <!-- <image class="right" src="./../../assets/img/right.png"></image> -->
       </view>
     </view>

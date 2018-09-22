@@ -1,6 +1,67 @@
 <view class="challenge">
-	<view class="header">
-		header
-	</view>
+  <view class="header" bindtap="login">
+    <image src="/assets/img/headerbg.png" class="headerbg" />
+    <view class="dec">
+      <view class="title">一周三画</view>
+      <view class="datebox">
+        <view class="key">报名倒计时：</view>
+        <view class="date">
+          <view class="num">{{time.d}}</view>
+          <view class="unit">天</view>
+          <view class="num">{{time.h}}</view>
+          <view class="unit">时</view>
+          <view class="num">{{time.m}}</view>
+          <view class="unit">天</view>
+          <view class="num">{{time.s}}</view>
+          <view class="unit">秒</view>
+        </view>
+      </view>
+    </view>
+    <view class="foot">
+      <view class="item">
+        <view class="key">已参与（人）</view>
+        <view class="value">50</view>
+      </view>
+      <view class="item">
+        <view class="key">奖金池（元）</view>
+        <view class="value">1500.00</view>
+      </view>
+    </view>
+  </view>
+  <view class="main">
+    <image class="status" src="/assets/img/baoming.png" />
+    <view class="guize">
+      <view class="title">
+        <image class="icon" src="/assets/img/guize.png" />
+        <view class="text">游戏规则</view>
+      </view>
+      <view class="decs">
+        <view class="row">活动时间：9月15-9月23日</view>
+        <view class="row">打卡时间：09：00-22：00</view>
+        <view class="row">活动上限：10000人</view>
+        <view class="row">保证金　：30元</view>
+        <view class="row">报名截止：9月14日 23：29</view>
+      </view>
+    </view>
+
+    <view class="xize">
+      <view class="title">
+        <image class="icon" src="/assets/img/guize.png" />
+        <view class="text">游戏细则</view>
+      </view>
+      <rich-text class="html" stype="node" nodes="活动时间：9月15日-9月23日<br />单独一个人可能灭亡的地方两个人在一起就可能得救为了同一个目标前进岂不乐哉" />
+    </view>
+
+    <view class="jiangping">
+      <view class="title">
+        <image class="icon" src="/assets/img/jiangping.png" />
+        <view class="text">奖品</view>
+      </view>
+      <view class="imgs">
+        <image class="" src="/assets/img/share.png" mode="aspectFit" />
+        <image class="" src="/assets/img/share.png" mode="aspectFit" />
+
+      </view>
+    </view>
+  </view>
 </view>
-<tabbar tab="1" />

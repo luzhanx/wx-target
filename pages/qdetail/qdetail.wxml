@@ -9,8 +9,8 @@
     </view>
     <view class="content">
       <image mode="aspectFit" class="showImg" src="{{ groupMess.group_show }}" />
-      <view class="text" bindtap="handleShowText" style="height:{{ ShowText?'auto':'80rpx' }}">
-        {{ groupMess.group_text }}
+      <view  class="text" bindtap="handleShowText" style="height:{{ ShowText?'auto':'80rpx' }}">
+      <rich-text nodes="{{ groupMess.group_text }}" />  
       </view>
       <view class="foot" bindtap="handleShowText">
         <view class="footz">{{ ShowTextBtn }}</view>
@@ -86,9 +86,9 @@
       <navigator class="btn" url="/pages/index/index" open-type="reLaunch">
         主页
     </navigator>
-    <view wx:if="{{ groupMess.owner === 0 }}" class="btn dis" bindtap="delTarget">删除此打卡</view>
+    <!-- <view wx:if="{{ groupMess.owner === 0 }}" class="btn dis" bindtap="delTarget">删除此打卡</view> -->
     <navigator wx:if="{{ groupMess.owner === 0 }}" class="btn" url="/pages/report/report?id={{ groupMess.target_id }}">
-      打卡
+      {{ sign == 0 ? '打卡':'已签到' }}
     </navigator>
     <view wx:if="{{ groupMess.join === 0 }}" class="btn" bindtap="addgroup">加入打卡</view>
     <navigator class="btn" url="/pages/report/report?id={{ groupMess.target_id }}" wx:if="{{ groupMess.join === 1 && groupMess.owner !== 0 }}">

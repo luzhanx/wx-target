@@ -7,9 +7,9 @@
 
     <view class="group">
         <view class="row">
-            <view class="label">需要连续打卡天数（天）</view>
+            <view class="label">需要连续打卡天数</view>
             <view class="value">
-                <input  bindinput="bindDay" type="number" placeholder="天数" />
+                <input  bindinput="bindDay" type="number" placeholder="天" />
             </view>
         </view>
         <view class="row">

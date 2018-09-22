@@ -14,7 +14,8 @@ Page({
     fraction: {},
     startX: 0,
     showModal: false,
-    startNum: 0
+    startNum: 0,
+    tipNum: 0
   },
 
   /**
@@ -47,14 +48,16 @@ Page({
 
             this.setData({
               item: res.targetList,
-              fraction: res.user
+              fraction: res.user,
+              moon: res.moon,
+              tipNum: res.getStars
             });
             if (res.getStars > 0) {
               wx.showToast({
                 title: `刚刚被${res.getStars}个人点赞了`,
                 icon: 'none',
                 mask: true,
-                duration: 3000
+                duration: 1500
               });
             }
           },

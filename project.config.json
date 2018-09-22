@@ -33,97 +33,13 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 14,
+			"current": 0,
 			"list": [
 				{
 					"id": -1,
-					"name": "添加自定义目标",
-					"pathName": "pages/new/new",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "添加模板目标",
-					"pathName": "pages/template/template",
-					"query": "id=3"
-				},
-				{
-					"id": -1,
 					"name": "分享主页",
-					"pathName": "pages/share_index/share_index",
+					"pathName": "pages/challenge/challenge",
 					"query": "id=600034"
-				},
-				{
-					"id": -1,
-					"name": "签到详情",
-					"pathName": "pages/report/report",
-					"query": "id=35"
-				},
-				{
-					"id": -1,
-					"name": "编辑目标",
-					"pathName": "pages/target/target",
-					"query": "id=63"
-				},
-				{
-					"id": -1,
-					"name": "星星榜",
-					"pathName": "pages/ranking/ranking",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "新建目标",
-					"pathName": "pages/create/create",
-					"query": ""
-				},
-				{
-					"id": 7,
-					"name": "签到提交",
-					"pathName": "pages/reportSubmit/reportSubmit",
-					"query": ""
-				},
-				{
-					"id": 8,
-					"name": "群打卡详情",
-					"pathName": "pages/qdetail/qdetail",
-					"query": "id=15"
-				},
-				{
-					"id": -1,
-					"name": "个人中心",
-					"pathName": "pages/center/center",
-					"query": ""
-				},
-				{
-					"id": 10,
-					"name": "今日打卡",
-					"pathName": "pages/lists/lists",
-					"query": "tid=15"
-				},
-				{
-					"id": -1,
-					"name": "切换分享图",
-					"pathName": "pages/share_edit/share_edit",
-					"query": "id=15"
-				},
-				{
-					"id": -1,
-					"name": "目标详情",
-					"pathName": "pages/template/template",
-					"query": "id=4"
-				},
-				{
-					"id": -1,
-					"name": "添加目标",
-					"pathName": "pages/create/create",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "添加1111",
-					"pathName": "pages/qdetail/qdetail",
-					"query": "id=19"
 				}
 			]
 		}
