@@ -11,7 +11,7 @@ Page({
     title: '',        // 标题
     description: '',  // 内容
     day: '',
-    remind: false,                    // 提醒功能
+    remind: true,                    // 提醒功能
     remind_time: '',                    // 提醒时间
   },
 
@@ -127,7 +127,7 @@ Page({
     } else {
       that.data.remind_time = '';
     }
-    
+
     let formData = {
       title: that.data.title,
       description: that.data.description,

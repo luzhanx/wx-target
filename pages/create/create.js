@@ -9,9 +9,14 @@ Page({
 	data: {
 		template: {},
 		fraction: {},
-		newFix: false
+    newFix: false,
+    isshow: true
 	},
-
+  showTc(){
+    this.setData({
+      isshow: !this.data.isshow
+    })
+  },
 	onLoad: function() {
 		// app.globalData.tabIndex = 1;
 	},

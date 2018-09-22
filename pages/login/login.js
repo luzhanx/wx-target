@@ -12,7 +12,8 @@ Page({
 	getUserInfo(e) {
 		let that = this;
 		wx.showLoading({
-			title: '登录授权中'
+			title: '登录授权中',
+      mask: true
 		});
 
 		wx.login({

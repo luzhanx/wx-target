@@ -36,11 +36,11 @@
     <view class="row">
       <view class="label">是否开启提醒功能</view>
       <view class="value">
-        <switch color="#9de8f7" bindchange="remindChange" />
+        <switch color="#9de8f7" bindchange="remindChange" checked="{{ remind }}" />
       </view>
     </view>
     <view class="row" wx:if="{{ remind }}">
-      <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindTimeChange">
+      <picker mode="time" value="{{time}}"  bindchange="bindTimeChange">
         <view class="timePicker">
           <view class="label">设置每天提醒时间</view>
           <view class="value">

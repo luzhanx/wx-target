@@ -1,86 +1,103 @@
 // out: create.wxss, compress:false, sourceMap:false
-page{
-    background: #f8f8f8;
+page {
+	background: #f8f8f8;
 }
-.index{
-    display: flex;
-    height: 100%;
-    margin-bottom: 100rpx;
-    flex-direction: column;
-    .avatar{
-        display: flex;
-        justify-content: center;
-        background: #fff;
-    }
-    .fraction{
-        padding: 0 90rpx;
-        padding-top: 30rpx;
-        background: #fff;
-    }
-    .lists{
-        padding: 0 45rpx;
-        margin-top: 20rpx;
-        .item{
-            width: 166rpx;
-            display: inline-block;
-            padding: 0 27rpx;
-            margin-bottom: 30rpx;
-            box-sizing: content-box;
-            &:active{
-                background: #eee;
-            }
-            .icon{
-                width: 166rpx;
-                height: 166rpx;
-                border-radius: 50%;
-            }
-            .title{
-                color: #313131;
-                font-size: 24rpx;
-                text-align: center;
-                white-space: nowrap;
-            }
-            .btn{
-                width: 100%;
-                height: 54rpx;
-                margin-top: 17rpx;
-                position: relative;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                .bg{
-                    width: 100%;
-                    height: 100%;
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                }
-                .text{
-                    font-size: 24rpx;
-                    color: #2E2E2E;
-                    position: relative;
-                    z-index: 9;
-                }
-            }
-        }
-    }
-    .newFix{
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        z-index: 9999;
-        background: rgba(0, 0, 0, 0.6);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        .btn{
-            width: 250rpx;
-            height: 250rpx;
-            margin: 0 40rpx;
-            image{
-                width: 100%;
-                height: 100%;
-            }
-        }
-    }
+.index {
+	display: flex;
+	height: 100%;
+	padding-bottom: 100rpx;
+	flex-direction: column;
+	.avatar {
+		display: flex;
+		justify-content: center;
+		background: #fff;
+	}
+	.fraction {
+		padding: 0 90rpx;
+		padding-top: 30rpx;
+		background: #fff;
+	}
+	.lists {
+		padding: 0 45rpx;
+		margin-top: 20rpx;
+		.item {
+			width: 166rpx;
+			display: inline-block;
+			padding: 0 27rpx;
+			margin-bottom: 30rpx;
+			box-sizing: content-box;
+			&:active {
+				background: #eee;
+			}
+			.icon {
+				width: 166rpx;
+				height: 166rpx;
+				border-radius: 50%;
+			}
+			.title {
+				color: #313131;
+				font-size: 24rpx;
+				text-align: center;
+				white-space: nowrap;
+			}
+			.btn {
+				width: 100%;
+				height: 54rpx;
+				margin-top: 17rpx;
+				position: relative;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				.bg {
+					width: 100%;
+					height: 100%;
+					position: absolute;
+					left: 0;
+					top: 0;
+				}
+				.text {
+					font-size: 24rpx;
+					color: #2e2e2e;
+					position: relative;
+					z-index: 9;
+				}
+			}
+		}
+	}
+	.newFix {
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		z-index: 9999;
+		background: rgba(0, 0, 0, 0.6);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		.btn {
+			width: 250rpx;
+			height: 250rpx;
+			margin: 0 40rpx;
+			image {
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+}
+
+.tanchuang{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  .hdong{
+    width: 500rpx;
+    height: 500rpx;
+  }
 }

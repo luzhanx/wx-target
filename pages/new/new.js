@@ -10,7 +10,7 @@ Page({
 		description: '', // 内容
 		day: '', // 天数
 		photo: '', // 封面图片
-		remind: false, // 提醒功能
+		remind: true, // 提醒功能
 		remind_time: '' // 提醒时间,
 	},
 

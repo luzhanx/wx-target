@@ -1,51 +1,51 @@
 <form class='new' report-submit="{{ true }}" bindsubmit="submit">
-    <view class="group">
-        <view class="row">
-            <view class="label">标题</view>
-            <view class="value">
-                <input type="text" bindinput="bindTitle" placeholder="标题" />
-            </view>
-        </view>
-        <view class="row">
-            <textarea bindinput="bindDescription" placeholder="有什么话想要给正在坚持目标的自己说?"></textarea>
-        </view>
-        <view class="row" bindtap="linkTailoring">
-            <view class="label">设置你的目标封面</view>
-            <view class="value">
-                <image src="{{ photo === '' ? './../../assets/img/photo.png':photo }}" class="photo"></image>
-            </view>
-        </view>
-        <view class="row">
-            <view class="label">需要连续打卡天数（天）</view>
-            <view class="value">
-                <!-- <text class="text">700</text> -->
-                <input bindinput="bindDay" type="number" placeholder="天数" />
-                <!-- <image class="right" src="./../../assets/img/right.png"></image> -->
-            </view>
-        </view>
-        <view class="row">
-            <view class="label">是否开启提醒功能</view>
-            <view class="value">
-                <switch color="#9de8f7" bindchange="remindChange" />
-            </view>
-        </view>
-        <view class="row" wx:if="{{ remind }}">
-            <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindTimeChange">
-                <view class="timePicker">
-                    <view class="label">设置每天提醒时间</view>
-                    <view class="value">
-                        <text class="text">{{remind_time}}</text>
-                        <image class="right" src="./../../assets/img/right.png"></image>
-                    </view>
-                </view>
-            </picker>
-        </view>
-        <view class="row">
-            <button plain form-type="submit" class="btn">
-                <image class="bg" src="./../../assets/img/ggtx3.png"></image>
-                <view class="text">立即添加</view>
-            </button>
-        </view>
+  <view class="group">
+    <view class="row">
+      <view class="label">标题</view>
+      <view class="value">
+        <input type="text" bindinput="bindTitle" placeholder="标题" />
+      </view>
     </view>
-    
+    <view class="row">
+      <textarea bindinput="bindDescription" placeholder="有什么话想要给正在坚持目标的自己说?"></textarea>
+    </view>
+    <view class="row" bindtap="linkTailoring">
+      <view class="label">设置你的目标封面</view>
+      <view class="value">
+        <image src="{{ photo === '' ? './../../assets/img/photo.png':photo }}" class="photo"></image>
+      </view>
+    </view>
+    <view class="row">
+      <view class="label">需要连续打卡天数（天）</view>
+      <view class="value">
+        <!-- <text class="text">700</text> -->
+        <input bindinput="bindDay" type="number" placeholder="天数" />
+        <!-- <image class="right" src="./../../assets/img/right.png"></image> -->
+      </view>
+    </view>
+    <view class="row">
+      <view class="label">是否开启提醒功能</view>
+      <view class="value">
+        <switch color="#9de8f7" bindchange="remindChange" checked="{{ remind }}" />
+      </view>
+    </view>
+    <view class="row" wx:if="{{ remind }}">
+      <picker mode="time" value="{{time}}" bindchange="bindTimeChange">
+        <view class="timePicker">
+          <view class="label">设置每天提醒时间</view>
+          <view class="value">
+            <text class="text">{{remind_time}}</text>
+            <image class="right" src="./../../assets/img/right.png"></image>
+          </view>
+        </view>
+      </picker>
+    </view>
+    <view class="row">
+      <button plain form-type="submit" class="btn">
+        <image class="bg" src="./../../assets/img/ggtx3.png"></image>
+        <view class="text">立即添加</view>
+      </button>
+    </view>
+  </view>
+
 </form>

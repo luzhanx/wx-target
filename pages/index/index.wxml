@@ -77,7 +77,7 @@
             <image class="bg" src="./../../assets/img/ggtx.png"></image>
             <view class="text">点击签到</view>
           </view>
-          <view class="guidang success" wx:elif="{{ item.sign == 1 || item.sign == 2 }}">点击归档</view>
+          <!-- <view class="guidang success" wx:elif="{{ item.sign == 1 || item.sign == 2 }}">点击归档</view> -->
         </view>
       </view>
     </block>

@@ -9,6 +9,14 @@
     </view> -->
   <commonbg title="新建小目标"></commonbg>
   <view class="lists">
+        <view class="item" bindtap="showNewFix">
+      <image class="icon" src="./../../assets/img/add2.png"></image>
+      <view class="title">添加自定义目标</view>
+      <view class="btn">
+        <image class="bg" src="./../../assets/img/ggtx.png"></image>
+        <view class="text">添加</view>
+      </view>
+    </view>
     <block wx:for="{{ template }}" wx:key="{{ index }}">
       <view class="item" bindtap="link" data-id="{{ item.id }}">
         <image class="icon" src="{{ item.images }}"></image>
@@ -19,14 +27,6 @@
         </view>
       </view>
     </block>
-    <view class="item" bindtap="showNewFix">
-      <image class="icon" src="./../../assets/img/add2.png"></image>
-      <view class="title">添加自定义目标</view>
-      <view class="btn">
-        <image class="bg" src="./../../assets/img/ggtx.png"></image>
-        <view class="text">添加</view>
-      </view>
-    </view>
   </view>
   <view class="newFix" wx:if="{{ newFix }}" bindtap="showNewFix">
     <view class="btn" bindtap="link" data-type="geren">
@@ -38,3 +38,8 @@
   </view>
 </view>
 <tabbar tab="1" />
+<view class="tanchuang" bindtap="showTc" wx:if="{{ isshow }}">
+  <navigator class=""url="/pages/qdetail/qdetail?id=19">
+    <image class="hdong" src="/assets/img/hdong.png" />
+  </navigator>
+</view>

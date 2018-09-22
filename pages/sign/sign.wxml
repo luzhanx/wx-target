@@ -1,0 +1,11 @@
+<!--pages/Sign/Sign.wxml-->
+<view class='Sign'>
+   <view class='Sign_img'><image class='champion' src='/assets/img/champion.png'></image></view>
+   <text class='title'>恭喜你签到成功</text>
+   <text class='intro'>你已经坚持签到{{ share.count }}次，目前总排名第 {{ share.user.rank }}名 </text>
+   <view class='buttons'>
+    <button open-type="share">邀请好友</button>
+    <button bindtap="toshare">生成分享图</button>
+    <button bindtap="toHome">返回主页</button>
+   </view>
+</view>

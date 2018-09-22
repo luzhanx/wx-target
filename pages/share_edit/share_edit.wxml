@@ -1,0 +1,36 @@
+<view class="share_edit">
+  <view class="header">
+    <view class="btn hui_color" bindtap="toHome">返回主页</view>
+    <view class="center" bindtap="qiehuan">
+      <image src="/assets/img/shuaxin.png" class="icon" />
+      <text>换张图片</text>
+    </view>
+    <view class="btn" bindtap="shengc">生成分享</view>
+  </view>
+  <view class="sharebox">
+    <view class="shareImg">
+      <image src="/assets/img/share{{ imgIndex }}.png" class="img" />
+      <view class="info">
+        <image src="{{ share.user.avatar }}" class="avatar" />
+
+        <view wx:if="{{ share.type == 2 }}" class="content">我是第{{ share.group_rank}} 个"{{ share.group.group_title }}"的传递者\n想起TA就告诉TA, 长按菊花码加入我们的行动</view>
+        <view wx:if="{{ share.type == 1 }}" class="content">我的排名{{ share.user.rank}}名\n想起TA就告诉TA, 长按菊花码加入我们的行动</view>
+        <image class="ewm" src="{{ wxpath }}" />
+     </view>
+    </view>
+  </view>
+  <canvas canvas-id="shareCanvas" class="canvas" style="height:{{ canvasHeight }}px;border: 1px solid;" />
+  <!-- <image src="{{ src }}" alt="" style="height:1335rpx;" /> -->
+  <view class="share-model" wx:if="{{ realShow }}">
+    <view class="mask" bindtap="hideDialog"></view>
+    <view class="share-conetent" style='position:{{ positionStatus }}'>
+      <image class='share-image' style='width:{{ imageWidth }}px;height:{{ imageHeight }}px' src='{{ src }}'></image>
+      <button class='btn-save-local' bindtap='saveImageTap'>保存</button>
+    </view>
+    <view class='close-wrppper' bindtap='closeModel'>
+      <image class='close-image' src='./../../assets/img/close.png'></image>
+    </view>
+  </view>
+</view>
+
+

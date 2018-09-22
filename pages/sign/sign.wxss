@@ -1,0 +1,51 @@
+/* pages/Sign/Sign.wxss */
+page{
+  background: #f8f8f8;
+}
+.Sign{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0px 0px 10rpx #eeeeee;
+  width: 700rpx;
+  margin: auto;
+  border-radius:12px;
+  background: #fff;
+  margin-top: 20rpx;
+}
+.Sign_img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 170rpx;
+}
+.champion{
+  width: 473rpx;
+  height: 270rpx;
+}
+.title{
+  font-size: 42rpx;
+  color: #333333;
+  margin-top: 56rpx;
+}
+.intro{
+  font-size: 32rpx;
+  color: #666666;
+  margin-top: 34rpx;
+  margin-bottom: 96rpx;
+}
+.buttons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 330rpx;
+}
+button{
+  font-size: 32rpx;
+  color: #ffffff;
+  background: #e9b318;
+  margin-right: 24rpx;
+}
+button:nth-of-type(3){
+  margin-right: 0;
+}

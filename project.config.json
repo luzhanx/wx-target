@@ -12,7 +12,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.3.0",
-	"appid": "wxea9f749b0debbcbc",
+	"appid": "wx1117b6148821cb99",
 	"projectname": "wx-target",
 	"isGameTourist": false,
 	"condition": {
@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 8,
+			"current": 14,
 			"list": [
 				{
 					"id": -1,
@@ -100,6 +100,30 @@
 					"name": "今日打卡",
 					"pathName": "pages/lists/lists",
 					"query": "tid=15"
+				},
+				{
+					"id": -1,
+					"name": "切换分享图",
+					"pathName": "pages/share_edit/share_edit",
+					"query": "id=15"
+				},
+				{
+					"id": -1,
+					"name": "目标详情",
+					"pathName": "pages/template/template",
+					"query": "id=4"
+				},
+				{
+					"id": -1,
+					"name": "添加目标",
+					"pathName": "pages/create/create",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "添加1111",
+					"pathName": "pages/qdetail/qdetail",
+					"query": "id=19"
 				}
 			]
 		}

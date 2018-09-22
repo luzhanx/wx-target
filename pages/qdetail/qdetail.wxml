@@ -8,9 +8,9 @@
       </view>
     </view>
     <view class="content">
-      <image class="showImg" src="{{ groupMess.group_show }}" />
+      <image mode="aspectFit" class="showImg" src="{{ groupMess.group_show }}" />
       <view class="text" bindtap="handleShowText" style="height:{{ ShowText?'auto':'80rpx' }}">
-        {{ groupMess.group_text }}分享享给群友分给群友分享给群友分享给群友分享给群友分享给群友分享给群友分享给群分享给群友分享给群友分享给群友分享给群友分享给群友分享给群友分享友分享给群友分享给群友
+        {{ groupMess.group_text }}
       </view>
       <view class="foot" bindtap="handleShowText">
         <view class="footz">{{ ShowTextBtn }}</view>
@@ -35,7 +35,7 @@
     <view class="card">
       <view class="head">
         <avatar user="{{ item.user_oth }}" size="{{ 105 }}" />
-        <view class="nickname">霸道总裁PP</view>
+        <view class="nickname">{{ item.user_oth.nickname }}</view>
         <view class="date">
           <view class="date_t">{{ item.now }}</view>
           <view class="date_b">{{ item.sign_sum }}天</view>
@@ -83,6 +83,9 @@
     </view>
   </view> -->
   <view class="footer">
+      <navigator class="btn" url="/pages/index/index" open-type="reLaunch">
+        主页
+    </navigator>
     <view wx:if="{{ groupMess.owner === 0 }}" class="btn dis" bindtap="delTarget">删除此打卡</view>
     <navigator wx:if="{{ groupMess.owner === 0 }}" class="btn" url="/pages/report/report?id={{ groupMess.target_id }}">
       打卡
