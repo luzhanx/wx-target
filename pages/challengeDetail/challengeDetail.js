@@ -25,42 +25,7 @@ Page({
     });
   },
 
-  // 加入群目标
-  addgroup() {
-    let that = this;
 
-    Api.groupAddgrouptarget({
-      id: this.data.groupMess.id
-    }).then((result) => {
-      let res = result.data;
-
-      if (res.code === 0) {
-        wx.showToast({
-          title: res.msg,
-          icon: 'success',
-          mask: true
-        });
-        that.setData({
-          groupMess: { ...that.data.groupMess,
-            join: 1,
-            target_id: res.target_id
-          }
-        });
-      } else if (res.code === 1) {
-        wx.showToast({
-          title: res.msg,
-          icon: 'none',
-          mask: true
-        });
-      } else {
-        wx.showToast({
-          title: res.msg,
-          icon: 'none',
-          mask: true
-        });
-      }
-    });
-  },
   xinzan(e) {
     let id = e.currentTarget.dataset.id;
     let allow_probability = e.currentTarget.dataset.allowprobability;

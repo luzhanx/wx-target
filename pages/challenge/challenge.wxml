@@ -29,7 +29,7 @@
     </view>
   </view>
   <view class="main">
-    <image class="status" src="/assets/img/baoming.png" />
+    <image class="status" src="/assets/img/baoming.png" wx:if="{{challengeInfo.challenge_state != 3}}" />
     <view class="guize">
       <view class="title">
         <image class="icon" src="/assets/img/guize.png" />
@@ -64,11 +64,12 @@
       </view>
     </view>
   </view>
+  <view class="padding" style="padding-bottom:100rpx;"></view>
   <view class="linebox">
     <view class="line">推荐活动</view>
   </view>
-  <block wx:for="{{challengeList}}" wx:key="{{ index }}">
-    <view class="card">
+  <!-- <block wx:for="{{challengeList}}" wx:key="{{ index }}">
+    <navigator url="/pages/challenge/challenge?id={{ item.id }}" open-type="redirect" class="card">
       <view class="head">
         <view class="title">
           <image class="icon" src="/assets/img/xx.png" />
@@ -89,14 +90,13 @@
             <avatar user="{{ pro }}" size="60" />
           </block>
           <view class="num">{{ item.target_count }}人参加</view>
-          <!-- <image class="more" src="/assets/img/more.png"></image> -->
         </view>
       </view>
-    </view>
-  </block>
+    </navigator>
+  </block> -->
   <view class="footer">
     <navigator class="btn" url="/pages/index/index" open-type="reLaunch">主页</navigator>
     <button class="btn" url="/pages/index/index" open-type="share">邀请好友</button>
-    <button class="btn" form-type="submit" >立即参与</button>
+    <button class="btn" form-type="submit">{{ submitText }}</button>
   </view>
 </form>

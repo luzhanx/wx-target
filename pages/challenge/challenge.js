@@ -15,7 +15,8 @@ Page({
       h: 0,
       m: 0,
       s: 0
-    }
+    },
+    submit: '活动暂未开始'
   },
   countTime(residue) {
     let that = this;
@@ -69,9 +70,12 @@ Page({
       let res = result.data;
       console.log(res);
 
+      let submitText = that.submitText(res.challengeInfo.challenge_state);
+
       that.setData({
         challengeInfo: res.challengeInfo,
-        challengeList: res.challengeList
+        challengeList: res.challengeList,
+        submitText: submitText
       })
       this.countTime(res.challengeInfo.residue);
 
@@ -79,15 +83,30 @@ Page({
       wx.hideLoading();
     })
   },
-
+  submitText(text) {
+    // 0=正在报名 1=活动未开始 2=活动进行中 3=已报名（登陆后） 4=人数已上限
+    if (text === 0) {
+      return '正在报名';
+    } else if (text === 1) {
+      return '活动未开始'
+    } else if (text === 2) {
+      return '活动进行中'
+    } else if (text === 3) {
+      return '进入挑战'
+    } else if (text === 4) {
+      return '人数已上限'
+    }
+    return '';
+  },
   submit(e) {
     let formId = e.detail.formId;
     let id = this.options.id;
+    let that = this;
 
     if (!wx.getStorageSync('user')) {
       wx.showModal({
         title: '提示',
-        content: '登录后才能点赞哦',
+        content: '登录后才能参加活动哦',
         success: function (res) {
           if (res.confirm) {
             wx.navigateTo({
@@ -98,36 +117,110 @@ Page({
       });
       return;
     }
+    // 0=正在报名 1=活动未开始 2=活动进行中 3=已报名（登陆后） 4=人数已上限
+    if (this.data.submitText === '活动未开始') {
+      return wx.showToast({
+        title: '活动未开始',
+      })
+    }
+    if (this.data.submitText === '挑战进行中') {
+      return wx.showToast({
+        title: '挑战进行中',
+      })
+    }
+    if (this.data.submitText === '人数已上限') {
+      return wx.showToast({
+        title: '人数已上限',
+      })
+    }
+    if (this.data.submitText === '进入挑战') {
+      return wx.navigateTo({
+        url: '/pages/challengeDetail/challengeDetail?id=' + that.data.challengeInfo.id
+      });
+    }
 
-    Api.challengeAdd({
-      id: id,
-      formId: formId
+    Api.payIndex({
+      challenge_money: that.data.challengeInfo.challenge_money
     }).then(result => {
       let res = result.data;
-
-      if (res.code === 0) {
-        wx.showToast({
-          title: res.msg,
-          icon: 'none',
-          mask: true,
-        });
-      } else {
-        wx.showToast({
-          title: res.msg,
-          icon: 'none',
-          mask: true,
-        });
-      }
-
       console.log(res);
 
-    }).catch(e => {
-      wx.showToast({
-        title: '网络异常',
-        icon: 'none',
-        mask: true,
+      wx.requestPayment({
+        timeStamp: res.timeStamp,
+        nonceStr: res.nonceStr,
+        package: res.package,
+        signType: res.signType,
+        paySign: res.paySign,
+        success: (result) => {
+          Api.challengeAdd({
+            id: id,
+            formId: formId
+          }).then(result => {
+            let res = result.data;
+
+            if (res.code === 0) {
+              wx.showToast({
+                title: res.msg,
+                icon: 'none',
+                mask: true,
+              });
+            } else {
+              wx.showToast({
+                title: res.msg,
+                icon: 'none',
+                mask: true,
+              });
+            }
+
+            console.log(res);
+
+          }).catch(e => {
+            wx.showToast({
+              title: '网络异常',
+              icon: 'none',
+              mask: true,
+            });
+          })
+        },
+        fail: () => {
+          wx.showToast({
+            title: '支付失败',
+            icon: 'none',
+            mask: true,
+          });
+        },
+        complete: () => {}
       });
     })
+    // Api.challengeAdd({
+    //   id: id,
+    //   formId: formId
+    // }).then(result => {
+    //   let res = result.data;
+
+    //   if (res.code === 0) {
+    //     wx.showToast({
+    //       title: res.msg,
+    //       icon: 'none',
+    //       mask: true,
+    //     });
+    //   } else {
+    //     wx.showToast({
+    //       title: res.msg,
+    //       icon: 'none',
+    //       mask: true,
+    //     });
+    //   }
+
+    //   console.log(res);
+
+    // }).catch(e => {
+    //   wx.showToast({
+    //     title: '网络异常',
+    //     icon: 'none',
+    //     mask: true,
+    //   });
+    // })
   },
 
   /**

@@ -164,9 +164,13 @@ const api = {
     return http.post('/challenge/add', data)
   },
   // 挑战签到页面
-  challengeChallengeSign(data){
+  challengeChallengeSign(data) {
     return http.get('/challenge/challengeSign', data);
-  }
+  },
+  // 挑战支付
+  payIndex(data) {
+    return http.post('/pay/index', data);
+  },
 };
 
 module.exports = api;
