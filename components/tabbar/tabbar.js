@@ -34,12 +34,15 @@ Component({
           url = './../index/index';
           break;
         case '1':
-          wx.showToast({
-            title: '有彩蛋！国庆推出,敬请期待',
-            icon: 'none',
-            mask: true,
-          });
-          return;
+          url = './../challenge/challenge?id=17'
+          break;
+
+          // wx.showToast({
+          //   title: '有彩蛋！国庆推出,敬请期待',
+          //   icon: 'none',
+          //   mask: true,
+          // });
+          // return;
         case '2':
           url = './../ranking/ranking';
           wx.navigateTo({

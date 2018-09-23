@@ -1,0 +1,61 @@
+<view class="challengeDetail">
+  <view class="main">
+    <view class="head">
+      <view class="title">
+        <image class="icon" src="/assets/img/xx.png" />
+        <view class="text">{{ challengeInfo.challenge_title }}</view>
+      </view>
+      <view class="share">
+        <button class="fang">放弃挑战</button>
+      </view>
+    </view>
+
+    <view class="content">
+      <view class="numrow">
+        <view class="item">
+          <view class="key">已参与</view>
+          <view class="value">{{ challengeInfo.target_count }}</view>
+        </view>
+        <view class="item">
+          <view class="key">奖金池（元）</view>
+          <view class="value">{{challengeInfo.price}}</view>
+        </view>
+      </view>
+      <view class="tip">今天是你坚持的第 {{ challengeInfo.signDay }} 天，还有 {{ challengeInfo.leftDay }} 天就成功了！</view>
+
+      <image src="/assets/img/report.png" class="report" />
+    </view>
+  </view>
+  <view class="linebox">
+    <view class="line">小伙伴们的打卡记录</view>
+  </view>
+  <block wx:for="{{signList}}" wx:key="{{ index }}">
+    <view class="card">
+      <navigator url="/pages/share_index/share_index?id={{ item.uid }}" class="head">
+        <avatar user="{{ item.user_oth }}" size="{{ 105 }}" />
+        <view class="nickname">{{ item.user_oth.nickname }}</view>
+        <view class="date">
+          <view class="date_t">{{ item.now }}</view>
+          <view class="date_b">{{ item.sign_sum }}天</view>
+        </view>
+      </navigator>
+      <view class="content">
+        <view class="imgBox">
+          <image data-imgurl="{{ item.sign_images }}" bindtap="handlePreviewImage" wx:if="{{item.sign_images !== ''}}" class="contentImg" src="{{ item.sign_images }}" mode="aspectFill" />
+        </view>
+        <view class="text">{{ item.sign_title }}</view>
+      </view>
+      <view class="avatars">
+        <view class="left">
+          <block wx:for="{{item.pro}}" wx:for-item="pro" wx:for-index="i" wx:key="{{ i }}">
+            <avatar user="{{ pro }}" size="60" />
+          </block>
+          <image class="more" src="/assets/img/more.png"></image>
+        </view>
+        <image class="xinzan" src="/assets/img/xinzan.png" bindtap="xinzan" data-index="{{ index }}" data-id="{{ item.id }}" data-allowProbability="{{ item.allow_probability }}" />
+      </view>
+    </view>
+  </block>
+</view>
+
+<tabbar tab="1" />

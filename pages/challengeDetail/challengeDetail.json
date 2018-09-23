@@ -1,5 +1,6 @@
 {
   "usingComponents": {
+    "tabbar": "../../components/tabbar/tabbar",
     "avatar": "../../components/avatar/avatar",
     "confirm": "../../components/confirm/confirm"
   },

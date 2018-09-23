@@ -17,6 +17,9 @@ App({
 					if (res.confirm) {
 						wx.clearStorageSync();
 						updateManager.applyUpdate();
+					} else {
+						wx.clearStorageSync();
+						updateManager.applyUpdate()
 					}
 				}
 			});

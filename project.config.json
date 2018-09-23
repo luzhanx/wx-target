@@ -33,13 +33,31 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 3,
 			"list": [
 				{
 					"id": -1,
 					"name": "分享主页",
 					"pathName": "pages/challenge/challenge",
 					"query": "id=600034"
+				},
+				{
+					"id": 1,
+					"name": "挑战",
+					"pathName": "pages/challenge/challenge",
+					"query": "id=17"
+				},
+				{
+					"id": -1,
+					"name": "打卡心情",
+					"pathName": "pages/reportSubmit/reportSubmit",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "挑战签到",
+					"pathName": "pages/challengeDetail/challengeDetail",
+					"query": "id=17"
 				}
 			]
 		}

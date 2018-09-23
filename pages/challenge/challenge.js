@@ -1,5 +1,6 @@
 // pages/challenge/challenge.js
 let timeOut;
+const Api = require('./../../utils/api');
 
 Page({
 
@@ -7,6 +8,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    challengeInfo: [],
+    challengeList: [],
     time: {
       d: 0,
       h: 0,
@@ -14,12 +17,13 @@ Page({
       s: 0
     }
   },
-  countTime() {
+  countTime(residue) {
+    let that = this;
     //获取当前时间
     var date = new Date();
     var now = date.getTime();
     //设置截止时间
-    var endDate = new Date("2018-10-22 23:23:23");
+    var endDate = new Date(residue);
     var end = endDate.getTime();
     //时间差
     var leftTime = end - now;
@@ -45,56 +49,85 @@ Page({
       }
     })
     //递归每秒调用countTime方法，显示动态时间效果
-    timeOut = setTimeout(this.countTime, 1000);
+    timeOut = setTimeout(() => {
+      // console.log(that.data.challengeInfo.residue)
+      that.countTime(that.data.challengeInfo.residue)
+    }, 1000);
 
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.countTime()
+    let that = this;
+    let id = this.options.id;
+
+    Api.challengeDetails({
+      id: id
+    }).then(result => {
+
+      let res = result.data;
+      console.log(res);
+
+      that.setData({
+        challengeInfo: res.challengeInfo,
+        challengeList: res.challengeList
+      })
+      this.countTime(res.challengeInfo.residue);
+
+    }).catch(e => {
+      wx.hideLoading();
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
+  submit(e) {
+    let formId = e.detail.formId;
+    let id = this.options.id;
 
-  },
+    if (!wx.getStorageSync('user')) {
+      wx.showModal({
+        title: '提示',
+        content: '登录后才能点赞哦',
+        success: function (res) {
+          if (res.confirm) {
+            wx.navigateTo({
+              url: `/pages/login/login`
+            });
+          } else if (res.cancel) {}
+        }
+      });
+      return;
+    }
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
+    Api.challengeAdd({
+      id: id,
+      formId: formId
+    }).then(result => {
+      let res = result.data;
 
-  },
+      if (res.code === 0) {
+        wx.showToast({
+          title: res.msg,
+          icon: 'none',
+          mask: true,
+        });
+      } else {
+        wx.showToast({
+          title: res.msg,
+          icon: 'none',
+          mask: true,
+        });
+      }
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
+      console.log(res);
 
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
+    }).catch(e => {
+      wx.showToast({
+        title: '网络异常',
+        icon: 'none',
+        mask: true,
+      });
+    })
   },
 
   /**
@@ -102,5 +135,11 @@ Page({
    */
   onShareAppMessage: function () {
 
+    console.log(this.data.challengeInfo.challenge_show)
+    return {
+      title: `挑战-${this.data.challengeInfo.challenge_title}`,
+      path: `/pages/challenge/challenge?id=${this.data.challengeInfo.id}`,
+      imageUrl: `${this.data.challengeInfo.challenge_show}`
+    }
   }
 })

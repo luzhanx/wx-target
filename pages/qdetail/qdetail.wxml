@@ -8,9 +8,9 @@
       </view>
     </view>
     <view class="content">
-      <image mode="aspectFit" class="showImg" src="{{ groupMess.group_show }}" />
+      <image bindtap="handlePreviewImage" data-imgurl="{{ groupMess.group_show }}" mode="aspectFit" class="showImg" src="{{ groupMess.group_show }}" />
       <view  class="text" bindtap="handleShowText" style="height:{{ ShowText?'auto':'80rpx' }}">
-      <rich-text nodes="{{ groupMess.group_text }}" />  
+      <rich-text nodes="{{ groupMess.group_text }}" />
       </view>
       <view class="foot" bindtap="handleShowText">
         <view class="footz">{{ ShowTextBtn }}</view>
@@ -33,17 +33,17 @@
   </view>
   <block wx:for="{{signList}}" wx:key="{{ index }}">
     <view class="card">
-      <view class="head">
+      <navigator url="/pages/share_index/share_index?id={{ item.uid }}" class="head">
         <avatar user="{{ item.user_oth }}" size="{{ 105 }}" />
         <view class="nickname">{{ item.user_oth.nickname }}</view>
         <view class="date">
           <view class="date_t">{{ item.now }}</view>
           <view class="date_b">{{ item.sign_sum }}天</view>
         </view>
-      </view>
+      </navigator>
       <view class="content">
         <view class="imgBox">
-          <image wx:if="{{item.sign_images !== ''}}" class="contentImg" src="{{ item.sign_images }}" mode="aspectFill" />
+          <image data-imgurl="{{ item.sign_images }}" bindtap="handlePreviewImage" wx:if="{{item.sign_images !== ''}}" class="contentImg" src="{{ item.sign_images }}" mode="aspectFill" />
         </view>
         <view class="text">{{ item.sign_title }}</view>
       </view>
@@ -58,41 +58,18 @@
       </view>
     </view>
   </block>
-  <!-- <view class="card">
-    <view class="head">
-      <avatar user="{{ user }}" size="{{ 105 }}" />
-      <view class="nickname">霸道总裁PP(测试用的)</view>
-      <view class="date">
-        <view class="date_t">今天09:03</view>
-        <view class="date_b">150天</view>
-      </view>
-    </view>
-    <view class="content">
-      <view class="imgBox">
-        <image class="contentImg" src="./../../assets/img/share.png" mode="aspectFill" />
-      </view>
-      <view class="text">周三早安打卡第105天！希望能够顺利考上中文系研究生！周三早安打卡第105天！希望能够顺利考上中文系研究生！</view>
-    </view>
-    <view class="avatars">
-      <view class="left">
-        <avatar user="{{ user }}" size="60" />
-        <avatar user="{{ user }}" size="60" />
-        <image class="more" src="/assets/img/more.png"></image>
-      </view>
-      <image class="xinzan" src="/assets/img/xinzan.png" />
-    </view>
-  </view> -->
+
   <view class="footer">
       <navigator class="btn" url="/pages/index/index" open-type="reLaunch">
         主页
     </navigator>
     <!-- <view wx:if="{{ groupMess.owner === 0 }}" class="btn dis" bindtap="delTarget">删除此打卡</view> -->
-    <navigator wx:if="{{ groupMess.owner === 0 }}" class="btn" url="/pages/report/report?id={{ groupMess.target_id }}">
+    <navigator wx:if="{{ groupMess.owner === 0 && groupMess.join == 1 }}" class="btn" url="/pages/report/report?id={{ groupMess.target_id }}">
       {{ sign == 0 ? '打卡':'已签到' }}
     </navigator>
     <view wx:if="{{ groupMess.join === 0 }}" class="btn" bindtap="addgroup">加入打卡</view>
-    <navigator class="btn" url="/pages/report/report?id={{ groupMess.target_id }}" wx:if="{{ groupMess.join === 1 && groupMess.owner !== 0 }}">
-      {{ sign == 0 ? '打卡':'已签到' }}
+    <navigator class="btn" url="/pages/report/report?id={{ groupMess.target_id }}" wx:if="{{ groupMess.join == 1 && groupMess.owner !== 0 }}">
+      {{ sign == 0  ? '打卡':'已签到' }}
     </navigator>
     <!-- <view wx:if="{{ groupMess.join === 0 }}" class="btn" bindtap="addgroup">加入打卡</view> -->
   </view>

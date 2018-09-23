@@ -160,10 +160,15 @@ page {
 			.infos {
 				flex: 1;
 				.username {
+          width: 276rpx;
 					height: 40rpx;
 					font-size: 28rpx;
 					font-weight: bold;
-					margin-bottom: 8rpx;
+          margin-bottom: 8rpx;
+          word-break:keep-all;
+          white-space:nowrap;
+          overflow: hidden;
+          text-overflow:ellipsis;
 				}
 				.info {
 					font-size: 22rpx;

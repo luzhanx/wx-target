@@ -48,6 +48,7 @@ Page({
 
             this.setData({
               item: res.targetList,
+              activeList: res.activeList,
               fraction: res.user,
               moon: res.moon,
               tipNum: res.getStars,
@@ -190,6 +191,15 @@ Page({
         wx.showToast({
           title: '目标已经完成啦',
           icon: 'success'
+        });
+        return;
+        if (gid == 0) {
+          url = `/pages/report/report?id=${id}`;
+        } else {
+          url = `/pages/qdetail/qdetail?id=${gid}`;
+        }
+        wx.navigateTo({
+          url: url
         });
         return;
       case 2:
