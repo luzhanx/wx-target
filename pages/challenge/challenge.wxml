@@ -64,11 +64,11 @@
       </view>
     </view>
   </view>
-  <view class="padding" style="padding-bottom:100rpx;"></view>
+  <!-- <view class="padding" style="padding-bottom:100rpx;"></view> -->
   <view class="linebox">
     <view class="line">推荐活动</view>
   </view>
-  <!-- <block wx:for="{{challengeList}}" wx:key="{{ index }}">
+  <block wx:for="{{challengeList}}" wx:key="{{ index }}">
     <navigator url="/pages/challenge/challenge?id={{ item.id }}" open-type="redirect" class="card">
       <view class="head">
         <view class="title">
@@ -93,7 +93,7 @@
         </view>
       </view>
     </navigator>
-  </block> -->
+  </block>
   <view class="footer">
     <navigator class="btn" url="/pages/index/index" open-type="reLaunch">主页</navigator>
     <button class="btn" url="/pages/index/index" open-type="share">邀请好友</button>

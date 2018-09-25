@@ -17,7 +17,8 @@
     "pages/share_index/share_index",
     "pages/login/login",
     "pages/tailoring/tailoring",
-    "pages/share_edit/share_edit"
+    "pages/share_edit/share_edit",
+    "pages/challengeList/challengeList"
   ],
   "window": {
     "backgroundTextStyle": "light",

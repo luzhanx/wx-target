@@ -1,0 +1,36 @@
+<div class="challengeList">
+  <view class="header">
+    <image src="/assets/img/headerbg.png" class="headerbg" />
+    <view class="dec">
+      dec
+    </view>
+  </view>
+
+  <block wx:for="{{challengeList}}" wx:key="{{ index }}">
+    <navigator url="/pages/challenge/challenge?id={{ item.id }}" open-type="redirect" class="card">
+      <view class="head">
+        <view class="title">
+          <image class="icon" src="/assets/img/xx.png" />
+          <view class="text">{{ item.challenge_title }}</view>
+        </view>
+        <view class="date">
+          <view class="date_t">{{ item.active_time }}</view>
+        </view>
+      </view>
+      <view class="content">
+        <view class="imgBox">
+          <image class="contentImg" src="{{ item.challenge_show }}" mode="aspectFill" />
+        </view>
+      </view>
+      <view class="avatars">
+        <view class="left">
+          <block wx:for="{{item.target}}" wx:key="{{ index }}" wx:for-item="pro" wx:for-index="i" wx:key="{{ i }}">
+            <avatar user="{{ pro }}" size="60" />
+          </block>
+          <view class="num">{{ item.target_count }}人参加</view>
+        </view>
+      </view>
+    </navigator>
+  </block>
+</div>
+<tabbar tab="1" />

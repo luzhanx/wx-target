@@ -1,0 +1,6 @@
+{
+    "navigationBarBackgroundColor": "#fcdf31",
+    "usingComponents": {
+        "tabbar": "../../components/tabbar/tabbar"
+    }
+}
