@@ -18,8 +18,9 @@
     <fraction star="{{ user.star }}" rank="{{ user.rank }}" sum="{{ user.sum }}" target="{{ user.target }}"></fraction>
   </view>
   <view class="lists">
-    <view class="div">归档管理</view>
-    <view class="div">我的钱包</view>
+    <navigator url="/pages/case/case" class="div">归档管理</navigator>
+    <navigator url="/pages/money/money" class="div">我的钱包</navigator>
+    <navigator url="/pages/message/message" class="div">消息列表</navigator>
     <view class="div">用户须知</view>
     <view class="div">小目标KEEP的公众号</view>
   </view>

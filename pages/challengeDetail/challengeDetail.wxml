@@ -5,7 +5,7 @@
         <image class="icon" src="/assets/img/xx.png" />
         <view class="text">{{ challengeInfo.challenge_title }}</view>
       </view>
-      <view class="share">
+      <view class="share" bindtap="fangqi">
         <button class="fang">放弃挑战</button>
       </view>
     </view>
@@ -23,7 +23,9 @@
       </view>
       <view class="tip">今天是你坚持的第 {{ challengeInfo.signDay }} 天，还有 {{ challengeInfo.leftDay }} 天就成功了！</view>
 
-      <image src="/assets/img/report.png" class="report" />
+      <navigator url="/pages/report/report?id={{ challengeInfo.target_id }}">
+        <image src="/assets/img/report.png" class="report" />
+      </navigator>
     </view>
   </view>
   <view class="linebox">

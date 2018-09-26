@@ -1,0 +1,46 @@
+<!-- pages/demo/demo.wxml -->
+<view class='ranking'>
+  <view class='title'>
+    <image src="./../../assets/img/ranking_t1.png" class="ranking_t1"></image>
+    <view class="text">
+      <view class='text1'>档</view>
+      <view class='text2'>案</view>
+      <view class='text3'>管</view>
+      <view class='text3'>理</view>
+    </view>
+    <image src="./../../assets/img/ranking_t2.png" class="ranking_t2"></image>
+  </view>
+  <view class="ranking_c"></view>
+  <view class="ranklist">
+    <image class='bg2' src='./../../assets/img/bg2.png'></image>
+    <view class='case'>
+      <view class='case_button'>
+        <image bindtap="sel" data-index="0" class='case_img target_s' src='./../../assets/img/target_s.png'></image>
+        <image bindtap="sel" data-index="1" class='case_img target_f' src='./../../assets/img/target_f.png'></image>
+      </view>
+      <view class='case_all'>
+        <block wx:for="{{ data }}">
+          <view class='case_list' wx:key="{{ index }}">
+            <view class='case_left'>
+              <view class='case_list_img'>
+                <image src="{{ item.images }}"></image>
+              </view>
+              <view class='case_word'>
+                <text class='case_title'>{{ item.title }}</text>
+                <text class='case_content'>{{ item.description }}</text>
+              </view>
+            </view>
+            <view class='case_right'>
+              <view class='num'>
+                <text class='red'>{{ item.sign_count }}</text>
+                / {{ item.day }}
+              </view>
+              <image class='fashion' src='./../../assets/img/fashion.png'></image>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- <tabbar isShandow="{{ flase }}" tab="2" /> -->

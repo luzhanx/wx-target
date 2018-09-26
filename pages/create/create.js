@@ -10,7 +10,7 @@ Page({
 		template: {},
 		fraction: {},
     newFix: false,
-    isshow: true
+    isshow: false
 	},
   showTc(){
     this.setData({

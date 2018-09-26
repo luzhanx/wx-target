@@ -1,6 +1,6 @@
 <view class="reportSubmit">
   <div class="header">
-    <view class="item">取消</view>
+    <view class="item" bindtap="back">取消</view>
     <view class="title">打卡心情</view>
     <view class="item fabu" bindtap="submit">发布</view>
   </div>

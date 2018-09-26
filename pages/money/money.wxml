@@ -1,0 +1,31 @@
+<!-- pages/demo/demo.wxml -->
+<view class='ranking'>
+  <view class='title'>
+    <image src="./../../assets/img/ranking_t1.png" class="ranking_t1"></image>
+    <view class="text">
+      <view class='text1'>我</view>
+      <view class='text2'>的</view>
+      <view class='text3'>钱</view>
+      <view class='text3'>包</view>
+    </view>
+    <image src="./../../assets/img/ranking_t2.png" class="ranking_t2"></image>
+  </view>
+  <view class="ranking_c"></view>
+  <view class="ranklist">
+    <image class='bg2' src='./../../assets/img/bg2.png'></image>
+    <view class='money'>
+      <view class='money_box'>
+        <text class='money_title'>我的余额</text>
+        <text class='money_number'>¥{{ balance }}</text>
+        <image bindtap="tixian" class='money_button' src='./../../assets/img/extract.png'></image>
+      </view>
+      <view class='exp'>
+        <text>提现说明：</text>
+        <text>1、申请提现后，1-2个工作日完成审核并打款</text>
+        <text>2、审核过程中，请勿再次提现，提现已成功后可继续提现</text>
+        <text>3、如有任何问题，请在公众号留下您的问题和个人联系方式便于联系您。</text>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- <tabbar isShandow="{{ flase }}" tab="2" /> -->

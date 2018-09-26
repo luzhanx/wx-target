@@ -2,35 +2,32 @@
   <view class="header">
     <image src="/assets/img/headerbg.png" class="headerbg" />
     <view class="dec">
-      dec
+      <view class='head_title'>
+        <text>人生没点挑战</text>
+        <text>还有什么乐趣</text>
+      </view>
     </view>
   </view>
 
-  <block wx:for="{{challengeList}}" wx:key="{{ index }}">
-    <navigator url="/pages/challenge/challenge?id={{ item.id }}" open-type="redirect" class="card">
+  <block wx:for="{{challenge}}" wx:key="{{ index }}">
+    <view data-id="{{ item.id }}" bindtap="toChallenge" class="card">
       <view class="head">
         <view class="title">
           <image class="icon" src="/assets/img/xx.png" />
-          <view class="text">{{ item.challenge_title }}</view>
+          <view class="text">{{item.challenge_title}}</view>
         </view>
         <view class="date">
-          <view class="date_t">{{ item.active_time }}</view>
+          <view class="date_t">共{{item.target_count}}人参与</view>
         </view>
       </view>
       <view class="content">
         <view class="imgBox">
           <image class="contentImg" src="{{ item.challenge_show }}" mode="aspectFill" />
+            <image wx:if="{{item.challenge_state == 0 || item.challenge_state == 2 || item.challenge_state == 1}}" class='imgBox_mid' src='/assets/img/begin.png'></image>
+            <image wx:else class='imgBox_mid' src='/assets/img/challenge.png'></image>
         </view>
       </view>
-      <view class="avatars">
-        <view class="left">
-          <block wx:for="{{item.target}}" wx:key="{{ index }}" wx:for-item="pro" wx:for-index="i" wx:key="{{ i }}">
-            <avatar user="{{ pro }}" size="60" />
-          </block>
-          <view class="num">{{ item.target_count }}人参加</view>
-        </view>
-      </view>
-    </navigator>
+    </view>
   </block>
 </div>
 <tabbar tab="1" />

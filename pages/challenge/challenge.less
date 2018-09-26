@@ -326,6 +326,7 @@ page {
     text-align: center;
     padding: 0;
     box-sizing: border-box;
+    overflow: initial;
     &.dis {
       background: #d2d2d2;
       &::before {
@@ -342,7 +343,7 @@ page {
       // opacity: 0.6;
     }
   }
-  .btn::before {
+  .btn:before {
     content: '';
     position: absolute;
     right: 10%;
@@ -351,7 +352,7 @@ page {
     height: 2px;
     background-color: #e9b318;
   }
-  .btn::after {
+  .btn:after {
     content: '';
     position: absolute;
     right: 35%;

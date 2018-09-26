@@ -1,10 +1,13 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/message/message",
+    "pages/case/case",
+    "pages/center/center",
+    "pages/money/money",
     "pages/challengeDetail/challengeDetail",
     "pages/sign/sign",
     "pages/qdetail/qdetail",
-    "pages/center/center",
     "pages/news/news",
     "pages/challenge/challenge",
     "pages/target/target",

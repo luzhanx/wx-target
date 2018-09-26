@@ -1,0 +1,96 @@
+// out: app.wxss, compress:true, sourceMap:false
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}
+
+view, button{
+  box-sizing: border-box;
+}
+
+.modal {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	left: 0;
+	top: 0;
+	background: red;
+	z-index: 9999;
+	background: rgba(0, 0, 0, 0.6);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0 80rpx;
+	.msg {
+		width: 100%;
+		background: #fff;
+		border-radius: 16rpx;
+		padding: 80rpx;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		.text {
+			font-size: 30rpx;
+			color: #535353;
+			margin-bottom: 30rpx;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			.centertext {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+		}
+		.icon {
+			width: 40rpx;
+			height: 40rpx;
+			margin: 0 10rpx;
+		}
+		.num {
+			font-size: 48rpx;
+			color: #e9b318;
+			line-height: 72rpx;
+			padding: 0 10rpx;
+		}
+		.toCreate {
+			display: flex;
+			width: 100%;
+			height: 80rpx;
+			border-radius: 80rpx;
+			background: #e9b318;
+			color: #fff;
+			line-height: 80rpx;
+			justify-content: center;
+			align-items: center;
+			font-size: 32rpx;
+			border: 1px solid #6b400d;
+			position: relative;
+			&::before {
+				content: '';
+				position: absolute;
+				right: 10%;
+				top: -1px;
+				width: 12%;
+				height: 1px;
+				background-color: #e9b318;
+			}
+			&::after {
+				content: '';
+				position: absolute;
+				right: 35%;
+				top: -1px;
+				width: 4%;
+				height: 1px;
+				background-color: #e9b318;
+			}
+		}
+	}
+}

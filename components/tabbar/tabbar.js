@@ -34,7 +34,7 @@ Component({
           url = './../index/index';
           break;
         case '1':
-          url = './../challenge/challenge?id=17'
+          url = './../challengeList/challengeList'
           break;
 
           // wx.showToast({

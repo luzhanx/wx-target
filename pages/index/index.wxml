@@ -31,8 +31,7 @@
   </view>
   <view class="lists tip" wx:if="{{ user == '' }}">登录后可查看</view>
   <view class="lists" wx:else>
-    <view wx:if="{{check == 0}}" class="item activity" data-text="挑战" data-gid="{{moon.group_id}}" bindtap="report"
-      data-id="{{ moon.id }}" data-sign="{{ moon.sign }}">
+    <view wx:if="{{check == 0 && moon}}" class="item activity" data-text="活动" data-gid="{{moon.group_id}}" bindtap="report" data-id="{{ moon.id }}" data-sign="{{ moon.sign }}">
       <view class="navigator">
         <image class="img" src="{{ moon.images }}"></image>
         <view class="info">
@@ -57,18 +56,14 @@
         </view>
       </view>
     </view>
-
     <block wx:for="{{ activeList }}" wx:key="{{ index }}">
-      <view wx:if="{{ item.group_id != 19 }}" bindtouchmove="itemTouchmove" bindtouchstart="itemTouchstart"
-        bindtouchend="itemTouchend" class="item {{ item.type == 1 ? '': item.type == 2 ? 'groupOf': 'activity' }}"
-        data-text="{{ item.type == 1 ? '': item.type == 2 ? '群目标': '活动' }}" bindtap="report" data-id="{{ item.id }}"
-        data-sign="{{ item.sign }}" data-gid="{{item.group_id}}">
+      <view wx:if="{{ item.group_id != 19 }}" class="item {{ item.type == 1 ? '': item.type == 2 ? 'groupOf': 'activity' }}" data-text="{{ item.type == 1 ? '': item.type == 2 ? '群目标': '挑战' }}" bindtap="report" data-id="{{ item.id }}" data-sign="{{ item.sign }}" data-tid="{{ item.challenge_id }}" data-gid="{{item.group_id}}">
         <view class="navigator">
           <image class="img" src="{{ item.images }}"></image>
           <view class="info">
             <view class="title">{{ item.title }}</view>
             <view class="dec">
-              <rich-text nodes="{{ item.description }}" />
+              <rich-text nodes="{{ item.description ? item.description : item.title }}" />
             </view>
           </view>
         </view>
@@ -90,10 +85,7 @@
       </view>
     </block>
     <block wx:for="{{ item }}" wx:key="{{ index }}">
-      <view wx:if="{{ item.group_id != 19 }}" bindtouchmove="itemTouchmove" bindtouchstart="itemTouchstart"
-        bindtouchend="itemTouchend" class="item {{ item.type == 1 ? '': item.type == 2 ? 'groupOf': 'activity' }}"
-        data-text="{{ item.type == 1 ? '': item.type == 2 ? '群目标': '活动' }}" bindtap="report" data-id="{{ item.id }}"
-        data-sign="{{ item.sign }}" data-gid="{{item.group_id}}">
+      <view wx:if="{{ item.group_id != 19 }}" data-index="{{ index }}" class="item {{ item.type == 1 ? '': item.type == 2 ? 'groupOf': 'activity' }}" data-text="{{ item.type == 1 ? '': item.type == 2 ? '群目标': '活动' }}" bindtap="report" data-id="{{ item.id }}" data-sign="{{ item.sign }}" data-gid="{{item.group_id}}">
         <view class="navigator">
           <image class="img" src="{{ item.images }}"></image>
           <view class="info">
@@ -116,7 +108,9 @@
             <image class="bg" src="./../../assets/img/ggtx.png"></image>
             <view class="text">点击签到</view>
           </view>
-          <!-- <view class="guidang success" wx:elif="{{ item.sign == 1 || item.sign == 2 }}">点击归档</view> -->
+          <view class="guidang success" bindtap="guidang" data-id="{{ item.id }}" data-gid="{{item.group_id}}" wx:elif="{{ item.sign == 1 || item.sign == 2 }}">
+            点击归档
+          </view>
         </view>
       </view>
     </block>
@@ -138,6 +132,14 @@
     </view>
     <view class="text">快来添加你的第一个打卡计划吧</view>
     <view class="toCreate" bindtap="toCreate">+ 去添加</view>
+  </view>
+</view>
+<view class="modal" wx:if="{{showModal2}}" bindtap="closeShowModal2">
+  <view class="msg">
+    <view class="text">啊噢，你有{{ break }}个挑战中断了</view>
+    <view class="text">但人总要再给自己一次机会</view>
+    <view class="text">你愿意继续挑战吗？</view>
+    <view class="toCreate" bindtap="toMsg">前往消息列表补签</view>
   </view>
 </view>
 <official-account></official-account>

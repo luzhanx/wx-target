@@ -1,0 +1,34 @@
+<!-- pages/demo/demo.wxml -->
+<view class='ranking'>
+  <view class='title'>
+    <image src="./../../assets/img/ranking_t1.png" class="ranking_t1"></image>
+    <view class="text">
+      <view class='text1'>消</view>
+      <view class='text2'>息</view>
+      <view class='text3'>列</view>
+      <view class='text3'>表</view>
+    </view>
+    <image src="./../../assets/img/ranking_t2.png" class="ranking_t2"></image>
+  </view>
+  <view class="ranking_c"></view>
+  <view class="ranklist" wx:if="{{message.length}}">
+    <image class='bg2' src='./../../assets/img/bg2.png'></image>
+    <view class='message'>
+      <block wx:for="{{message}}">
+        <view class='message_list' data-id="{{ index }}" bindtap="handleBuqian">
+          <view class='left'>
+            <text>{{item.title}}</text>
+          </view>
+          <view class='right'>
+            <view class='right_img'>
+              <image wx:if="{{ broken === 0 }}" class='type' src='./../../assets/img/retroactive.png'></image>
+              <image wx:else class='type' src='./../../assets/img/fail.png'></image>
+            </view>
+          </view>
+          <image class='star' src='./../../assets/img/star.png'></image>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>
+<!-- <tabbar isShandow="{{ flase }}" tab="2" /> -->

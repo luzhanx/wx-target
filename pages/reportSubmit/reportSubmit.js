@@ -22,7 +22,12 @@ Page({
 		let that = this;
 
 		console.log(appInst);
-	},
+  },
+  back(){
+    wx.navigateBack({
+      delta: 1
+    });
+  },
 	submit() {
 		let that = this;
 		console.log(that.data.sign_title);

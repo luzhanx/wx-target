@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 4,
+			"current": 6,
 			"list": [
 				{
 					"id": -1,
@@ -64,6 +64,18 @@
 					"name": "挑战",
 					"pathName": "pages/challengeList/challengeList",
 					"query": "id=18"
+				},
+				{
+					"id": -1,
+					"name": "挑战",
+					"pathName": "pages/challengeList/challengeList",
+					"query": "id=18"
+				},
+				{
+					"id": -1,
+					"name": "挑战19",
+					"pathName": "pages/challenge/challenge",
+					"query": "id=19"
 				}
 			]
 		}

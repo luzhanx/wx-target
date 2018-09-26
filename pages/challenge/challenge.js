@@ -15,7 +15,8 @@ Page({
 			m: 0,
 			s: 0
 		},
-		submit: '活动暂未开始'
+		submit: '活动暂未开始',
+		showModal2: false
 	},
 	countTime(residue) {
 		let that = this;
@@ -84,7 +85,7 @@ Page({
 	submitText(text) {
 		// 0=正在报名 1=活动未开始 2=活动进行中 3=已报名（登陆后） 4=人数已上限
 		if (text === 0) {
-			return '正在报名';
+			return '参加挑战';
 		} else if (text === 1) {
 			return '活动未开始';
 		} else if (text === 2) {
@@ -93,14 +94,12 @@ Page({
 			return '进入挑战';
 		} else if (text === 4) {
 			return '人数已上限';
+		} else if (text === 5) {
+			return '已放弃挑战';
 		}
 		return '';
 	},
-	submit(e) {
-		let formId = e.detail.formId;
-		let id = this.options.id;
-		let that = this;
-
+	closeShowModal2() {
 		if (!wx.getStorageSync('user')) {
 			wx.showModal({
 				title: '提示',
@@ -126,13 +125,22 @@ Page({
 		}
 		if (this.data.submitText === '活动进行中') {
 			return wx.showToast({
+				icon: 'none',
 				title: '挑战进行中',
 				mask: true
 			});
 		}
 		if (this.data.submitText === '人数已上限') {
 			return wx.showToast({
+				icon: 'none',
 				title: '人数已上限',
+				mask: true
+			});
+		}
+		if (this.data.submitText === '已放弃挑战') {
+			return wx.showToast({
+				icon: 'none',
+				title: '已放弃挑战',
 				mask: true
 			});
 		}
@@ -141,6 +149,15 @@ Page({
 				url: '/pages/challengeDetail/challengeDetail?id=' + that.data.challengeInfo.id
 			});
 		}
+		this.setData({
+			showModal2: !this.data.showModal2
+		});
+	},
+	submit(e) {
+		let formId = e.detail.formId;
+		let id = this.options.id;
+		let that = this;
+		console.log('submit');
 
 		Api.payIndex({
 			challenge_money: that.data.challengeInfo.challenge_money
@@ -167,6 +184,9 @@ Page({
 									title: res.msg,
 									icon: 'none',
 									mask: true
+								});
+								wx.redirectTo({
+									url: '/pages/challengeDetail/challengeDetail?id=' + that.data.challengeInfo.id
 								});
 							} else {
 								wx.showToast({
