@@ -72,10 +72,10 @@
 					"query": "id=18"
 				},
 				{
-					"id": -1,
+					"id": 6,
 					"name": "挑战19",
 					"pathName": "pages/challenge/challenge",
-					"query": "id=19"
+					"query": "id=17"
 				}
 			]
 		}

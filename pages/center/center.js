@@ -18,14 +18,10 @@ Page({
 	onLoad: function(options) {
 		let that = this;
 
-		wx.getStorage({
-			key: 'user',
-			success: (result) => {
-				that.setData({
-					user: result.data
-				});
-			}
-		});
+    var curPages = getCurrentPages()[getCurrentPages().length - 2];
+    this.setData({
+      user: curPages.data.user
+    })
 	},
 	// 点击跳转头像登录
 	login() {

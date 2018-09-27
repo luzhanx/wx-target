@@ -9,7 +9,6 @@
         <button class="fang">放弃挑战</button>
       </view>
     </view>
-
     <view class="content">
       <view class="numrow">
         <view class="item">
@@ -21,11 +20,12 @@
           <view class="value">{{challengeInfo.price}}</view>
         </view>
       </view>
-      <view class="tip">今天是你坚持的第 {{ challengeInfo.signDay }} 天，还有 {{ challengeInfo.leftDay }} 天就成功了！</view>
-
-      <navigator url="/pages/report/report?id={{ challengeInfo.target_id }}">
+      <view class="tip">
+        今天是你坚持的第 {{ challengeInfo.signDay }} 天，还有 {{ challengeInfo.leftDay }} 天就成功了！
+      </view>
+      <view data-id="{{ challengeInfo.target_id }}" bindtap="report">
         <image src="/assets/img/report.png" class="report" />
-      </navigator>
+      </view>
     </view>
   </view>
   <view class="linebox">
@@ -58,7 +58,14 @@
       </view>
     </view>
   </block>
-
 </view>
-
 <tabbar tab="1" />
+<view class="modal" wx:if="{{showModal2}}" bindtap="closeShowModal2">
+  <view class="msg">
+    <view class="text">啊噢, 您的挑战失败</view>
+    <view class="text">挑战金将归入奖金池</view>
+    <view class="text">平分给最后完成挑战的伙伴</view>
+    <view class="text">希望下个挑战你能得到奖金~</view>
+    <view bindtap="toHome" class="toCreate">我知道了</view>
+  </view>
+</view>

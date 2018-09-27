@@ -6,6 +6,7 @@
     "pages/center/center",
     "pages/money/money",
     "pages/challengeDetail/challengeDetail",
+    "pages/challengeReport/challengeReport",
     "pages/sign/sign",
     "pages/qdetail/qdetail",
     "pages/news/news",

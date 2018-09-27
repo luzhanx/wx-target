@@ -29,7 +29,11 @@ Page({
 	// 补签
 	handleBuqian(e) {
 		let that = this;
-		let id = e.currentTarget.dataset.id;
+    let id = e.currentTarget.dataset.id;
+    let broken = e.currentTarget.dataset.broken;
+    if(broken !== 0){
+      return;
+    }
 		Api.signRetroactive({ id: id }).then((result) => {
 			let res = result.data;
 
@@ -40,7 +44,9 @@ Page({
 					icon: 'none',
 					mask: false
 				});
-				that.getList();
+				setTimeout(() => {
+					that.getList();
+				}, 2000);
 			} else {
 				wx.showToast({
 					title: res.msg,

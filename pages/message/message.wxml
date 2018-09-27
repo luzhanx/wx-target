@@ -15,7 +15,7 @@
     <image class='bg2' src='./../../assets/img/bg2.png'></image>
     <view class='message'>
       <block wx:for="{{message}}">
-        <view class='message_list' data-id="{{ index }}" bindtap="handleBuqian">
+        <view class='message_list' data-id="{{ item.id }}" data-broken="{{ broken }}" bindtap="handleBuqian" wx:key="{{ index }}">
           <view class='left'>
             <text>{{item.title}}</text>
           </view>

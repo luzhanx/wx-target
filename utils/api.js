@@ -214,15 +214,15 @@ const api = {
 	// 归档管理
 	pigeonhole() {
 		return http.get('/index/pigeonhole');
-  },
-  // 消息列表
-  signActivemess(){
-    return http.post('/sign/activemess');
-  },
-  // 补签
-  signRetroactive(data){
-    return http.post('/sign/retroactive', data);
-  },
+	},
+	// 消息列表
+	signActivemess() {
+		return http.post('/sign/activemess');
+	},
+	// 补签
+	signRetroactive(data) {
+		return http.post('/sign/retroactive', data);
+	}
 };
 
 module.exports = api;

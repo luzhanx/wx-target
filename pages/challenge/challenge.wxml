@@ -29,7 +29,7 @@
     </view>
   </view>
   <view class="main">
-    <image class="status" src="/assets/img/baoming.png" wx:if="{{challengeInfo.challenge_state != 3 || challengeInfo.challenge_state != 2}}" />
+    <image class="status" src="/assets/img/baoming.png" wx:if="{{challengeInfo.challenge_state != 3 && challengeInfo.challenge_state != 2}}" />
     <view class="guize">
       <view class="title">
         <image class="icon" src="/assets/img/guize.png" />

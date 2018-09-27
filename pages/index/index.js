@@ -53,7 +53,8 @@ Page({
 							activeList: res.activeList,
 							fraction: res.user,
 							moon: res.moon ? res.moon : [],
-							tipNum: res.getStars,
+              tipNum: res.getStars,
+              brack: res.break,
 							check: res.check ? res.check : 1
 						});
 						if (res.getStars > 0) {

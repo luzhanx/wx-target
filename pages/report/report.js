@@ -234,21 +234,21 @@ Page({
 
       if (that.data.code == 0) {
         // 生成菊花码
-        let uid = wx.getStorageSync('user').id;
-        wx.showLoading();
-        wx.getImageInfo({
-          src: 'https://xdk.xtow.net/api.php/chrysanthemum/index?id=' + uid,
-          success: function (xres) {
-            const share = { ...that.data.share };
-            console.log(...that.data.share)
-            share.jhm = xres.path;
-            share.showShareModel = true;
+        // let uid = wx.getStorageSync('user').id;
+        // wx.showLoading();
+        // wx.getImageInfo({
+        //   src: 'https://xdk.xtow.net/api.php/chrysanthemum/index?id=' + uid,
+        //   success: function (xres) {
+        //     const share = { ...that.data.share };
+        //     console.log(...that.data.share)
+        //     share.jhm = xres.path;
+        //     share.showShareModel = true;
 
-            that.setData({
-              share: share
-            })
-          }
-        })
+        //     that.setData({
+        //       share: share
+        //     })
+        //   }
+        // })
       } else if (that.data.code == 1) {
         const confirm = { ...that.data.confirm };
         console.log(confirm)

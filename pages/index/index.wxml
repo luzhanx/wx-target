@@ -73,8 +73,8 @@
             <text class="fenge">/</text>
             <text>{{ item.day }}</text>
           </view>
-          <view class="tiptext success" wx:elif="{{ item.sign == 1 }}">目标已完成</view>
-          <view class="tiptext error" wx:elif="{{ item.sign == 2 }}">目标未完成</view>
+          <view class="tiptext success" wx:elif="{{ item.sign == 1 }}">挑战已完成</view>
+          <view class="tiptext error" wx:elif="{{ item.sign == 2 }}">挑战未完成</view>
           <view class="tiptext yes" wx:if="{{ item.sign == 3 }}">今日已签到</view>
           <view class="btn" wx:if="{{ item.sign != 1 && item.sign != 2 && item.sign != 3}}">
             <image class="bg" src="./../../assets/img/ggtx.png"></image>

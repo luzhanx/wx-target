@@ -4,7 +4,9 @@ Page({
 	data: {
 		challengeInfo: {},
 		signList: [],
-		pageIndex: 1
+		pageIndex: 1,
+		sign: 0,
+		showModal2: false
 	},
 	onLoad: function() {
 		let id = this.options.id;
@@ -24,7 +26,67 @@ Page({
 			console.log(res);
 		});
 	},
-
+	// 签到
+	// "sign": 3 0 //当日是否可签到 0=可以签到，1=目标完成 2=超时 3=今日已签到 4=活动未开始 5=未到签到时间
+	report() {
+		if (this.data.sign === 1) {
+			wx.showToast({
+				title: '目标完成',
+				icon: 'none',
+				mask: true
+			});
+			return;
+		}
+		if (this.data.sign === 2) {
+			wx.showToast({
+				title: '目标超时',
+				icon: 'none',
+				mask: true
+			});
+			return;
+		}
+		if (this.data.sign === 3) {
+			wx.showToast({
+				title: '今日已签到',
+				icon: 'none',
+				mask: true
+			});
+			return;
+		}
+		if (this.data.sign === 4) {
+			wx.showToast({
+				title: '活动未开始',
+				icon: 'none',
+				mask: true
+			});
+			return;
+		}
+		if (this.data.sign === 5) {
+			wx.showToast({
+				title: '未到签到时间',
+				icon: 'none',
+				mask: true
+			});
+			return;
+		}
+		console.log(this.data.sign, '签到时间。');
+		// 签到页面
+		wx.navigateTo({
+			url: '/pages/challengeReport/challengeReport'
+		});
+	},
+	onShow() {
+		let res = this.data.result;
+		if (res) {
+			if (res.code === 1) {
+				console.log('签到成功');
+			} else if (res.code === 2) {
+				this.setData({
+					showModal2: true
+				});
+			}
+		}
+	},
 	xinzan(e) {
 		let id = e.currentTarget.dataset.id;
 		let allow_probability = e.currentTarget.dataset.allowprobability;
@@ -112,7 +174,11 @@ Page({
 			current: imgUrl
 		});
 	},
-
+	toHome() {
+		wx.redirectTo({
+			url: '/pages/index/index'
+		});
+	},
 	// 删除吃打卡
 	delTarget() {
 		this.setData({
@@ -144,12 +210,5 @@ Page({
 			});
 
 		console.log('onReachBottom');
-	},
-	onShareAppMessage: function() {
-		console.log(this.data.groupMess);
-		return {
-			title: this.data.challengeInfo.challenge_title,
-			path: '/pages/challenge/challenge?id=' + this.data.challengeInfo.id
-		};
 	}
 });

@@ -100,6 +100,7 @@ Page({
 		return '';
 	},
 	closeShowModal2() {
+		let that = this;
 		if (!wx.getStorageSync('user')) {
 			wx.showModal({
 				title: '提示',
@@ -145,7 +146,7 @@ Page({
 			});
 		}
 		if (this.data.submitText === '进入挑战') {
-			return wx.redirectTo({
+			return wx.navigateTo({
 				url: '/pages/challengeDetail/challengeDetail?id=' + that.data.challengeInfo.id
 			});
 		}
