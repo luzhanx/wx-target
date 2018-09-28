@@ -39,9 +39,7 @@
         <view class="row">活动上限：{{ challengeInfo.challenge_num}}人</view>
         <view class="row">保证金　：{{ challengeInfo.challenge_money }}元</view>
         <view class="row">报名截止：{{ challengeInfo.apply_time }}</view>
-        <view class="row">
-          打卡时间：{{ challengeInfo.challenge_star}} - {{ challengeInfo.challenge_end }}
-        </view>
+        <view class="row">打卡时间：{{ challengeInfo.challenge_star}} - {{ challengeInfo.challenge_end }}</view>
         <view class="row">活动时间：{{ challengeInfo.active_time }}-{{ challengeInfo.end_time }}</view>
       </view>
     </view>

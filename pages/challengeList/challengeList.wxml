@@ -23,8 +23,9 @@
       <view class="content">
         <view class="imgBox">
           <image class="contentImg" src="{{ item.challenge_show }}" mode="aspectFill" />
-            <image wx:if="{{item.challenge_state == 0 || item.challenge_state == 2 || item.challenge_state == 1}}" class='imgBox_mid' src='/assets/img/begin.png'></image>
-            <image wx:else class='imgBox_mid' src='/assets/img/challenge.png'></image>
+            <image wx:if="{{item.challenge_state == 0  || item.challenge_state == 1}}" class='imgBox_mid' src='/assets/img/begin.png'></image>
+            <image wx:elif="{{ item.challenge_state == 4 }}" class='imgBox_mid' src='/assets/img/challenge.png'></image>
+            <view wx:else></view>
         </view>
       </view>
     </view>

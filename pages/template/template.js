@@ -82,20 +82,23 @@ Page({
     if (that.data.title === '') {
       wx.showToast({
         title: '标题不能为空',
-        icon: 'none'
+        icon: 'none',
+        mask: true
       });
       return;
     } else if (that.data.title > 8) {
       wx.showToast({
         title: '标题文字不能超过8个字',
-        icon: 'none'
+        icon: 'none',
+        mask: true
       });
       return;
     }
     if (that.data.description === '') {
       wx.showToast({
         title: '内容不能为空',
-        icon: 'none'
+        icon: 'none',
+        mask: true
       });
       return;
     }
@@ -147,7 +150,8 @@ Page({
       if (result.data.code == 0) {
         wx.showToast({
           title: result.data.msg,
-          icon: 'success'
+          icon: 'success',
+          mask: true
         })
         setTimeout(() => {
           wx.reLaunch({
@@ -157,6 +161,8 @@ Page({
       } else {
         wx.showToast({
           title: result.msg,
+          mask: true,
+          icon: 'none'
         })
       }
     }, err => {

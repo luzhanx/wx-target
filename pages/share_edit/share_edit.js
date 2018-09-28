@@ -9,10 +9,10 @@ Page({
    * 页面的初始数据
    */
 	data: {
-    share: {},
+		share: {},
 		shareImgWidth: 0,
 		src: '',
-		imgIndex: 0,
+		imgIndex: 1,
 		realShow: false,
 		wxpath: '',
 		avatarpath: ''
@@ -29,7 +29,7 @@ Page({
 			mask: true
 		});
 		const ctx = wx.createCanvasContext('shareCanvas', this);
-		var sharePath = `/assets/img/share${this.data.imgIndex}.png`;
+		var sharePath = `/assets/img/share${this.data.imgIndex}.jpg`;
 
 		// ctx.setFillStyle('#212d46');
 		ctx.fillRect(0, 0, windowWidth, windowHeight);
@@ -67,6 +67,8 @@ Page({
 			str = `我是第 ${that.data.share.group_rank} 个"${that.data.share.group.group_title}"的传递者`;
 		} else if (this.data.share.type === 1) {
 			str = `我的排名 ${that.data.share.user.rank} 名`;
+		} else if (this.data.share.type === 3) {
+			str = `我是第 ${that.data.share.group_rank} 个"${that.data.share.group.group_title}"的挑战者`;
 		}
 		ctx.fillText(str, windowWidth * 0.1866, windowWidth * 1.64);
 		ctx.fillText('想起TA就告诉TA, 长按菊花码加入我们的行动', windowWidth * 0.1866, windowWidth * 1.6933);
@@ -90,7 +92,7 @@ Page({
 	},
 	qiehuan() {
 		let index = this.data.imgIndex;
-		++index > 2 ? (index = 0) : index;
+		++index > 7 ? (index = 1) : index;
 		console.log(index);
 		this.setData({
 			imgIndex: index
@@ -104,8 +106,8 @@ Page({
 
 		this.setData({
 			share: appInst.globalData.share
-    });
-
+		});
+		console.log(appInst.globalData);
 		// console.log(appInst.globalData.share.data);
 		let uid = this.data.share.user.id;
 

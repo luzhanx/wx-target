@@ -39,7 +39,7 @@ Page({
 		}
 		if (this.data.sign === 2) {
 			wx.showToast({
-				title: '目标超时',
+				title: '挑战超时',
 				icon: 'none',
 				mask: true
 			});

@@ -145,7 +145,7 @@ Page({
 				if (gid == 0) {
 					url = `/pages/report/report?id=${id}`;
 				} else if (tid) {
-					url = `/pages/challenge/challenge?id=${tid}`;
+					url = `/pages/challengeDetail/challengeDetail?id=${tid}`;
 				} else {
 					url = `/pages/qdetail/qdetail?id=${gid}`;
 				}
@@ -217,7 +217,7 @@ Page({
 				if (gid == 0) {
 					url = `/pages/report/report?id=${id}`;
 				} else if (tid) {
-					url = `/pages/challenge/challenge?id=${tid}`;
+					url = `/pages/challengeDetail/challengeDetail?id=${tid}`;
 				} else {
 					url = `/pages/qdetail/qdetail?id=${gid}`;
 				}

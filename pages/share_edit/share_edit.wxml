@@ -9,11 +9,12 @@
   </view>
   <view class="sharebox">
     <view class="shareImg">
-      <image src="/assets/img/share{{ imgIndex }}.png" class="img" />
+      <image src="/assets/img/share{{ imgIndex }}.jpg" class="img" />
       <view class="info">
         <image src="{{ share.user.avatar }}" class="avatar" />
 
         <view wx:if="{{ share.type == 2 }}" class="content">我是第{{ share.group_rank}} 个"{{ share.group.group_title }}"的传递者\n想起TA就告诉TA, 长按菊花码加入我们的行动</view>
+        <view wx:if="{{ share.type == 3 }}" class="content">我是第{{ share.group_rank}} 个"{{ share.group.group_title }}"的挑战者\n想起TA就告诉TA, 长按菊花码加入我们的行动</view>
         <view wx:if="{{ share.type == 1 }}" class="content">我的排名{{ share.user.rank}}名\n想起TA就告诉TA, 长按菊花码加入我们的行动</view>
         <image class="ewm" src="{{ wxpath }}" />
      </view>
